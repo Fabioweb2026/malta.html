@@ -1,102 +1,100 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Malta Mediterranean</title>
     <style>
         /* =================================================== */
-        /* 1. ESTILIZAÇÃO GERAL DA PÁGINA                      */
+        /* 1. CONFIGURAÇÕES VISUAIS DA PÁGINA                  */
         /* =================================================== */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fcfbfa;
+            background-color: #f7f3ed; /* Cor de fundo off-white do seu print */
             margin: 0;
-            padding: 40px 20px;
+            padding: 50px 20px;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
+            min-height: 100vh;
         }
 
-        h1 {
-            color: #333;
-            margin-bottom: 8px;
-        }
-
-        .subtitle {
-            color: #777;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        /* =================================================== */
-        /* 2. LAYOUT DOS CARDS (GRID/ALINHAMENTO)               */
-        /* =================================================== */
+        /* Container que alinha os 3 blocos lado a lado */
         .cards-container {
             display: flex;
+            flex-direction: row;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 24px;
             justify-content: center;
-            max-width: 1200px;
+            max-width: 1140px;
             width: 100%;
         }
 
-        /* Base de cada card individual (Idêntico à foto enviada) */
-        .card {
+        /* Estrutura base usando as tags originais do seu site */
+        section {
             background: #ffffff;
-            border-radius: 16px; /* Bordas arredondadas e suaves */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06); /* Sombra elegante */
-            overflow: hidden; /* Garante que a foto siga as curvas do topo */
-            width: 100%;
-            max-width: 360px;
-            text-align: center;
+            border-radius: 12px; /* Bordas arredondadas idênticas à imagem */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+            display: flex;
+            flex-direction: column;
             cursor: pointer;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        /* Efeito visual discreto ao passar o mouse */
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+        section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
         }
 
-        /* Tamanho padrão e recorte perfeito das imagens */
+        /* Espaço da foto do topo */
+        .card-header {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
         .card-img {
             width: 100%;
-            height: 240px;
+            height: 100%;
             object-fit: cover;
             display: block;
         }
 
+        /* Conteúdo interno centralizado */
         .card-body {
-            padding: 28px 24px;
+            padding: 30px 20px;
+            text-align: center;
         }
 
-        /* Cor dourada/marrom idêntica ao título da imagem enviada */
-        .card-title {
-            color: #a47c48;
-            font-size: 24px;
-            margin: 0 0 14px 0;
-            font-weight: 600;
+        /* Títulos principais em Dourado/Marrom */
+        h3 {
+            color: #9d7543;
+            font-size: 22px;
+            margin: 0 0 16px 0;
+            font-weight: bold;
         }
 
-        .card-text {
-            color: #666666;
-            font-size: 15px;
-            line-height: 1.6;
+        /* Texto descritivo em inglês */
+        p {
+            color: #6d6d6d;
+            font-size: 14.5px;
+            line-height: 1.5;
             margin: 0;
         }
 
-        /* Linha decorativa que aparece apenas ao abrir */
+        /* =================================================== */
+        /* 2. RECURSO DE EXPANSÃO (ABRIR/FECHAR)                */
+        /* =================================================== */
         .card-divider {
             border: 0;
             border-top: 1px solid #eeeeee;
-            margin: 18px 0;
+            margin: 15px 0;
         }
 
-        /* =================================================== */
-        /* 3. SISTEMA DE ANIMAÇÃO OCULTA (ABRIR/FECHAR)        */
-        /* =================================================== */
         .card-extra-info {
             max-height: 0;
             opacity: 0;
@@ -106,86 +104,82 @@
         }
 
         .info-item {
-            font-size: 14px;
-            color: #444444;
-            margin-bottom: 10px;
-            line-height: 1.5;
+            font-size: 13.5px;
+            color: #3f3f3f;
+            margin-bottom: 8px;
+            line-height: 1.4;
         }
 
-        /* Classe acionada pelo JavaScript que expande o conteúdo */
-        .card.open .card-extra-info {
-            max-height: 250px; /* Margem de altura limite para o texto descer */
+        /* Ativado dinamicamente pelo JavaScript ao clicar */
+        section.open .card-extra-info {
+            max-height: 200px;
             opacity: 1;
         }
     </style>
 </head>
 <body>
 
-    <h1>Malta Mediterranean</h1>
-    <p class="subtitle">Discover the history, culture, and paradise hidden in the heart of the sea</p>
-
     <div class="cards-container">
 
         <!-- CARD 1: TOURISM -->
-        <div class="card" onclick="toggleCard(this)">
+        <section id="turismo" onclick="toggleCard(this)">
             <div class="card-header">
-                <img src="https://unsplash.com" alt="Tourism in Malta" class="card-img">
+                <img src="st-julians1.png alt="Tourism" class="card-img">
             </div>
             <div class="card-body">
-                <h2 class="card-title">Tourism</h2>
-                <p class="card-text">Explore historic walled cities, ancient paths, and scenic viewpoint routes across the islands.</p>
+                <h3>Tourism</h3>
+                <p>Explore historic walled cities, ancient paths, and scenic viewpoint routes across the islands.</p>
                 
+                <!-- Área expansível com informações extras -->
                 <div class="card-extra-info">
                     <hr class="card-divider">
-                    <p class="info-item"><strong>Cidades Históricas:</strong> Caminhe por Valletta, uma capital fortificada construída inteiramente por Cavaleiros Hospitalários.</p>
-                    <p class="info-item"><strong>Rotas:</strong> Explore Mdina, a antiga capital medieval conhecida mundialmente como a "Cidade Silenciosa".</p>
+                    <p class="info-item"><strong>Cidades Históricas:</strong> Visite as grandes fortificações da capital Valletta e as muralhas medievais de Mdina.</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- CARD 2: GASTRONOMY & ARCHITECTURE -->
-        <div class="card" onclick="toggleCard(this)">
+        <!-- CARD 2: GASTRONOMY -->
+        <section id="gastronomia" onclick="toggleCard(this)">
             <div class="card-header">
-                <img src="https://unsplash.com" alt="Gastronomy and Architecture" class="card-img">
+                <img src="giorgios.png" alt="Gastronomy & Architecture" class="card-img">
             </div>
             <div class="card-body">
-                <h2 class="card-title">Gastronomy & Architecture</h2>
-                <p class="card-text">Taste unique Mediterranean culinary delights and admire centuries of historical building designs.</p>
+                <h3>Gastronomy & Architecture</h3>
+                <p>Taste unique Mediterranean culinary delights and admire centuries of historical building designs.</p>
                 
+                <!-- Área expansível com informações extras -->
                 <div class="card-extra-info">
                     <hr class="card-divider">
-                    <p class="info-item"><strong>Sabores Tradicionais:</strong> Delicie-se com o Pastizzi (massa folhada recheada com ricota ou purê de ervilhas).</p>
-                    <p class="info-item"><strong>Estilo Arquitetônico:</strong> Admire as icônicas e vibrantes sacadas de madeira colorida estendidas pelas fachadas barrocas.</p>
+                    <p class="info-item"><strong>Culinária Local:</strong> Saboreie pratos tradicionais e cafés finos na badalada Sliema.</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- CARD 3: BLUE LAGOON (CARD DA SUA FOTO) -->
-        <div class="card" onclick="toggleCard(this)">
+        <!-- CARD 3: BLUE LAGOON -->
+        <section id="blue-lagoon" onclick="toggleCard(this)">
             <div class="card-header">
-                <!-- Imagem em alta definição idêntica à composição enviada na imagem -->
-                <img src="https://unsplash.com" alt="Blue Lagoon, Malta" class="card-img">
+                <img src="bluelagoon2.png" alt="Blue Lagoon" class="card-img">
             </div>
             <div class="card-body">
-                <h2 class="card-title">Blue Lagoon</h2>
-                <p class="card-text">Immerse yourself in crystal cyan waters, hidden coastal caves, and beautiful sunny bays.</p>
+                <h3>Blue Lagoon</h3>
+                <p>Immerse yourself in crystal cyan waters, hidden coastal caves, and beautiful sunny bays.</p>
                 
+                <!-- Área expansível com informações extras -->
                 <div class="card-extra-info">
                     <hr class="card-divider">
-                    <p class="info-item"><strong>Como Visitar:</strong> Pegue barcos diários que partem de Cirkewwa (Malta) ou de Mġarr (Gozo).</p>
-                    <p class="info-item"><strong>Dica de Viagem:</strong> Prefira realizar a visita no início da manhã para curtir a lagoa antes do pico das embarcações comerciais.</p>
+                    <p class="info-item"><strong>Como Visitar:</strong> Pegue pequenas embarcações e barcos turísticos saindo de Cirkewwa.</p>
                 </div>
             </div>
-        </div>
+        </section>
 
     </div>
 
     <!-- =================================================== */
-    /* 4. LÓGICA JAVASCRIPT (INDEPENDENTE E ISOLADA)        */
+    /* 3. CONTROLE DE INTERAÇÃO JAVASCRIPT                 */
     /* =================================================== -->
     <script>
         function toggleCard(cardElement) {
-            // Aplica ou remove a classe 'open' estritamente no card clicado
+            // Adiciona ou remove a classe 'open' na tag <section> clicada
             cardElement.classList.toggle('open');
         }
     </script>
