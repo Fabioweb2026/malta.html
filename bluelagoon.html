@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blue Lagoon - Comino Island</title>
+    <title>Blue Lagoon & Blue Grotto - Malta</title>
     <style>
         /* ==========================================
            Configurações Gerais (Mantendo o Padrão)
@@ -73,39 +73,22 @@
         }
 
         /* ==========================================
-           Bloco de Destaque da Blue Lagoon
+           Blocos de Conteúdo Estilizados
            ========================================== */
-        .lagoon-card {
+        .info-card {
             background-color: #f4ece1; /* Bege calcário */
             border: 1px solid #e6dac8;
             border-radius: 12px;
             overflow: hidden;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             box-shadow: 0 4px 15px rgba(140, 120, 100, 0.05);
         }
 
-        .lagoon-image-wrapper {
-            width: 100%;
-            height: 350px; /* Altura um pouco maior para valorizar a paisagem paradisíaca */
-            overflow: hidden;
-        }
-
-        .lagoon-image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .lagoon-card:hover .lagoon-image-wrapper img {
-            transform: scale(1.02);
-        }
-
-        .lagoon-info {
+        .card-padding {
             padding: 30px;
         }
 
-        .lagoon-info h2 {
+        .info-card h2 {
             font-size: 1.6rem;
             color: #735e49;
             margin-bottom: 5px;
@@ -122,41 +105,118 @@
             margin-bottom: 15px;
         }
 
-        .lagoon-text {
+        .card-text {
             font-size: 0.95rem;
             color: #4a3f35;
             text-align: justify;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Grid de Imagens da Blue Lagoon */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 0 30px 30px 30px;
+        }
+
+        .gallery-item {
+            background: #fcf8f2;
+            border: 1px solid #e6dac8;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.03);
+        }
+
+        .item-caption {
+            padding: 10px;
+            font-size: 0.85rem;
+            color: #706356;
+            text-align: center;
+            background-color: #f4ece1;
+            border-top: 1px solid #e6dac8;
+        }
+
+        /* Imagem Solo para o Bloco da Blue Grotto */
+        .solo-image-wrapper {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+        }
+
+        .solo-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover .solo-image-wrapper img {
+            transform: scale(1.02);
         }
     </style>
 </head>
 <body>
 
-    <!-- Link de retorno para a Home principal (index.html) -->
+    <!-- Link para retornar à Home principal (index.html ou malta.html) -->
     <a href="index.html" class="back-btn">← Back to Home</a>
 
     <header class="header-section">
-        <h1>The Blue Lagoon</h1>
-        <p>A paradise of crystal-clear turquoise waters nestled on the peaceful island of Comino.</p>
+        <h1>Aquatic Paradises</h1>
+        <p>Explore the glowing turquoise waters, hidden caves, and dramatic sea cliffs of the Maltese archipelago.</p>
     </header>
 
     <main class="main-container">
 
-        <section class="lagoon-card">
-            <div class="lagoon-image-wrapper">
-                <!-- Utilizando a sua imagem local configurada na página inicial -->
-                <img src="bluelagoon2.png" alt="Blue Lagoon Paradise Waters">
-            </div>
-            <div class="lagoon-info">
-                <h2>Comino's Natural Masterpiece</h2>
+        <!-- SEÇÃO 1: BLUE LAGOON (Com as duas novas imagens) -->
+        <section class="info-card">
+            <div class="card-padding">
+                <h2>The Blue Lagoon & Comino Island</h2>
                 <div class="location-tag">📍 Comino Island, Malta</div>
                 
-                <p class="lagoon-text">
-                    The Blue Lagoon is widely recognized as one of Malta's most breathtaking natural treasures. Situated between the small island of Comino and the islet of Cominotto, this giant natural pool features a white sandy bottom and exceptionally clear, glowing cyan waters that resemble a tropical paradise in the middle of the Mediterranean Sea.
+                <p class="card-text">
+                    The Blue Lagoon is a paradise pool nestled between Comino and the islet of Cominotto. Historically, Comino island served as a hiding spot for pirates and smugglers during the Middle Ages due to its secluded bays and complex cave systems. Today, its white sandy seafloor reflects the sunlight to create a glowing cyan surface, making it one of the top locations in Europe for swimming and snorkeling.
                 </p>
+            </div>
+
+            <!-- Galeria com bluelagoon3.png e bluelagoon4.jpg -->
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="bluelagoon3.png" alt="Boats anchored at Blue Lagoon">
+                    <div class="item-caption">Crystal-clear currents ideal for boat tours and anchoring</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="bluelagoon4.jpg" alt="Snorkeling at Comino">
+                    <div class="item-caption">Scenic coastal cliffs bordering the turquoise lagoon</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: BLUE GROTTO (Nova seção com a terceira imagem) -->
+        <section class="info-card">
+            <div class="solo-image-wrapper">
+                <img src="maltathebluegrotto.jpg" alt="Blue Grotto Sea Arches">
+            </div>
+            
+            <div class="card-padding">
+                <h2>The Majestic Blue Grotto</h2>
+                <div class="location-tag">📍 Zurrieq, Southern Coast of Malta</div>
                 
-                <p class="lagoon-text">
-                    It is a top destination for travelers looking to swim, snorkel, or cruise by boat. Surrounded by scenic limestone cliffs and small caves, the lagoon offers an unforgettable view. To fully experience its peaceful atmosphere, visiting early in the morning or during a sunset boat trip allows you to enjoy the golden Maltese sun reflecting beautifully across the turquoise sea.
+                <p class="card-text">
+                    Located on the southern cliffs of Malta, the Blue Grotto is a complex system of seven interconnected sea caves, highlighted by a massive 30-meter main stone arch. Deeply rooted in local history, mythology associates these caverns with the home of sea sirens who enchanted sailors. 
+                </p>
+                <p class="card-text">
+                    The location is globally famous for its morning phenomenon: the unique angle of the sunlight combines with the water chemistry and cave architecture to project a mirror-like phosphorescent blue glow onto the cave walls, creating an unforgettable visual experience for coastal explorers.
                 </p>
             </div>
         </section>
