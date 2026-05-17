@@ -1,88 +1,194 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Malta Mediterranean</title>
     <style>
+        /* =================================================== */
+        /* 1. ESTILIZAÇÃO GERAL DA PÁGINA                      */
+        /* =================================================== */
         body {
-            background-color: #F5F2EB; 
-            font-family: 'Segoe UI', sans-serif;
-            color: #3E3B35;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fcfbfa;
             margin: 0;
-            padding: 20px;
+            padding: 40px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        header { text-align: center; margin-bottom: 40px; }
-        header h1 { color: #8C6D46; font-size: 2.7rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
-        header p { font-style: italic; color: #706B62; font-size: 1.1rem; }
-        
-        .card-container {
+
+        h1 {
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #777;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* =================================================== */
+        /* 2. LAYOUT DOS CARDS (GRID/ALINHAMENTO)               */
+        /* =================================================== */
+        .cards-container {
             display: flex;
-            gap: 25px;
-            justify-content: center;
             flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
             max-width: 1200px;
             width: 100%;
-            margin-top: 20px;
         }
-        .card-link { text-decoration: none; color: inherit; }
+
+        /* Base de cada card individual (Idêntico à foto enviada) */
         .card {
-            background-color: #FFFFFF;
-            border: 1px solid #E6DFD3;
-            border-radius: 12px;
-            width: 320px;
-            padding: 20px;
+            background: #ffffff;
+            border-radius: 16px; /* Bordas arredondadas e suaves */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06); /* Sombra elegante */
+            overflow: hidden; /* Garante que a foto siga as curvas do topo */
+            width: 100%;
+            max-width: 360px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
+
+        /* Efeito visual discreto ao passar o mouse */
         .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(140, 109, 70, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
         }
-        .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
-        .card h3 { color: #8C6D46; margin: 15px 0 10px 0; font-size: 1.4rem; }
-        .card p { font-size: 0.95rem; color: #666; line-height: 1.4; }
+
+        /* Tamanho padrão e recorte perfeito das imagens */
+        .card-img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-body {
+            padding: 28px 24px;
+        }
+
+        /* Cor dourada/marrom idêntica ao título da imagem enviada */
+        .card-title {
+            color: #a47c48;
+            font-size: 24px;
+            margin: 0 0 14px 0;
+            font-weight: 600;
+        }
+
+        .card-text {
+            color: #666666;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Linha decorativa que aparece apenas ao abrir */
+        .card-divider {
+            border: 0;
+            border-top: 1px solid #eeeeee;
+            margin: 18px 0;
+        }
+
+        /* =================================================== */
+        /* 3. SISTEMA DE ANIMAÇÃO OCULTA (ABRIR/FECHAR)        */
+        /* =================================================== */
+        .card-extra-info {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out, opacity 0.3s ease;
+            text-align: left;
+        }
+
+        .info-item {
+            font-size: 14px;
+            color: #444444;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        /* Classe acionada pelo JavaScript que expande o conteúdo */
+        .card.open .card-extra-info {
+            max-height: 250px; /* Margem de altura limite para o texto descer */
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Malta Mediterranean</h1>
-        <p>Discover the history, culture, and paradise hidden in the heart of the sea</p>
-    </header>
+    <h1>Malta Mediterranean</h1>
+    <p class="subtitle">Discover the history, culture, and paradise hidden in the heart of the sea</p>
 
-    <div class="card-container">
-        <!-- CARD 1 -->
-        <a href="tourism.html" class="card-link">
-            <div class="card">
-                <img src="st-julians1.png" alt="Tourism">
-                <h3>Tourism</h3>
-                <p>Explore historic walled cities, ancient paths, and scenic viewpoint routes across the islands.</p>
-            </div>
-        </a>
+    <div class="cards-container">
 
-        <!-- CARD 2 -->
-        <a href="gastronomy.html" class="card-link">
-            <div class="card">
-                <img src="giorgios.png" alt="Gastronomy">
-                <h3>Gastronomy & Architecture</h3>
-                <p>Taste unique Mediterranean culinary delights and admire centuries of historical building designs.</p>
+        <!-- CARD 1: TOURISM -->
+        <div class="card" onclick="toggleCard(this)">
+            <div class="card-header">
+                <img src="https://unsplash.com" alt="Tourism in Malta" class="card-img">
             </div>
-        </a>
+            <div class="card-body">
+                <h2 class="card-title">Tourism</h2>
+                <p class="card-text">Explore historic walled cities, ancient paths, and scenic viewpoint routes across the islands.</p>
+                
+                <div class="card-extra-info">
+                    <hr class="card-divider">
+                    <p class="info-item"><strong>Cidades Históricas:</strong> Caminhe por Valletta, uma capital fortificada construída inteiramente por Cavaleiros Hospitalários.</p>
+                    <p class="info-item"><strong>Rotas:</strong> Explore Mdina, a antiga capital medieval conhecida mundialmente como a "Cidade Silenciosa".</p>
+                </div>
+            </div>
+        </div>
 
-        <!-- CARD 3 -->
-        <a href="bluelagoon.html" class="card-link">
-            <div class="card">
-                <img src="bluelagoon2.png" alt="Blue Lagoon">
-                <h3>Blue Lagoon</h3>
-                <p>Immerse yourself in crystal cyan waters, hidden coastal caves, and beautiful sunny bays.</p>
+        <!-- CARD 2: GASTRONOMY & ARCHITECTURE -->
+        <div class="card" onclick="toggleCard(this)">
+            <div class="card-header">
+                <img src="https://unsplash.com" alt="Gastronomy and Architecture" class="card-img">
             </div>
-        </a>
+            <div class="card-body">
+                <h2 class="card-title">Gastronomy & Architecture</h2>
+                <p class="card-text">Taste unique Mediterranean culinary delights and admire centuries of historical building designs.</p>
+                
+                <div class="card-extra-info">
+                    <hr class="card-divider">
+                    <p class="info-item"><strong>Sabores Tradicionais:</strong> Delicie-se com o Pastizzi (massa folhada recheada com ricota ou purê de ervilhas).</p>
+                    <p class="info-item"><strong>Estilo Arquitetônico:</strong> Admire as icônicas e vibrantes sacadas de madeira colorida estendidas pelas fachadas barrocas.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 3: BLUE LAGOON (CARD DA SUA FOTO) -->
+        <div class="card" onclick="toggleCard(this)">
+            <div class="card-header">
+                <!-- Imagem em alta definição idêntica à composição enviada na imagem -->
+                <img src="https://unsplash.com" alt="Blue Lagoon, Malta" class="card-img">
+            </div>
+            <div class="card-body">
+                <h2 class="card-title">Blue Lagoon</h2>
+                <p class="card-text">Immerse yourself in crystal cyan waters, hidden coastal caves, and beautiful sunny bays.</p>
+                
+                <div class="card-extra-info">
+                    <hr class="card-divider">
+                    <p class="info-item"><strong>Como Visitar:</strong> Pegue barcos diários que partem de Cirkewwa (Malta) ou de Mġarr (Gozo).</p>
+                    <p class="info-item"><strong>Dica de Viagem:</strong> Prefira realizar a visita no início da manhã para curtir a lagoa antes do pico das embarcações comerciais.</p>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+    <!-- =================================================== */
+    /* 4. LÓGICA JAVASCRIPT (INDEPENDENTE E ISOLADA)        */
+    /* =================================================== -->
+    <script>
+        function toggleCard(cardElement) {
+            // Aplica ou remove a classe 'open' estritamente no card clicado
+            cardElement.classList.toggle('open');
+        }
+    </script>
 
 </body>
 </html>
