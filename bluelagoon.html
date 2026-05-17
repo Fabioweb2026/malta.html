@@ -8,157 +8,170 @@
         /* ==========================================
            Estilos Isolados e Livres de Conflito
            ========================================== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Georgia, serif;
-        }
+       <style>
+    /* ==========================================
+       RESET EXCLUSIVO E TOTAL CONTRA CONFLITOS
+       ========================================== */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Georgia, serif;
+    }
 
-        body {
-            background-color: #fcf8f2; /* Creme suave */
-            color: #4a3f35; /* Marrom escuro */
-            line-height: 1.6;
-        }
+    body {
+        background-color: #fcf8f2;
+        color: #4a3f35;
+        line-height: 1.6;
+    }
 
-        /* Botão Voltar Estilizado */
-        .back-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background-color: #f4ece1;
-            border: 1px solid #e6dac8;
-            color: #4a3f35;
-            text-decoration: none;
-            padding: 10px 18px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            z-index: 10;
-            transition: all 0.2s ease;
-        }
+    /* Botão Voltar */
+    .back-btn {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: #f4ece1;
+        border: 1px solid #e6dac8;
+        color: #4a3f35;
+        text-decoration: none;
+        padding: 10px 18px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        z-index: 10;
+        transition: all 0.2s ease;
+    }
 
-        .back-btn:hover {
-            background-color: #ebe0cf;
-            transform: translateX(-3px);
-        }
+    .back-btn:hover {
+        background-color: #ebe0cf;
+        transform: translateX(-3px);
+    }
 
-        /* Cabeçalho */
-        .header-section {
-            text-align: center;
-            padding: 100px 20px 40px 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+    .header-section {
+        text-align: center;
+        padding: 100px 20px 40px 20px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
 
-        .header-section h1 {
-            font-size: 2.5rem;
-            color: #8c7864;
-            font-weight: 400;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-        }
+    .header-section h1 {
+        font-size: 2.5rem;
+        color: #8c7864;
+        font-weight: 400;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+    }
 
-        .header-section p {
-            font-size: 1.05rem;
-            color: #706356;
-            font-style: italic;
-        }
+    .header-section p {
+        font-size: 1.05rem;
+        color: #a3907c;
+        font-style: italic;
+    }
 
-        /* Container Principal */
-        .main-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+    .main-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+    }
 
-        /* ==========================================
-           Blocos de Conteúdo Estilo Full Width Image
-           ========================================== */
-        .info-card {
-            background-color: #f4ece1; /* Bege calcário */
-            border: 1px solid #e6dac8;
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 50px;
-            box-shadow: 0 4px 15px rgba(140, 120, 100, 0.05);
-        }
+    .info-card {
+        background-color: #f4ece1;
+        border: 1px solid #e6dac8;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 50px;
+        box-shadow: 0 4px 15px rgba(140, 120, 100, 0.05);
+    }
 
-        /* Container de imagem cobrindo toda a largura superior */
-        .lagoon-image-wrapper, .solo-image-wrapper {
-            width: 100%;
-            height: 280px; /* Altura ideal de exibição panorâmica */
-            overflow: hidden;
-        }
+    /* ==========================================
+       BLINDAGEM DO TAMANHO DAS IMAGENS (IMPACTO TOTAL)
+       ========================================== */
+    
+    /* Força os containers a aceitarem o formato retangular de banner */
+    .lagoon-image-wrapper, .solo-image-wrapper {
+        width: 100% !important;
+        height: 320px !important; /* Altura de destaque ideal definida de forma rígida */
+        overflow: hidden !important;
+        position: relative !important;
+    }
 
-        .lagoon-image-wrapper img, .solo-image-wrapper img {
-            width: 100% !important;
-            height: 100% !important;
-            object-fit: cover !important; /* Preenche o espaço proporcionalmente sem achatar */
-            display: block;
-        }
+    /* Garante que a imagem preencha o card inteiro sem distorcer e SEM herdar formato redondo */
+    .lagoon-image-wrapper img, .solo-image-wrapper img {
+        width: 100% !important;
+        height: 100% !important;
+        max-height: none !important;
+        border-radius: 0px !important; /* Remove qualquer chance de herdar o estilo de círculo */
+        object-fit: cover !important; /* Ocupa todo o retângulo proporcionalmente */
+        display: block !important;
+        transform: none !important;
+    }
 
-        .card-padding {
-            padding: 30px;
-        }
+    .card-padding {
+        padding: 30px;
+    }
 
-        .info-card h2 {
-            font-size: 1.6rem;
-            color: #735e49;
-            margin-bottom: 5px;
-        }
+    .info-card h2 {
+        font-size: 1.6rem;
+        color: #735e49;
+        margin-bottom: 5px;
+    }
 
-        .location-tag {
-            display: inline-block;
-            background-color: #dfcfbe;
-            color: #5c4f43;
-            padding: 3px 10px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
+    .location-tag {
+        display: inline-block;
+        background-color: #dfcfbe;
+        color: #5c4f43;
+        padding: 3px 10px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
 
-        .card-text {
-            font-size: 0.95rem;
-            color: #4a3f35;
-            text-align: left;
-            word-wrap: break-word;
-        }
+    .card-text {
+        font-size: 0.95rem;
+        color: #4a3f35;
+        text-align: left;
+    }
 
-        /* ==========================================
-           Galeria Inferior para Fotos Menores
-           ========================================== */
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            padding: 0 30px 30px 30px;
-        }
+    /* ==========================================
+       GALERIA MENOR INFERIOR
+       ========================================== */
+    .image-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        padding: 0 30px 30px 30px;
+    }
 
-        .gallery-item {
-            background: #fcf8f2;
-            border: 1px solid #e6dac8;
-            border-radius: 8px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
+    .gallery-item {
+        background: #fcf8f2;
+        border: 1px solid #e6dac8;
+        border-radius: 8px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
 
-        .gallery-item img {
-            width: 100% !important;
-            height: 200px !important;
-            object-fit: cover !important;
-        }
+    /* Força os mini cards inferiores a manterem formato retangular equilibrado */
+    .gallery-item img {
+        width: 100% !important;
+        height: 200px !important;
+        border-radius: 0px !important;
+        object-fit: cover !important;
+        display: block !important;
+    }
 
-        .item-caption {
-            padding: 15px;
-            font-size: 0.9rem;
-            color: #706356;
-            text-align: center;
-            background-color: #f4ece1;
-            border-top: 1px solid #e6dac8;
-            word-wrap: break-word;
+    .item-caption {
+        padding: 15px;
+        font-size: 0.9rem;
+        color: #706356;
+        text-align: center;
+        background-color: #f4ece1;
+        border-top: 1px solid #e6dac8;
+        word-wrap: break-word;
+    }
+</style>
+
         }
     </style>
 </head>
