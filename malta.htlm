@@ -1,48 +1,43 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turismo em Malta</title>
+    <title>Malta Mediterranean</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="hero">
-        <h1>Descubra Malta</h1>
-        <p>Explore as maravilhas, a culinária e as paisagens paradisíacas</p>
+    <!-- Título Principal -->
+    <header class="main-header">
+        <h1>Malta Mediterranean</h1>
     </header>
 
+    <!-- Seção de Cards Pequenos e Discretos -->
     <main class="container">
         <section class="cards-grid">
             
             <!-- Card 1: Turismo -->
-            <a href="turismo.html" class="card">
-                <div class="card-img" style="background-image: url('https://unsplash.com');"></div>
+            <a href="turismo.html" class="card-discreto">
                 <div class="card-content">
-                    <h2>Pontos Turísticos</h2>
-                    <p>Conheça as cidades históricas, templos antigos e a rica cultura de Malta.</p>
-                    <span class="btn">Explorar</span>
+                    <h2>Turismo</h2>
+                    <p>Explore as cidades históricas e a rica cultura maltesa.</p>
                 </div>
             </a>
 
-            <!-- Card 2: Gastronomia -->
-            <a href="gastronomy.html" class="card">
-                <div class="card-img" style="background-image: url('https://unsplash.com');"></div>
+            <!-- Card 2: Gastronomia e Arquitetura -->
+            <a href="gastronomy.html" class="card-discreto">
                 <div class="card-content">
-                    <h2>Gastronomia</h2>
-                    <p>Saboreie os pratos tradicionais, frutos do mar frescos e influências mediterrâneas.</p>
-                    <span class="btn">Saborear</span>
+                    <h2>Gastronomia & Arquitetura</h2>
+                    <p>Descubra os sabores tradicionais e os edifícios de pedra calcária.</p>
                 </div>
             </a>
 
             <!-- Card 3: Blue Lagoon -->
-            <a href="bluelagoon.html" class="card">
-                <div class="card-img" style="background-image: url('https://unsplash.com');"></div>
+            <a href="bluelagoon.html" class="card-discreto">
                 <div class="card-content">
                     <h2>Blue Lagoon</h2>
-                    <p>Visite as águas cristalinas mais famosas da ilha de Comino.</p>
-                    <span class="btn">Descobrir</span>
+                    <p>Visite as águas cristalinas e paradisíacas da ilha de Comino.</p>
                 </div>
             </a>
 
@@ -51,4 +46,5 @@
 
 </body>
 </html>
+
 
