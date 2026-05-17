@@ -2,91 +2,91 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Malta Mediterranean</title>
-    <!-- Adicione seus links de CSS aqui se houver -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 1. TÍTULO NA PARTE SUPERIOR DA WEBPAGE -->
-    <header style="text-align: center; padding: 20px;">
+    <!-- Botão de Acessibilidade (Contraste) -->
+    <button id="toggle-contrast" class="contrast-btn" aria-label="Alternar Contraste">🌓</button>
+
+    <!-- Título Principal -->
+    <header class="main-header">
         <h1>Malta Mediterranean</h1>
+        <p class="subtitle">A joia de pedra calcária no coração do Mediterrâneo</p>
     </header>
 
-    <main class="cards-container">
-        
-        <!-- CARD 1: TOURISM (Abre em página separada) -->
-        <a href="./turismo.html" target="_blank" class="card-link" style="text-decoration: none; color: inherit;">
-            <section id="turismo">
-                <div class="card-header">
-                    <img src="./st-julians1.png" alt="Tourism" class="card-img">
+    <!-- Seção de Cards Pequenos e Discretos -->
+    <main class="container">
+        <section class="cards-grid">
+            
+            <!-- Card 1: Turismo -->
+            <a href="turismo.html" class="card-discreto">
+                <div class="card-content">
+                    <h2>Turismo</h2>
+                    <p>Explore as cidades históricas e a rica cultura maltesa.</p>
                 </div>
-                <div class="card-body">
-                    <h3>Tourism</h3>
-                    <p>Explore historic walled cities, ancient paths, and scenic viewpoint routes across the islands.</p>
-                </div>
-            </section>
-        </a>
+            </a>
 
-        <!-- CARD 2: GASTRONOMY (Abre em página separada) -->
-        <a href="./<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Malta Mediterranean</title>
-    <!-- Adicione seus links de CSS aqui se houver -->
-</head>
-<body>
-
-    <!-- 1. TÍTULO NA PARTE SUPERIOR DA WEBPAGE -->
-    <header style="text-align: center; padding: 20px;">
-        <h1>Malta Mediterranean</h1>
-    </header>
-
-    <main class="cards-container">
-        
-        <!-- CARD 1: TOURISM (Abre em página separada) -->
-        <a href="./st-julians1.png" target="_blank" class="card-link" style="text-decoration: none; color: inherit;">
-            <section id="turismo">
-                <div class="card-header">
-                    <img src="./st-julians1.png" alt="Tourism" class="card-img">
+            <!-- Card 2: Gastronomia e Arquitetura -->
+            <a href="gastronomy.html" class="card-discreto">
+                <div class="card-content">
+                    <h2>Gastronomia & Arquitetura</h2>
+                    <p>Descubra os sabores tradicionais e os edifícios de pedra calcária.</p>
                 </div>
-                <div class="card-body">
-                    <h3>Tourism</h3>
-                    <p>Explore historic walled cities, ancient paths, and scenic viewpoint routes across the islands.</p>
-                </div>
-            </section>
-        </a>
+            </a>
 
-        <!-- CARD 2: GASTRONOMY (Abre em página separada) -->
-        <a href="./giorgios.png" target="_blank" class="card-link" style="text-decoration: none; color: inherit;">
-            <section id="gastronomia">
-                <div class="card-header">
-                    <img src=".giorgios.png" alt="Gastronomy" class="card-img">
+            <!-- Card 3: Blue Lagoon -->
+            <a href="bluelagoon.html" class="card-discreto">
+                <div class="card-content">
+                    <h2>Blue Lagoon</h2>
+                    <p>Visite as águas cristalinas e paradisíacas da ilha de Comino.</p>
                 </div>
-                <div class="card-body">
-                    <h3>Gastronomy & Architecture</h3>
-                    <p>Taste unique Mediterranean culinary delights and admire centuries of historical building designs.</p>
-                </div>
-            </section>
-        </a>
+            </a>
 
+        </section>
     </main>
 
-</body>
-</html>
-" target="_blank" class="card-link" style="text-decoration: none; color: inherit;">
-            <section id="gastronomia">
-                <div class="card-header">
-                    <img src="./gastronomy.png" alt="Gastronomy" class="card-img">
-                </div>
-                <div class="card-body">
-                    <h3>Gastronomy & Architecture</h3>
-                    <p>Taste unique Mediterranean culinary delights and admire centuries of historical building designs.</p>
-                </div>
-            </section>
-        </a>
+    <!-- Código JavaScript Integrado -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card-discreto');
+            const contrastBtn = document.getElementById('toggle-contrast');
 
-    </main>
+            // 1. Efeito Visual de Entrada Suave nos Cards (Fade-in)
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.5s ease-out';
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 150); // Delay cascata para cada card
+            });
 
+            // 2. Animação de Saída ao Clicar (Transição de Página)
+            cards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    e.preventDefault(); // Pausa o clique imediato
+                    const targetUrl = this.getAttribute('href');
+                    
+                    // Aplica efeito de sumiço rápido antes de mudar de página
+                    document.body.style.opacity = '0';
+                    document.body.style.transition = 'opacity 0.3s ease';
+                    
+                    setTimeout(() => {
+                        window.location.href = targetUrl;
+                    }, 300);
+                });
+            });
+
+            // 3. Script Opcional: Alternador de Contraste para Acessibilidade
+            contrastBtn.addEventListener('click', () => {
+                document.body.classList.toggle('high-contrast');
+            });
+        });
+    </script>
 </body>
 </html>
