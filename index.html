@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,17 +9,15 @@
 <body>
 
     <!-- Botão de Acessibilidade (Contraste) -->
-    <button id="toggle-contrast" class="contrast-btn" aria-label="Alternar Contraste">🌓</button>
+    <button id="toggle-contrast" class="contrast-btn" aria-label="Toggle Contrast">🌓</button>
 
-    <!-- Título Principal -->
-        <!-- Main Header -->
+    <!-- Cabeçalho Principal -->
     <header class="main-header">
         <h1>Malta Mediterranean</h1>
         <p class="subtitle">The limestone gem in the heart of the Mediterranean</p>
     </header>
 
-    <!-- Small and Discreet Cards Section -->
-        <!-- Small and Discreet Cards Section with Circular Images -->
+    <!-- Seção de Cards com Imagens Circulares -->
     <main class="container">
         <section class="cards-grid">
             
@@ -59,13 +57,13 @@
         </section>
     </main>
 
-    <!-- Código JavaScript Integrado -->
+    <!-- JavaScript Integrado para Transição Suave e Contraste -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const cards = document.querySelectorAll('.card-discreto');
             const contrastBtn = document.getElementById('toggle-contrast');
 
-            // 1. Efeito Visual de Entrada Suave nos Cards (Fade-in)
+            // 1. Efeito de Entrada Suave (Fade-in)
             cards.forEach((card, index) => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(20px)';
@@ -74,16 +72,15 @@
                 setTimeout(() => {
                     card.style.opacity = '1';
                     card.style.transform = 'translateY(0)';
-                }, index * 150); // Delay cascata para cada card
+                }, index * 150);
             });
 
-            // 2. Animação de Saída ao Clicar (Transição de Página)
+            // 2. Animação de Saída ao Clicar
             cards.forEach(card => {
                 card.addEventListener('click', function(e) {
-                    e.preventDefault(); // Pausa o clique imediato
+                    e.preventDefault();
                     const targetUrl = this.getAttribute('href');
                     
-                    // Aplica efeito de sumiço rápido antes de mudar de página
                     document.body.style.opacity = '0';
                     document.body.style.transition = 'opacity 0.3s ease';
                     
@@ -93,7 +90,7 @@
                 });
             });
 
-            // 3. Script Opcional: Alternador de Contraste para Acessibilidade
+            // 3. Alternador de Contraste
             contrastBtn.addEventListener('click', () => {
                 document.body.classList.toggle('high-contrast');
             });
