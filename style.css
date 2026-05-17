@@ -177,57 +177,34 @@ body.high-contrast .main-header h1 {
    Correção para as Páginas Internas (Fim do texto cortado)
    ========================================== */
 /* ==========================================
-   CONSERTO DE CORTE DE IMAGENS E LEGENDAS
-   ========================================== */
-/* ==========================================
-   CONSERTO DE CORTE DE IMAGENS E LEGENDAS
-   ========================================== */
+
 
 /* 1. Ajuste para o Bloco da Blue Grotto (maltathebluegrotto.jpg) e bluelagoon2.png */
+/* Container de imagem flexível e sem altura fixa travada */
 .solo-image-wrapper, .lagoon-image-wrapper {
     width: 100%;
-    height: auto; /* Remove o tamanho fixo de 350px para não cortar o céu/mar */
-    max-height: 450px; /* Define um limite máximo elegante para telas grandes */
+    height: auto;
+    max-height: 450px;
     overflow: hidden;
-    background-color: #fcf8f2;
 }
 
 .solo-image-wrapper img, .lagoon-image-wrapper img {
     width: 100%;
-    height: auto; /* Garante que a foto mantenha a proporção real original */
+    height: auto;
     display: block;
-    object-fit: contain; /* Mostra a imagem INTEIRA sem nenhuma perda nos cantos */
+    object-fit: cover;
 }
 
-/* 2. Ajuste para a Galeria Menor (bluelagoon3.png e bluelagoon4.jpg) */
-.gallery-item {
-    background: #fcf8f2;
-    border: 1px solid #e6dac8;
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto; /* Remove a altura travada de 220px */
-    max-height: 250px;
-    object-fit: cover; /* Mantém preenchido, mas com proporção ajustada */
-}
-
-/* 3. CONSERTO DEFINITIVO DA LEGENDA (Para não comer as palavras abaixo) */
+/* Espaçamento extra nas legendas para nunca cortar palavras embaixo */
 .item-caption, .image-caption {
-    padding: 18px 15px; /* Aumentado o espaço interno superior e inferior */
-    font-size: 0.95rem; /* Tamanho confortável para leitura */
+    padding: 18px 15px;
+    font-size: 0.95rem;
     color: #706356;
     text-align: center;
     background-color: #f4ece1;
     border-top: 1px solid #e6dac8;
-    word-wrap: break-word; /* Força quebra de linha se a janela encolher */
+    word-wrap: break-word;
     display: block;
-    clear: both;
 }
 
-
-
+.
