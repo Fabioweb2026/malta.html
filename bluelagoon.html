@@ -80,25 +80,28 @@
         }
 
         /* ==========================================
-           BLINDAGEM CONTRA AS BOLINHAS (FORMATO RETANGULAR)
+           CORREÇÃO: TAMANHO MENOR E SEM CORTES ARTIFAIS
            ========================================== */
         
-        /* Força os containers a aceitarem o formato retangular de banner */
+        /* Centraliza a imagem e reduz o tamanho da caixa de visualização */
         .lagoon-image-wrapper, .solo-image-wrapper {
             width: 100% !important;
-            height: 320px !important; /* Altura ideal de exibição panorâmica */
-            overflow: hidden !important;
-            position: relative !important;
+            height: 220px !important; /* Reduzido de 320px para um visual menor e sutil */
+            background-color: #f4ece1; /* Mantém o fundo bege integrado */
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            padding: 15px 0; /* Respiro sutil para as fotos não colarem no topo */
             border-radius: 0px !important;
         }
 
-        /* Garante que a imagem seja retangular e preencha todo o espaço */
+        /* Faz a foto inteira (100%) aparecer sem cortar o céu ou as rochas */
         .lagoon-image-wrapper img, .solo-image-wrapper img {
-            width: 100% !important;
-            height: 100% !important;
-            max-height: none !important;
-            border-radius: 0px !important; /* Força o fim das bolinhas circulares */
-            object-fit: cover !important; /* Ocupa o retângulo sem distorcer */
+            width: auto !important; /* Permite que a largura se ajuste de forma real */
+            height: 100% !important; /* Limita a altura máxima no tamanho menor */
+            max-height: 100% !important;
+            border-radius: 6px !important; /* Bordas levemente arredondadas e limpas */
+            object-fit: contain !important; /* MÁGICA: Mostra toda a paisagem original sem cortes */
             display: block !important;
             transform: none !important;
         }
@@ -131,11 +134,11 @@
         }
 
         /* ==========================================
-           GALERIA MENOR INFERIOR
+           GALERIA INFERIOR MENOR AJUSTADA
            ========================================== */
         .image-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 20px;
             padding: 0 30px 30px 30px;
         }
@@ -149,18 +152,18 @@
             flex-direction: column;
         }
 
-        /* Força os mini cards inferiores a manterem formato retangular equilibrado */
+        /* Ajuste de harmonia para as fotos menores inferiores */
         .gallery-item img {
             width: 100% !important;
-            height: 200px !important;
-            border-radius: 0px !important; /* Garante cantos retos dentro do card */
+            height: 150px !important; /* Tamanho compacto e elegante */
+            border-radius: 0px !important;
             object-fit: cover !important;
             display: block !important;
         }
 
         .item-caption {
-            padding: 15px;
-            font-size: 0.9rem;
+            padding: 12px;
+            font-size: 0.85rem;
             color: #706356;
             text-align: center;
             background-color: #f4ece1;
@@ -171,7 +174,7 @@
 </head>
 <body>
 
-    <!-- Link para retornar à Home principal (index.html) -->
+    <!-- Link para retornar à Home principal -->
     <a href="index.html" class="back-btn">← Back to Home</a>
 
     <header class="header-section">
