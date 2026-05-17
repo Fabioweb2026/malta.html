@@ -173,3 +173,15 @@ body.high-contrast .card-content h2,
 body.high-contrast .main-header h1 {
     color: #dfcfbe;
 }
+/* ==========================================
+   Correção para as Páginas Internas (Fim do texto cortado)
+   ========================================== */
+.destination-text, .card-text, .lagoon-text, .block-text {
+    font-size: 0.95rem;
+    color: #4a3f35;
+    text-align: left; /* Alinhamento à esquerda evita quebras artificiais */
+    word-wrap: break-word; /* Força o texto a quebrar e ir para a linha de baixo */
+    overflow-wrap: break-word;
+    line-height: 1.6; /* Dá espaço respirável para a leitura */
+}
+
