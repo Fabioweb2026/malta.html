@@ -1,148 +1,35 @@
-/* ==========================================
-   Configurações Gerais e Cores de Malta
-   ========================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Georgia, serif;
-}
-
-body {
-    background-color: #fcf8f2; /* Creme suave */
-    color: #4a3f35; /* Marrom escuro */
-    transition: background-color 0.3s ease, color 0.3s ease, opacity 0.3s ease;
-}
-
-/* Cabeçalho */
-.main-header {
-    text-align: center;
-    padding: 90px 20px 30px 20px;
-}
-
-.main-header h1 {
-    font-size: 2.8rem;
-    color: #8c7864; /* Tom de pedra calcária escura */
-    font-weight: 400;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-}
-
-.main-header .subtitle {
-    font-size: 1rem;
-    color: #a3907c;
-    font-style: italic;
-}
-
-/* Container dos Cards */
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-}
-
-/* ==========================================
-   Estilo do Card Pequeno e Discreto
-   ========================================== */
-.card-discreto {
-    background-color: #f4ece1; /* Cor de pedra calcária maltesa */
-    border: 1px solid #e6dac8;
-    border-radius: 6px;
-    text-decoration: none;
-    color: #4a3f35;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.card-discreto:hover {
-    background-color: #ebe0cf;
-    transform: translateY(-4px) !important; /* Sobrescreve o estilo inicial do JS */
-    box-shadow: 0 6px 15px rgba(140, 120, 100, 0.15);
-}
-
-/* Imagens Circulares */
+/* Container da imagem com margem superior ajustada para o efeito flutuante */
 .card-image-wrapper {
     text-align: center;
-    padding-top: 25px;
+    margin-top: -40px; /* Faz a foto subir levemente para fora do card */
+    position: relative;
+    z-index: 2;
 }
 
+/* Novo tamanho das fotos: maior, nítido e imponente */
 .card-thumb {
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #8c7864;
-    box-shadow: 0 2px 8px rgba(140, 120, 100, 0.1);
-    transition: transform 0.3s ease;
+    width: 120px;       /* Aumentado de 75px para 120px */
+    height: 120px;      /* Mantém proporção perfeita */
+    border-radius: 50%; /* Perfeitamente redondo */
+    object-fit: cover;  /* Não distorce a imagem */
+    border: 4px solid #f4ece1; /* Borda grossa na cor do card para fundir o design */
+    box-shadow: 0 8px 20px rgba(140, 120, 100, 0.2); /* Sombra marcante */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+/* Efeito interativo controlado ao passar o mouse */
 .card-discreto:hover .card-thumb {
-    transform: scale(1.08);
+    transform: scale(1.1) translateY(-5px); /* Dá zoom e sobe sutilmente */
+    border-color: #ebe0cf; /* Altera a borda acompanhando o hover do card */
 }
 
-/* Conteúdo do Card */
+/* Ajuste nos espaçamentos internos do card para equilibrar o design */
+.card-discreto {
+    margin-top: 40px; /* Abre espaço no grid para a foto flutuante não cortar no topo */
+}
+
 .card-content {
-    padding: 15px 20px 25px 20px;
+    padding: 20px 25px 30px 25px;
     text-align: center;
 }
 
-.card-content h2 {
-    font-size: 1.25rem;
-    color: #735e49;
-    margin-bottom: 12px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-.card-content p {
-    font-size: 0.9rem;
-    color: #706356;
-    line-height: 1.5;
-}
-
-/* ==========================================
-   Acessibilidade e Alto Contraste
-   ========================================== */
-.contrast-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: #f4ece1;
-    border: 1px solid #e6dac8;
-    padding: 8px 12px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: all 0.2s ease;
-}
-
-.contrast-btn:hover {
-    background: #ebe0cf;
-}
-
-body.high-contrast {
-    background-color: #1a1510;
-    color: #fff6eb;
-}
-
-body.high-contrast .card-discreto {
-    background-color: #2d251e;
-    border-color: #4a3f35;
-    color: #fff6eb;
-}
-
-body.high-contrast .card-content h2,
-body.high-contrast .main-header h1 {
-    color: #dfcfbe;
-}
-
-body.high-contrast .card-thumb {
-    border-color: #dfcfbe;
-}
