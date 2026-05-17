@@ -1,188 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Malta Mediterranean</title>
-    <style>
-        /* =================================================== */
-        /* 1. CONFIGURAÇÕES VISUAIS DA PÁGINA                  */
-        /* =================================================== */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f7f3ed; /* Cor de fundo off-white do seu print */
-            margin: 0;
-            padding: 50px 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        /* Container que alinha os 3 blocos lado a lado */
-        .cards-container {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 24px;
-            justify-content: center;
-            max-width: 1140px;
-            width: 100%;
-        }
-
-        /* Estrutura base usando as tags originais do seu site */
-        section {
-            background: #ffffff;
-            border-radius: 12px; /* Bordas arredondadas idênticas à imagem */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            flex: 1;
-            min-width: 300px;
-            max-width: 350px;
-            display: flex;
-            flex-direction: column;
-            cursor: pointer;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        section:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-        }
-
-        /* Espaço da foto do topo */
-        .card-header {
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .card-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Conteúdo interno centralizado */
-        .card-body {
-            padding: 30px 20px;
-            text-align: center;
-        }
-
-        /* Títulos principais em Dourado/Marrom */
-        h3 {
-            color: #9d7543;
-            font-size: 22px;
-            margin: 0 0 16px 0;
-            font-weight: bold;
-        }
-
-        /* Texto descritivo em inglês */
-        p {
-            color: #6d6d6d;
-            font-size: 14.5px;
-            line-height: 1.5;
-            margin: 0;
-        }
-
-        /* =================================================== */
-        /* 2. RECURSO DE EXPANSÃO (ABRIR/FECHAR)                */
-        /* =================================================== */
-        .card-divider {
-            border: 0;
-            border-top: 1px solid #eeeeee;
-            margin: 15px 0;
-        }
-
-        .card-extra-info {
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-in-out, opacity 0.3s ease;
-            text-align: left;
-        }
-
-        .info-item {
-            font-size: 13.5px;
-            color: #3f3f3f;
-            margin-bottom: 8px;
-            line-height: 1.4;
-        }
-
-        /* Ativado dinamicamente pelo JavaScript ao clicar */
-        section.open .card-extra-info {
-            max-height: 200px;
-            opacity: 1;
-        }
-    </style>
+    <!-- Adicione seus links de CSS aqui se houver -->
 </head>
 <body>
 
-    <div class="cards-container">
+    <!-- 1. TÍTULO NA PARTE SUPERIOR DA WEBPAGE -->
+    <header style="text-align: center; padding: 20px;">
+        <h1>Malta Mediterranean</h1>
+    </header>
 
-        <!-- CARD 1: TOURISM -->
-        <section id="turismo" onclick="toggleCard(this)">
-            <div class="card-header">
-               <img src="./st-julians1.png" alt="Tourism" class="card-img">
-            </div>
-            <div class="card-body">
-                <h3>Tourism</h3>
-                <p>Explore historic walled cities, ancient paths, and scenic viewpoint routes across the islands.</p>
-                
-                <!-- Área expansível com informações extras -->
-                <div class="card-extra-info">
-                    <hr class="card-divider">
-                    <p class="info-item"><strong>Cidades Históricas:</strong> Visite as grandes fortificações da capital Valletta e as muralhas medievais de Mdina.</p>
+    <main class="cards-container">
+        
+        <!-- CARD 1: TOURISM (Abre em página separada) -->
+        <a href="./turismo.html" target="_blank" class="card-link" style="text-decoration: none; color: inherit;">
+            <section id="turismo">
+                <div class="card-header">
+                    <img src="./st-julians1.png" alt="Tourism" class="card-img">
                 </div>
-            </div>
-        </section>
-
-        <!-- CARD 2: GASTRONOMY -->
-        <section id="gastronomia" onclick="toggleCard(this)">
-            <div class="card-header">
-                <img src="giorgios.png" alt="Gastronomy & Architecture" class="card-img">
-            </div>
-            <div class="card-body">
-                <h3>Gastronomy & Architecture</h3>
-                <p>Taste unique Mediterranean culinary delights and admire centuries of historical building designs.</p>
-                
-                <!-- Área expansível com informações extras -->
-                <div class="card-extra-info">
-                    <hr class="card-divider">
-                    <p class="info-item"><strong>Culinária Local:</strong> Saboreie pratos tradicionais e cafés finos na badalada Sliema.</p>
+                <div class="card-body">
+                    <h3>Tourism</h3>
+                    <p>Explore historic walled cities, ancient paths, and scenic viewpoint routes across the islands.</p>
                 </div>
-            </div>
-        </section>
+            </section>
+        </a>
 
-        <!-- CARD 3: BLUE LAGOON -->
-        <section id="blue-lagoon" onclick="toggleCard(this)">
-            <div class="card-header">
-                <img src="bluelagoon2.png" alt="Blue Lagoon" class="card-img">
-            </div>
-            <div class="card-body">
-                <h3>Blue Lagoon</h3>
-                <p>Immerse yourself in crystal cyan waters, hidden coastal caves, and beautiful sunny bays.</p>
-                
-                <!-- Área expansível com informações extras -->
-                <div class="card-extra-info">
-                    <hr class="card-divider">
-                    <p class="info-item"><strong>Como Visitar:</strong> Pegue pequenas embarcações e barcos turísticos saindo de Cirkewwa.</p>
+        <!-- CARD 2: GASTRONOMY (Abre em página separada) -->
+        <a href="./<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Malta Mediterranean</title>
+    <!-- Adicione seus links de CSS aqui se houver -->
+</head>
+<body>
+
+    <!-- 1. TÍTULO NA PARTE SUPERIOR DA WEBPAGE -->
+    <header style="text-align: center; padding: 20px;">
+        <h1>Malta Mediterranean</h1>
+    </header>
+
+    <main class="cards-container">
+        
+        <!-- CARD 1: TOURISM (Abre em página separada) -->
+        <a href="./st-julians1.png" target="_blank" class="card-link" style="text-decoration: none; color: inherit;">
+            <section id="turismo">
+                <div class="card-header">
+                    <img src="./st-julians1.png" alt="Tourism" class="card-img">
                 </div>
-            </div>
-        </section>
+                <div class="card-body">
+                    <h3>Tourism</h3>
+                    <p>Explore historic walled cities, ancient paths, and scenic viewpoint routes across the islands.</p>
+                </div>
+            </section>
+        </a>
 
-    </div>
+        <!-- CARD 2: GASTRONOMY (Abre em página separada) -->
+        <a href="./giorgios.png" target="_blank" class="card-link" style="text-decoration: none; color: inherit;">
+            <section id="gastronomia">
+                <div class="card-header">
+                    <img src=".giorgios.png" alt="Gastronomy" class="card-img">
+                </div>
+                <div class="card-body">
+                    <h3>Gastronomy & Architecture</h3>
+                    <p>Taste unique Mediterranean culinary delights and admire centuries of historical building designs.</p>
+                </div>
+            </section>
+        </a>
 
-    <!-- =================================================== */
-    /* 3. CONTROLE DE INTERAÇÃO JAVASCRIPT                 */
-    /* =================================================== -->
-    <script>
-        function toggleCard(cardElement) {
-            // Adiciona ou remove a classe 'open' na tag <section> clicada
-            cardElement.classList.toggle('open');
-        }
-    </script>
+    </main>
+
+</body>
+</html>
+" target="_blank" class="card-link" style="text-decoration: none; color: inherit;">
+            <section id="gastronomia">
+                <div class="card-header">
+                    <img src="./gastronomy.png" alt="Gastronomy" class="card-img">
+                </div>
+                <div class="card-body">
+                    <h3>Gastronomy & Architecture</h3>
+                    <p>Taste unique Mediterranean culinary delights and admire centuries of historical building designs.</p>
+                </div>
+            </section>
+        </a>
+
+    </main>
 
 </body>
 </html>
