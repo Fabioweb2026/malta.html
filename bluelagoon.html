@@ -3,140 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malta Mediterranean - Blue Lagoon</title>
+    <title>Blue Lagoon - Comino Island</title>
     <style>
-        body { 
-            background-color: #F5F2EB; 
-            font-family: 'Segoe UI', sans-serif; 
-            color: #3E3B35; 
-            margin: 0; 
-            padding: 20px; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
+        /* ==========================================
+           Configurações Gerais (Mantendo o Padrão)
+           ========================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Georgia, serif;
         }
-        header { 
-            text-align: center; 
-            margin-bottom: 40px; 
-        }
-        header h1 { 
-            color: #8C6D46; 
-            font-size: 2.7rem; 
-            margin-bottom: 5px; 
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-        }
-        header p { 
-            font-style: italic; 
-            color: #706B62; 
-            font-size: 1.1rem; 
-        }
-        .back-link { 
-            align-self: flex-start; 
-            max-width: 1200px; 
-            width: 100%; 
-            margin-bottom: 20px; 
-        }
-        .back-link a { 
-            color: #8C6D46; 
-            text-decoration: none; 
-            font-weight: bold; 
-            transition: color 0.3s; 
-        }
-        .back-link a:hover { 
-            color: #3E3B35; 
-        }
-        .content-container { 
-            background-color: #FFFFFF; 
-            border: 1px solid #E6DFD3; 
-            border-radius: 12px; 
-            max-width: 900px; 
-            width: 100%; 
-            padding: 35px; 
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
-            box-sizing: border-box; 
-            margin-bottom: 40px; 
-        }
-        .card {
-            background-color: #FFFFFF;
-            border: 1px solid #E6DFD3;
-            border-radius: 12px;
-            width: 320px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-            }
-        .card img { 
-            width: 100%; 
-            height: 200px; 
-            object-fit: cover; 
-            border-radius: 8px; 
-        }
-        {
-        .card h1 { 
-            color: #8C6D46; 
-            margin: 15px 0 5px 0; 
-            font-size: 1.4rem;
-        }
-    
-        {
-        .section-title { 
-            color: #8C6D46; 
-            border-bottom: 2px solid #E6DFD3; 
-            padding-bottom: 10px; 
-            margin-top: 40px; 
-            font-size: 1.6rem; 
-            text-align: center;
-        }
-        .address-badge { 
-            font-size: 0.9rem; 
-            color: #8C6D46; 
-            font-style: italic; 
-            display: block; 
-            text-align: center;
-            margin-bottom: 15px; 
-        }
-        .intro-text {
-            text-align: center;
-            font-size: 1.1rem;
+
+        body {
+            background-color: #fcf8f2; /* Creme suave */
+            color: #4a3f35; /* Marrom escuro */
             line-height: 1.6;
-            max-width: 700px;
+        }
+
+        /* Botão Voltar Fixo e Discreto */
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #f4ece1;
+            border: 1px solid #e6dac8;
+            color: #4a3f35;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            z-index: 10;
+            transition: all 0.2s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #ebe0cf;
+            transform: translateX(-3px);
+        }
+
+        /* Cabeçalho */
+        .header-section {
+            text-align: center;
+            padding: 100px 20px 40px 20px;
+            max-width: 800px;
             margin: 0 auto;
+        }
+
+        .header-section h1 {
+            font-size: 2.5rem;
+            color: #8c7864;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .header-section p {
+            font-size: 1.05rem;
+            color: #706356;
+            font-style: italic;
+        }
+
+        /* Container Principal */
+        .main-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ==========================================
+           Bloco de Destaque da Blue Lagoon
+           ========================================== */
+        .lagoon-card {
+            background-color: #f4ece1; /* Bege calcário */
+            border: 1px solid #e6dac8;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(140, 120, 100, 0.05);
+        }
+
+        .lagoon-image-wrapper {
+            width: 100%;
+            height: 350px; /* Altura um pouco maior para valorizar a paisagem paradisíaca */
+            overflow: hidden;
+        }
+
+        .lagoon-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .lagoon-card:hover .lagoon-image-wrapper img {
+            transform: scale(1.02);
+        }
+
+        .lagoon-info {
+            padding: 30px;
+        }
+
+        .lagoon-info h2 {
+            font-size: 1.6rem;
+            color: #735e49;
+            margin-bottom: 5px;
+        }
+
+        .location-tag {
+            display: inline-block;
+            background-color: #dfcfbe;
+            color: #5c4f43;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .lagoon-text {
+            font-size: 0.95rem;
+            color: #4a3f35;
+            text-align: justify;
+            margin-bottom: 15px;
         }
     </style>
 </head>
 <body>
 
-    <div class="back-link">
-        <a href="index.html">← Back to Home</a>
-    </div>
+    <!-- Link de retorno para a Home principal (index.html) -->
+    <a href="index.html" class="back-btn">← Back to Home</a>
 
-    <header>
+    <header class="header-section">
         <h1>The Blue Lagoon</h1>
-        <p>Comino Island Paradise</p>
+        <p>A paradise of crystal-clear turquoise waters nestled on the peaceful island of Comino.</p>
     </header>
-    <div class="card-container">
-        <!-- CARD 1: blue lagoon
-        <div class="card">
-    <div class="content-container">
-        <img src="bluelagoon3.png" alt="bluelagoon"
-        <span class="address-badge">📍 Comino Island, Malta</span>
-        <p class="intro-text">Tucked away on the small, car-free island of Comino, the Blue Lagoon is a world-famous sanctuary famous for its pristine turquoise waters and golden limestone cliffs.</p>
-        <h3> class="section-title">The Blue Lagoon Experience</h3>
-        
-        <!-- CARD 2: blue lagoon
-        <div class="card">
-            <p cakss= "intro-text"> Enjoy a short scenic ferry ride along the north coast.
-            Along the way, appreciate the captivating beauty of the Comino Sea Caves.Travel to the Blue Lagoon efficiently and quickly, arriving in just 20-25 minutes.
-            Plan your day easily and flexibly with multiple 1-day trips every 30 minutes.
-        <h3> class="section´title">the Blue LAgoon Experience</h3>
-            
-        </div>
-            
-        </div>
-    </div>
+
+    <main class="main-container">
+
+        <section class="lagoon-card">
+            <div class="lagoon-image-wrapper">
+                <!-- Utilizando a sua imagem local configurada na página inicial -->
+                <img src="bluelagoon2.png" alt="Blue Lagoon Paradise Waters">
+            </div>
+            <div class="lagoon-info">
+                <h2>Comino's Natural Masterpiece</h2>
+                <div class="location-tag">📍 Comino Island, Malta</div>
+                
+                <p class="lagoon-text">
+                    The Blue Lagoon is widely recognized as one of Malta's most breathtaking natural treasures. Situated between the small island of Comino and the islet of Cominotto, this giant natural pool features a white sandy bottom and exceptionally clear, glowing cyan waters that resemble a tropical paradise in the middle of the Mediterranean Sea.
+                </p>
+                
+                <p class="lagoon-text">
+                    It is a top destination for travelers looking to swim, snorkel, or cruise by boat. Surrounded by scenic limestone cliffs and small caves, the lagoon offers an unforgettable view. To fully experience its peaceful atmosphere, visiting early in the morning or during a sunset boat trip allows you to enjoy the golden Maltese sun reflecting beautifully across the turquoise sea.
+                </p>
+            </div>
+        </section>
+
+    </main>
 
 </body>
 </html>
