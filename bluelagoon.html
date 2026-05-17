@@ -5,50 +5,217 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blue Lagoon & Blue Grotto - Malta</title>
     <style>
-        /* CSS unificado e blindado para evitar conflitos */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', serif; }
-        body { background-color: #fcf8f2; color: #4a3f35; line-height: 1.6; }
-        .header-section { text-align: center; padding: 50px 20px; }
-        .main-container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-        .info-card { background-color: #f4ece1; border: 1px solid #e6dac8; border-radius: 12px; margin-bottom: 30px; overflow: hidden; }
-        .card-padding { padding: 20px; }
-        /* Imagens sem cortes */
-        .solo-image-wrapper img, .lagoon-image-wrapper img { width: 100% !important; height: auto !important; object-fit: contain !important; }
-        .image-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; padding: 20px; }
-        .gallery-item img { width: 100% !important; height: 200px !important; object-fit: cover !important; }
-        .item-caption { padding: 10px; text-align: center; background: #eee; font-size: 0.9rem; }
+        /* ==========================================
+           Estilos Isolados e Livres de Conflito
+           ========================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Georgia, serif;
+        }
+
+        body {
+            background-color: #fcf8f2; /* Creme suave */
+            color: #4a3f35; /* Marrom escuro */
+            line-height: 1.6;
+        }
+
+        /* Botão Voltar Estilizado */
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #f4ece1;
+            border: 1px solid #e6dac8;
+            color: #4a3f35;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            z-index: 10;
+            transition: all 0.2s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #ebe0cf;
+            transform: translateX(-3px);
+        }
+
+        /* Cabeçalho */
+        .header-section {
+            text-align: center;
+            padding: 100px 20px 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header-section h1 {
+            font-size: 2.5rem;
+            color: #8c7864;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .header-section p {
+            font-size: 1.05rem;
+            color: #706356;
+            font-style: italic;
+        }
+
+        /* Container Principal */
+        .main-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ==========================================
+           Blocos de Conteúdo Estilo Full Width Image
+           ========================================== */
+        .info-card {
+            background-color: #f4ece1; /* Bege calcário */
+            border: 1px solid #e6dac8;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 15px rgba(140, 120, 100, 0.05);
+        }
+
+        /* Container de imagem cobrindo toda a largura superior */
+        .lagoon-image-wrapper, .solo-image-wrapper {
+            width: 100%;
+            height: 280px; /* Altura ideal de exibição panorâmica */
+            overflow: hidden;
+        }
+
+        .lagoon-image-wrapper img, .solo-image-wrapper img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important; /* Preenche o espaço proporcionalmente sem achatar */
+            display: block;
+        }
+
+        .card-padding {
+            padding: 30px;
+        }
+
+        .info-card h2 {
+            font-size: 1.6rem;
+            color: #735e49;
+            margin-bottom: 5px;
+        }
+
+        .location-tag {
+            display: inline-block;
+            background-color: #dfcfbe;
+            color: #5c4f43;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .card-text {
+            font-size: 0.95rem;
+            color: #4a3f35;
+            text-align: left;
+            word-wrap: break-word;
+        }
+
+        /* ==========================================
+           Galeria Inferior para Fotos Menores
+           ========================================== */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 0 30px 30px 30px;
+        }
+
+        .gallery-item {
+            background: #fcf8f2;
+            border: 1px solid #e6dac8;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gallery-item img {
+            width: 100% !important;
+            height: 200px !important;
+            object-fit: cover !important;
+        }
+
+        .item-caption {
+            padding: 15px;
+            font-size: 0.9rem;
+            color: #706356;
+            text-align: center;
+            background-color: #f4ece1;
+            border-top: 1px solid #e6dac8;
+            word-wrap: break-word;
+        }
     </style>
 </head>
 <body>
-    <header class="header-section"><h1>Aquatic Paradises</h1></header>
-        <main class="main-container">
+
+    <!-- Link para retornar à Home principal (index.html) -->
+    <a href="index.html" class="back-btn">← Back to Home</a>
+
+    <header class="header-section">
+        <h1>Aquatic Paradises</h1>
+        <p>Explore the glowing turquoise waters, hidden caves, and dramatic sea cliffs of the Maltese archipelago.</p>
+    </header>
+
+    <main class="main-container">
+
         <!-- SEÇÃO 1: BLUE LAGOON -->
         <section class="info-card">
-            <!-- ADICIONADO ../ ANTES DA IMAGEM PRINCIPAL -->
-            <div class="lagoon-image-wrapper"><img src="bluelagoon2.png" alt="Blue Lagoon"></div>
-            <div class="card-padding">
-                <h2>The Blue Lagoon</h2>
-                <p>Paradise pool with white sandy seafloor and cyan waters.</p>
+            <div class="lagoon-image-wrapper">
+                <img src="bluelagoon2.png" alt="The Blue Lagoon Panorama">
             </div>
-            
+            <div class="card-padding">
+                <h2>The Blue Lagoon & Comino Island</h2>
+                <div class="location-tag">📍 Comino Island, Malta</div>
+                <p class="card-text">
+                    The Blue Lagoon is a paradise pool nestled between Comino and the islet of Cominotto. Historically, Comino island served as a hiding spot for pirates and smugglers during the Middle Ages due to its secluded bays and complex cave systems. Today, its white sandy seafloor reflects the sunlight to create a glowing cyan surface, making it one of the top locations in Europe for swimming and snorkeling.
+                </p>
+            </div>
+
+            <!-- Galeria com bluelagoon3.png e bluelagoon4.jpg -->
             <div class="image-gallery">
-                <!-- ADICIONADO ../ ANTES DA BLUELAGOON3 -->
-                <div class="gallery-item"><img src="bluelagoon3.png" alt="Boats"><div class="item-caption">Crystal-clear currents</div></div>
-                <!-- ADICIONADO ../ ANTES DA BLUELAGOON4 -->
-                <div class="gallery-item"><img src="./bluelagoon4.jpg" alt="Coast"><div class="item-caption">Scenic coastal cliffs</div></div>
+                <div class="gallery-item">
+                    <img src="bluelagoon3.png" alt="Boats anchored at Blue Lagoon">
+                    <div class="item-caption">Crystal-clear currents ideal for boat tours and anchoring</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="bluelagoon4.jpg" alt="Snorkeling at Comino">
+                    <div class="item-caption">Scenic coastal cliffs bordering the turquoise lagoon</div>
+                </div>
             </div>
         </section>
 
         <!-- SEÇÃO 2: BLUE GROTTO -->
         <section class="info-card">
-            <!-- ADICIONADO ../ ANTES DA MALTATHEBLUEGROTTO -->
-            <div class="solo-image-wrapper"><img src="maltathebluegrotto.jpg" alt="Blue Grotto"></div>
+            <div class="solo-image-wrapper">
+                <img src="maltathebluegrotto.jpg" alt="Blue Grotto Sea Arches">
+            </div>
             <div class="card-padding">
-                <h2>The Blue Grotto</h2>
-                <p>System of seven sea caves with a 30-meter main arch, famous for its phosphorescent blue glow.</p>
+                <h2>The Majestic Blue Grotto</h2>
+                <div class="location-tag">📍 Zurrieq, Southern Coast of Malta</div>
+                <p class="card-text">
+                    Located on the southern cliffs of Malta, the Blue Grotto is a complex system of seven interconnected sea caves, highlighted by a massive 30-meter main stone arch. Deeply rooted in local history, mythology associates these caverns with the home of sea sirens who enchanted sailors. The location is globally famous for its morning phenomenon where light reflects a phosphorescent blue glow onto the cave walls.
+                </p>
             </div>
         </section>
+
     </main>
 
 </body>
 </html>
+
