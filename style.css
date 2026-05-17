@@ -181,56 +181,88 @@ body.high-contrast .main-header h1 {
 /* ==========================================
    CONSERTO DEFINITIVO DE IMAGENS E LEGENDAS
    ========================================== */
+<style>
+    /* CSS unificado, responsivo e blindado contra cortes artificiais */
+    * { 
+        margin: 0; 
+        padding: 0; 
+        box-sizing: border-box; 
+        font-family: 'Segoe UI', Georgia, serif; 
+    }
+    
+    body { 
+        background-color: #fcf8f2; 
+        color: #4a3f35; 
+        line-height: 1.6; 
+    }
+    
+    .header-section { 
+        text-align: center; 
+        padding: 60px 20px 30px 20px; 
+    }
+    
+    .main-container { 
+        max-width: 1000px; 
+        margin: 0 auto; 
+        padding: 20px; 
+    }
+    
+    .info-card { 
+        background-color: #f4ece1; 
+        border: 1px solid #e6dac8; 
+        border-radius: 12px; 
+        margin-bottom: 40px; 
+        overflow: hidden; 
+    }
+    
+    .card-padding { 
+        padding: 25px; 
+    }
+    
+    /* Configuração para as imagens grandes nunca cortarem o horizonte */
+    .solo-image-wrapper img, .lagoon-image-wrapper img { 
+        width: 100% !important; 
+        height: auto !important; 
+        max-height: 480px;
+        object-fit: contain !important; /* Mostra 100% da foto original sem cortes */
+        display: block;
+    }
+    
+    /* Grid organizado para as fotos menores */
+    .image-gallery { 
+        display: grid; 
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+        gap: 20px; 
+        padding: 0 25px 25px 25px; 
+    }
+    
+    .gallery-item {
+        background: #fcf8f2;
+        border: 1px solid #e6dac8;
+        border-radius: 8px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .gallery-item img { 
+        width: 100% !important; 
+        height: 220px !important; 
+        object-fit: cover !important; 
+    }
+    
+    /* Preenchimento de segurança para a legenda nunca comer palavras */
+    .item-caption { 
+        padding: 15px 10px !important; 
+        text-align: center; 
+        background: #f4ece1; 
+        font-size: 0.9rem; 
+        color: #706356;
+        border-top: 1px solid #e6dac8;
+        word-wrap: break-word;
+    }
+</style>
 
-/* 1. Ajuste para os Blocos Maiores (bluelagoon2.png e maltathebluegrotto.jpg) */
-.solo-image-wrapper, .lagoon-image-wrapper {
-    width: 100%;
-    height: auto !important; /* Libera a altura total para a imagem expandir */
-    background-color: #f4ece1; /* Fundo bege uniforme */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Força o navegador a mostrar 100% da imagem original sem cortar nada */
-.solo-image-wrapper img, .lagoon-image-wrapper img {
-    width: 100% !important;
-    height: auto !important; 
-    max-height: 550px; /* Evita que o céu fique excessivamente esticado em telas grandes */
-    display: block;
-    object-fit: contain !important; /* Garante que a foto inteira fique visível */
-}
-
-/* 2. Ajuste Fino para a Galeria Menor (bluelagoon3.png e bluelagoon4.jpg) */
-.gallery-item {
-    background: #fcf8f2;
-    border: 1px solid #e6dac8;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    height: auto !important;
-}
-
-.gallery-item img {
-    width: 100% !important;
-    height: auto !important;
-    max-height: 250px;
-    object-fit: cover !important; /* Preenche o mini card proporcionalmente */
-}
-
-/* 3. Espaçamento Isolado para as Legendas */
-.item-caption, .image-caption {
-    padding: 22px 18px !important; /* Amplo espaço interno para não prender o texto */
-    font-size: 0.95rem;
-    color: #706356;
-    text-align: center;
-    background-color: #f4ece1;
-    border-top: 1px solid #e6dac8;
-    word-wrap: break-word;
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-}
 
 
 
