@@ -1,35 +1,167 @@
-/* Container da imagem com margem superior ajustada para o efeito flutuante */
+/* ==========================================
+   Configurações Gerais e Cores de Malta
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Georgia, serif;
+}
+
+body {
+    background-color: #fcf8f2; /* Creme suave de Malta */
+    color: #4a3f35; /* Marrom escuro clássico */
+    transition: background-color 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Cabeçalho Principal */
+.main-header {
+    text-align: center;
+    padding: 100px 20px 40px 20px; /* Aumentado o espaço superior */
+}
+
+.main-header h1 {
+    font-size: 2.8rem;
+    color: #8c7864; /* Tom de pedra calcária antiga */
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.main-header .subtitle {
+    font-size: 1rem;
+    color: #a3907c;
+    font-style: italic;
+}
+
+/* ==========================================
+   Grid de Cards (Ajustado para o efeito)
+   ========================================== */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px; /* Margem extra para não cortar a foto do primeiro card */
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 60px 25px; /* Aumentado o espaçamento vertical entre as linhas para 60px */
+}
+
+/* ==========================================
+   Estilo do Card Pequeno e Discreto
+   ========================================== */
+.card-discreto {
+    background-color: #f4ece1; /* Bege calcário */
+    border: 1px solid #e6dac8;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #4a3f35;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+    margin-top: 20px; /* Garante espaço para a foto flutuar */
+    box-shadow: 0 4px 10px rgba(140, 120, 100, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.card-discreto:hover {
+    background-color: #ebe0cf;
+    transform: translateY(-5px) !important; /* Move o card levemente */
+    box-shadow: 0 10px 20px rgba(140, 120, 100, 0.15);
+}
+
+/* ==========================================
+   Imagens Circulares Flutuantes (Correção de tamanho)
+   ========================================== */
 .card-image-wrapper {
     text-align: center;
-    margin-top: -40px; /* Faz a foto subir levemente para fora do card */
-    position: relative;
-    z-index: 2;
+    margin-top: -45px; /* Puxa exatamente metade da foto para fora */
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-/* Novo tamanho das fotos: maior, nítido e imponente */
 .card-thumb {
-    width: 120px;       /* Aumentado de 75px para 120px */
-    height: 120px;      /* Mantém proporção perfeita */
-    border-radius: 50%; /* Perfeitamente redondo */
-    object-fit: cover;  /* Não distorce a imagem */
-    border: 4px solid #f4ece1; /* Borda grossa na cor do card para fundir o design */
-    box-shadow: 0 8px 20px rgba(140, 120, 100, 0.2); /* Sombra marcante */
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: 90px;       /* Reduzido de 120px para 90px - equilíbrio perfeito */
+    height: 90px;      /* Força a proporção idêntica */
+    border-radius: 50% !important; /* Garante que fique 100% redondo */
+    object-fit: cover;  /* Recorta a imagem perfeitamente sem esticar */
+    border: 4px solid #f4ece1; /* Fusão de cor com o topo do card */
+    box-shadow: 0 6px 12px rgba(140, 120, 100, 0.15);
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-/* Efeito interativo controlado ao passar o mouse */
+/* Efeito integrado de hover do card afetando a foto */
 .card-discreto:hover .card-thumb {
-    transform: scale(1.1) translateY(-5px); /* Dá zoom e sobe sutilmente */
-    border-color: #ebe0cf; /* Altera a borda acompanhando o hover do card */
+    transform: scale(1.08);
+    border-color: #ebe0cf; /* Acompanha a cor de fundo do hover */
 }
 
-/* Ajuste nos espaçamentos internos do card para equilibrar o design */
-.card-discreto {
-    margin-top: 40px; /* Abre espaço no grid para a foto flutuante não cortar no topo */
-}
-
+/* Conteúdo de Texto Interno */
 .card-content {
-    padding: 20px 25px 30px 25px;
+    padding: 15px 20px 25px 20px;
     text-align: center;
 }
 
+.card-content h2 {
+    font-size: 1.25rem;
+    color: #735e49;
+    margin-bottom: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: #706356;
+    line-height: 1.5;
+}
+
+/* ==========================================
+   Botão de Acessibilidade Ajustado Fixado
+   ========================================== */
+.contrast-btn {
+    position: fixed; /* Fixado na tela ao rolar */
+    top: 20px;
+    right: 20px;
+    background: #f4ece1;
+    border: 1px solid #e6dac8;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+}
+
+.contrast-btn:hover {
+    background: #ebe0cf;
+    transform: scale(1.05);
+}
+
+/* Modo Alto Contraste */
+body.high-contrast {
+    background-color: #1a1510;
+    color: #fff6eb;
+}
+
+body.high-contrast .card-discreto {
+    background-color: #2d251e;
+    border-color: #4a3f35;
+    color: #fff6eb;
+}
+
+body.high-contrast .card-content h2,
+body.high-contrast .main-header h1 {
+    color: #dfcfbe;
+}
+
+body.high-contrast .card-thumb {
+    border-color: #2d251e;
+}
