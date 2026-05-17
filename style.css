@@ -255,50 +255,57 @@ body.high-contrast .main-header h1 {
         overflow: hidden;
         margin-bottom: 50px;
         box-shadow: 0 4px 15px rgba(140, 120, 100, 0.05);
+        display: flex;
+        flex-direction: column;
     }
 
     /* ==========================================
-       NOVO TAMANHO MENOR, COMPACTO E SEM CORTES
+       ATIVANDO AS BOLINHAS COMPACTAS E HARMONIOSAS
        ========================================== */
     
+    /* Centraliza o container da bolinha no topo do conteúdo */
     .lagoon-image-wrapper, .solo-image-wrapper {
         width: 100% !important;
-        height: 200px !important; 
-        background-color: #f4ece1; 
+        height: auto !important;
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
-        padding: 15px 0; 
+        padding-top: 30px !important; /* Dá um espaço elegante no topo do card */
+        background-color: transparent !important;
     }
 
+    /* Força as imagens a virarem círculos perfeitos e menores */
     .lagoon-image-wrapper img, .solo-image-wrapper img {
-        width: auto !important; 
-        height: 100% !important; 
-        max-width: 100% !important;
-        border-radius: 4px !important; 
-        object-fit: contain !important; /* Exibe sem cortes */
+        width: 110px !important;  /* Tamanho menor e muito sutil */
+        height: 110px !important; /* Altura idêntica para manter o círculo */
+        border-radius: 50% !important; /* MÁGICA: Transforma em bolinha perfeita */
+        object-fit: cover !important;  /* Centraliza a paisagem dentro do círculo */
+        border: 3px solid #8c7864 !important; /* Borda fina elegante na cor de Malta */
+        box-shadow: 0 4px 10px rgba(140, 120, 100, 0.15) !important;
         display: block !important;
     }
 
     .card-padding {
-        padding: 30px;
+        padding: 20px 30px 30px 30px; /* Ajustado o topo para o texto respirar */
     }
 
     .info-card h2 {
         font-size: 1.6rem;
         color: #735e49;
         margin-bottom: 5px;
+        text-align: center; /* Centralizado combina mais com o estilo de bolinha */
     }
 
     .location-tag {
-        display: inline-block;
+        display: block;
+        width: max-content;
+        margin: 5px auto 15px auto; /* Centraliza a tag abaixo do título */
         background-color: #dfcfbe;
         color: #5c4f43;
         padding: 3px 10px;
         border-radius: 4px;
         font-size: 0.8rem;
         font-weight: bold;
-        margin-bottom: 15px;
     }
 
     .card-text {
@@ -308,7 +315,7 @@ body.high-contrast .main-header h1 {
     }
 
     /* ==========================================
-       GALERIA MENOR INFERIOR AJUSTADA
+       GALERIA MENOR INFERIOR (BOLINHAS TAMBÉM)
        ========================================== */
     .image-gallery {
         display: grid;
@@ -324,13 +331,16 @@ body.high-contrast .main-header h1 {
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        height: auto;
+        align-items: center; /* Centraliza a bolinha interna */
+        padding-top: 20px;
     }
 
+    /* Transforma as imagens menores da galeria em bolinhas também */
     .gallery-item img {
-        width: 100% !important;
-        height: 150px !important; 
-        border-radius: 0px !important;
+        width: 80px !important;
+        height: 80px !important;
+        border-radius: 50% !important; /* Bolinha perfeita */
+        border: 2px solid #8c7864 !important;
         object-fit: cover !important;
         display: block !important;
     }
@@ -340,8 +350,7 @@ body.high-contrast .main-header h1 {
         font-size: 0.85rem;
         color: #706356;
         text-align: center;
-        background-color: #f4ece1;
-        border-top: 1px solid #e6dac8;
+        background-color: transparent;
         word-wrap: break-word;
     }
 </style>
