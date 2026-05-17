@@ -1,39 +1,26 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malta Mediterranean</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <!-- Botão de Acessibilidade (Contraste) -->
-    <button id="toggle-contrast" class="contrast-btn" aria-label="Alternar Contraste">🌓</button>
-
-    <!-- Título Principal -->
+    <!-- Main Header -->
     <header class="main-header">
         <h1>Malta Mediterranean</h1>
-        <p class="subtitle">A joia de pedra calcária no coração do Mediterrâneo</p>
+        <p class="subtitle">The limestone gem in the heart of the Mediterranean</p>
     </header>
 
-    <!-- Seção de Cards Pequenos e Discretos -->
+    <!-- Small and Discreet Cards Section -->
     <main class="container">
         <section class="cards-grid">
             
-            <!-- Card 1: Turismo -->
+            <!-- Card 1: Tourism -->
             <a href="turismo.html" class="card-discreto">
                 <div class="card-content">
-                    <h2>Turismo</h2>
-                    <p>Explore as cidades históricas e a rica cultura maltesa.</p>
+                    <h2>Tourism</h2>
+                    <p>Explore historic cities and the rich Maltese culture.</p>
                 </div>
             </a>
 
-            <!-- Card 2: Gastronomia e Arquitetura -->
+            <!-- Card 2: Gastronomy & Architecture -->
             <a href="gastronomy.html" class="card-discreto">
                 <div class="card-content">
-                    <h2>Gastronomia & Arquitetura</h2>
-                    <p>Descubra os sabores tradicionais e os edifícios de pedra calcária.</p>
+                    <h2>Gastronomy & Architecture</h2>
+                    <p>Discover traditional flavors and iconic limestone buildings.</p>
                 </div>
             </a>
 
@@ -41,52 +28,10 @@
             <a href="bluelagoon.html" class="card-discreto">
                 <div class="card-content">
                     <h2>Blue Lagoon</h2>
-                    <p>Visite as águas cristalinas e paradisíacas da ilha de Comino.</p>
+                    <p>Visit the crystal-clear and paradise waters of Comino Island.</p>
                 </div>
             </a>
 
         </section>
     </main>
 
-    <!-- Código JavaScript Integrado -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const cards = document.querySelectorAll('.card-discreto');
-            const contrastBtn = document.getElementById('toggle-contrast');
-
-            // 1. Efeito Visual de Entrada Suave nos Cards (Fade-in)
-            cards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = 'all 0.5s ease-out';
-                
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, index * 150); // Delay cascata para cada card
-            });
-
-            // 2. Animação de Saída ao Clicar (Transição de Página)
-            cards.forEach(card => {
-                card.addEventListener('click', function(e) {
-                    e.preventDefault(); // Pausa o clique imediato
-                    const targetUrl = this.getAttribute('href');
-                    
-                    // Aplica efeito de sumiço rápido antes de mudar de página
-                    document.body.style.opacity = '0';
-                    document.body.style.transition = 'opacity 0.3s ease';
-                    
-                    setTimeout(() => {
-                        window.location.href = targetUrl;
-                    }, 300);
-                });
-            });
-
-            // 3. Script Opcional: Alternador de Contraste para Acessibilidade
-            contrastBtn.addEventListener('click', () => {
-                document.body.classList.toggle('high-contrast');
-            });
-        });
-    </script>
-</body>
-</html>
