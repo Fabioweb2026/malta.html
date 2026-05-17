@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turismo em Malta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero">
+        <h1>Descubra Malta</h1>
+        <p>Explore as maravilhas, a culinária e as paisagens paradisíacas</p>
+    </header>
+
+    <main class="container">
+        <section class="cards-grid">
+            
+            <!-- Card 1: Turismo -->
+            <a href="turismo.html" class="card">
+                <div class="card-img" style="background-image: url('https://unsplash.com');"></div>
+                <div class="card-content">
+                    <h2>Pontos Turísticos</h2>
+                    <p>Conheça as cidades históricas, templos antigos e a rica cultura de Malta.</p>
+                    <span class="btn">Explorar</span>
+                </div>
+            </a>
+
+            <!-- Card 2: Gastronomia -->
+            <a href="gastronomy.html" class="card">
+                <div class="card-img" style="background-image: url('https://unsplash.com');"></div>
+                <div class="card-content">
+                    <h2>Gastronomia</h2>
+                    <p>Saboreie os pratos tradicionais, frutos do mar frescos e influências mediterrâneas.</p>
+                    <span class="btn">Saborear</span>
+                </div>
+            </a>
+
+            <!-- Card 3: Blue Lagoon -->
+            <a href="bluelagoon.html" class="card">
+                <div class="card-img" style="background-image: url('https://unsplash.com');"></div>
+                <div class="card-content">
+                    <h2>Blue Lagoon</h2>
+                    <p>Visite as águas cristalinas mais famosas da ilha de Comino.</p>
+                    <span class="btn">Descobrir</span>
+                </div>
+            </a>
+
+        </section>
+    </main>
+
+</body>
+</html>
 
