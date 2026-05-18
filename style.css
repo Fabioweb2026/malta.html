@@ -344,23 +344,34 @@ body.high-contrast .location-tag {
 /* ... regras anteriores do seu CSS ... */
 
 /* Força as informações de endereço e contato a ficarem nítidas */
-.footer-info p {
-    font-size: 0.95rem !important; /* Aumentado para melhor leitura */
-    color: #2b1f14 !important;    /* Marrom escuro de alto contraste */
-    margin-bottom: 8px;
+/* ==========================================================================
+   AJUSTE DE CONTRASTE MÁXIMO DO RODAPÉ (FOOTER)
+   ========================================================================== */
+
+/* Força absolutamente todas as tags de texto dentro do rodapé a ficarem escuras */
+.main-footer, 
+.main-footer p, 
+.footer-info p, 
+.footer-copyright p {
+    color: #1a130c !important;    /* Marrom escuro quase preto para contraste total */
+    opacity: 1 !important;         /* Remove qualquer transparência que apague a letra */
+    font-size: 0.95rem !important; /* Tamanho confortável para leitura */
+    line-height: 1.6 !important;
 }
 
-/* Destaca o texto de direitos autorais (Copyright) */
+/* Deixa o nome da agência em destaque (Negrito) */
+.footer-info strong, 
+.footer-info p strong {
+    color: #1a130c !important;
+    font-weight: 700 !important;
+}
+
+/* Linha divisória sutil acima do copyright */
 .footer-copyright {
-    border-top: 1px solid #dfcfbe;
+    border-top: 1px solid #dfcfbe !important;
     padding-top: 15px;
     margin-top: 15px;
 }
 
-.footer-copyright p {
-    font-size: 0.95rem !important; /* Aumentado para ficar do mesmo tamanho do endereço */
-    color: #1a130c !important;    /* Cor quase preta para legibilidade máxima */
-    font-weight: 600 !important;   /* Aplica um leve negrito para destacar a assinatura */
-}
 
 
