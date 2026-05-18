@@ -250,3 +250,55 @@ body.high-contrast .location-tag {
     background-color: #4a3f35;
     color: #ffff00;
 }
+/* ==========================================================================
+   6. LOGO E ESTILIZAÇÃO DO RODAPÉ (FOOTER)
+   ========================================================================== */
+.logo-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.main-logo {
+    max-width: 150px;       /* Controla o tamanho máximo do seu logo */
+    height: auto;
+    object-fit: contain;
+}
+
+.main-footer {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+    border-top: 1px solid #e6dac8;
+    background-color: #f4ece1; /* Mesma cor bege dos cards para dar harmonia */
+}
+
+.main-footer p {
+    font-size: 0.9rem;
+    color: #a3907c;
+}
+
+/* ==========================================================================
+   7. MODO ESCURO AUTOMÁTICO PARA CELULAR E DISPOSITIVOS (MEDIA QUERY)
+   ========================================================================== */
+/* Se o usuário tiver o modo escuro ativo no celular, o site se adapta sozinho */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1510;
+        color: #fff6eb;
+    }
+    
+    .card-discreto, .main-footer {
+        background-color: #2d251e;
+        border-color: #4a3f35;
+        color: #fff6eb;
+    }
+    
+    .card-content h2, .main-header h1 {
+        color: #ffff00; /* Destaca os títulos principais em amarelo suave/leitura */
+    }
+    
+    .card-content p, .main-header .subtitle, .main-footer p {
+        color: #dcd1c4;
+    }
+}
+
