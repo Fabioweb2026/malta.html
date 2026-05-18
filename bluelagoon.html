@@ -5,22 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blue Lagoon - Comino Island</title>
     <style>
+        /* === ESTILOS BLINDADOS ANTI-CONFLITO === */
         * { margin: 0 !important; padding: 0 !important; box-sizing: border-box !important; }
         body { background-color: #fcf8f2 !important; color: #4a3f35 !important; font-family: 'Segoe UI', Georgia, serif !important; line-height: 1.6 !important; }
-        .back-btn { position: fixed !important; top: 20px !important; left: 20px !important; background: #f4ece1 !important; border: 1px solid #e6dac8 !important; color: #4a3f35 !important; text-decoration: none !important; padding: 10px 18px !important; border-radius: 20px !important; z-index: 9999 !important; }
+        .back-btn { position: fixed !important; top: 20px !important; left: 20px !important; background: #f4ece1 !important; border: 1px solid #e6dac8 !important; color: #4a3f35 !important; text-decoration: none !important; padding: 10px 18px !important; border-radius: 20px !important; font-size: 0.9rem !important; z-index: 9999 !important; }
+        .back-btn:hover { background-color: #ebe0cf !important; transform: translateX(-3px) !important; }
         .header-section { text-align: center !important; padding: 100px 20px 30px 20px !important; }
         .header-section h1 { color: #8c7864 !important; font-size: 2.5rem !important; font-weight: 400 !important; }
         .main-container { max-width: 900px !important; margin: 0 auto !important; padding: 20px !important; }
         
-        .info-card { background-color: #f4ece1 !important; border: 1px solid #e6dac8 !important; border-radius: 12px !important; padding: 30px !important; margin-bottom: 30px !important; box-shadow: 0 4px 15px rgba(140, 120, 100, 0.05) !important; text-align: center !important; }
+        /* Estrutura Limpa do Card */
+        .info-card { background-color: #f4ece1 !important; border: 1px solid #e6dac8 !important; border-radius: 12px !important; padding: 35px 30px !important; margin-bottom: 30px !important; box-shadow: 0 4px 15px rgba(140, 120, 100, 0.05) !important; text-align: center !important; }
         .info-card h2 { color: #735e49 !important; font-size: 1.6rem !important; margin-bottom: 5px !important; }
         .location-tag { background-color: #dfcfbe !important; color: #5c4f43 !important; padding: 4px 12px !important; border-radius: 4px !important; font-size: 0.8rem !important; font-weight: bold !important; display: inline-block !important; margin-bottom: 15px !important; }
         .card-text { font-size: 0.95rem !important; color: #4a3f35 !important; text-align: left !important; margin-bottom: 25px !important; }
         
-        /* Layout de Duas Imagens Retangulares Lado a Lado e Menores */
-        .image-container-grid { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; gap: 20px !important; margin-top: 20px !important; }
-        .img-box { background: #fcf8f2 !important; border: 1px solid #e6dac8 !important; border-radius: 8px !important; overflow: hidden !important; }
-        .img-box img { width: 100% !important; height: 180px !important; object-fit: cover !important; border-radius: 0px !important; display: block !important; }
+        /* OTIMIZAÇÃO DO VÍDEO DO CELULAR */
+        .video-wrapper { width: 100% !important; max-width: 600px !important; height: auto !important; margin: 20px auto !important; border-radius: 8px !important; overflow: hidden !important; border: 1px solid #e6dac8 !important; box-shadow: 0 4px 10px rgba(0,0,0,0.05) !important; }
+        .video-wrapper video { width: 100% !important; height: auto !important; display: block !important; opacity: 0.95 !important; /* Suaviza o contraste e detalhes de fundo */ }
+
+        /* GALERIA DE IMAGENS MENORES E SEM NENHUM CORTE */
+        .image-container-grid { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; gap: 20px !important; margin-top: 30px !important; }
+        .img-box { background: #fcf8f2 !important; border: 1px solid #e6dac8 !important; border-radius: 8px !important; overflow: hidden !important; height: 180px !important; display: flex !important; justify-content: center !important; align-items: center !important; padding: 10px !important; }
+        .img-box img { max-width: 100% !important; max-height: 100% !important; width: auto !important; height: auto !important; object-fit: contain !important; border-radius: 4px !important; display: block !important; }
     </style>
 </head>
 <body>
@@ -35,9 +42,17 @@
         <article class="info-card">
             <h2>The Blue Lagoon & Comino</h2>
             <div class="location-tag">📍 Comino Island, Malta</div>
-            <p class="card-text">The Blue Lagoon is a crystal-clear paradise pool with a white sandy seafloor. Historically a medieval sanctuary for coastal travelers, it offers spectacular tropical views right in the middle of the Mediterranean.</p>
+            <p class="card-text">The Blue Lagoon is a crystal-clear paradise pool with a white sandy seafloor. Surrounded by scenic cliffs, it offers spectacular tropical views right in the middle of the Mediterranean.</p>
             
-            <!-- Duas imagens retangulares perfeitamente alinhadas lado a lado -->
+            <!-- SEÇÃO DO VÍDEO: Adicionado com os parâmetros corretos para rodar no ar -->
+            <div class="video-wrapper">
+                <video autoplay loop muted playsinline>
+                    <source src="kemmuna.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- Imagens em formato menor e 100% inteiras abaixo do vídeo -->
             <div class="image-container-grid">
                 <div class="img-box"><img src="bluelagoon2.png" alt="Blue Lagoon View"></div>
                 <div class="img-box"><img src="bluelagoon4.jpg" alt="Blue Lagoon Cliffs"></div>
@@ -47,3 +62,4 @@
 
 </body>
 </html>
+
