@@ -319,4 +319,20 @@ body.high-contrast .location-tag {
         color: #dcd1c4;
     }
 }
+/* ... regras anteriores do seu CSS ... */
+
+.footer-info {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.footer-info p {
+    font-size: 0.85rem !important;
+    color: #706356 !important;
+}
+
+.footer-copyright {
+    border-top: 1px solid #dfcfbe;
+    padding-top: 15px;
+}
 
