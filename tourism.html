@@ -3,189 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tourism - Explore Malta</title>
+    <title>Blue Lagoon - Comino Island</title>
     <style>
-        /* ==========================================
-           Configurações Gerais (Mantendo o Padrão)
-           ========================================== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Georgia, serif;
+        /* === ESTILOS BLINDADOS (ANTI-CONFLITOS) === */
+        * { 
+            margin: 0 !important; 
+            padding: 0 !important; 
+            box-sizing: border-box !important; 
         }
-
-        body {
-            background-color: #fcf8f2; /* Creme suave */
-            color: #4a3f35; /* Marrom escuro */
-            line-height: 1.6;
+        
+        body { 
+            background-color: #fcf8f2 !important; 
+            color: #4a3f35 !important; 
+            font-family: 'Segoe UI', Georgia, serif !important; 
+            line-height: 1.6 !important;
         }
-
-        /* Botão Voltar Fixo e Discreto */
-        .back-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background-color: #f4ece1;
-            border: 1px solid #e6dac8;
-            color: #4a3f35;
-            text-decoration: none;
-            padding: 10px 18px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            z-index: 10;
-            transition: all 0.2s ease;
+        
+        /* Botão Voltar Fixo */
+        .back-btn { 
+            position: fixed !important; 
+            top: 20px !important; 
+            left: 20px !important; 
+            background: #f4ece1 !important; 
+            border: 1px solid #e6dac8 !important; 
+            color: #4a3f35 !important; 
+            text-decoration: none !important; 
+            padding: 10px 18px !important; 
+            border-radius: 20px !important; 
+            font-size: 0.9rem !important;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
+            z-index: 9999 !important; 
+            transition: all 0.2s ease !important;
         }
-
-        .back-btn:hover {
-            background-color: #ebe0cf;
-            transform: translateX(-3px);
+        
+        .back-btn:hover { 
+            background-color: #ebe0cf !important;
+            transform: translateX(-3px) !important;
         }
-
+        
         /* Cabeçalho */
-        .header-section {
-            text-align: center;
-            padding: 100px 20px 40px 20px;
-            max-width: 800px;
-            margin: 0 auto;
+        .header-section { 
+            text-align: center !important; 
+            padding: 100px 20px 40px 20px !important; 
+            max-width: 800px !important; 
+            margin: 0 auto !important; 
         }
-
-        .header-section h1 {
-            font-size: 2.5rem;
-            color: #8c7864;
-            font-weight: 400;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
+        
+        .header-section h1 { 
+            color: #8c7864 !important; 
+            font-size: 2.5rem !important; 
+            font-weight: 400 !important;
+            letter-spacing: 1px !important;
+            margin-bottom: 15px !important; 
         }
 
         .header-section p {
-            font-size: 1.05rem;
-            color: #706356;
-            font-style: italic;
+            font-size: 1.05rem !important;
+            color: #a3907c !important;
+            font-style: italic !important;
         }
-
+        
         /* Container Principal */
-        .main-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
+        .main-container { 
+            max-width: 900px !important; 
+            margin: 0 auto !important; 
+            padding: 0 20px 40px 20px !important;
+        }
+        
+        /* Estrutura do Card Principal */
+        .info-card { 
+            background-color: #f4ece1 !important; 
+            border: 1px solid #e6dac8 !important; 
+            border-radius: 12px !important; 
+            overflow: hidden !important; 
+            box-shadow: 0 4px 15px rgba(140, 120, 100, 0.05) !important; 
+        }
+        
+        /* Box de Imagem Estilo Banner (bluelagoon2.png) */
+        .banner-container { 
+            width: 100% !important; 
+            height: 300px !important; /* Altura ideal panorâmica */
+            overflow: hidden !important; 
+        }
+        
+        .banner-container img { 
+            width: 100% !important; 
+            height: 100% !important; 
+            border-radius: 0px !important; /* Garante que não fique redondo */
+            object-fit: cover !important; 
+            display: block !important;
+        }
+        
+        /* Bloco de Informações */
+        .card-padding { 
+            padding: 35px 30px !important; 
+        }
+        
+        .info-card h2 { 
+            color: #735e49 !important; 
+            font-size: 1.6rem !important;
+            margin-bottom: 5px !important; 
+        }
+        
+        .location-tag { 
+            background-color: #dfcfbe !important; 
+            color: #5c4f43 !important; 
+            padding: 4px 12px !important; 
+            border-radius: 4px !important; 
+            font-size: 0.8rem !important; 
+            font-weight: bold !important; 
+            display: inline-block !important; 
+            margin-bottom: 20px !important; 
+        }
+        
+        .card-text { 
+            font-size: 0.95rem !important; 
+            color: #4a3f35 !important; 
+            text-align: justify !important;
+            margin-bottom: 25px !important;
         }
 
-        /* ==========================================
-           Blocos de Destinos Turísticos
-           ========================================== */
-        .destination-card {
-            background-color: #f4ece1; /* Bege calcário */
-            border: 1px solid #e6dac8;
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 15px rgba(140, 120, 100, 0.05);
-            display: flex;
-            flex-direction: column;
+        /* Container para a Segunda Imagem (bluelagoon4.jpg) */
+        .secondary-image-wrapper {
+            width: 100% !important;
+            height: auto !important;
+            margin-top: 15px !important;
+            border-radius: 8px !important;
+            overflow: hidden !important;
+            border: 1px solid #e6dac8 !important;
         }
 
-        /* Exibição da Imagem Panorâmica */
-        .destination-image-wrapper {
-            width: 100%;
-            height: 300px;
-            overflow: hidden;
+        .secondary-image-wrapper img {
+            width: 100% !important;
+            height: auto !important;
+            max-height: 400px !important;
+            border-radius: 0px !important;
+            object-fit: cover !important;
+            display: block !important;
         }
 
-        .destination-image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .destination-card:hover .destination-image-wrapper img {
-            transform: scale(1.02);
-        }
-
-        /* Conteúdo do Texto */
-        .destination-info {
-            padding: 30px;
-        }
-
-        .destination-info h2 {
-            font-size: 1.6rem;
-            color: #735e49;
-            margin-bottom: 5px;
-        }
-
-        .location-tag {
-            display: inline-block;
-            background-color: #dfcfbe;
-            color: #5c4f43;
-            padding: 3px 10px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .destination-text {
-            font-size: 0.95rem;
-            color: #4a3f35;
-            text-align: justify;
+        .image-caption {
+            padding: 12px 15px !important;
+            font-size: 0.85rem !important;
+            color: #706356 !important;
+            text-align: center !important;
+            background-color: #f4ece1 !important;
+            border-top: 1px solid #e6dac8 !important;
         }
     </style>
 </head>
 <body>
 
-    <!-- Link para retornar à Home -->
+    <!-- Botão de Voltar apontando para a página principal correta -->
     <a href="index.html" class="back-btn">← Back to Home</a>
 
     <header class="header-section">
-        <h1>Wonders of Malta</h1>
-        <p>Discover breathtaking fortresses, ancient alleys, and vibrant coastal paths.</p>
+        <h1>The Blue Lagoon</h1>
+        <p>A paradise of crystal-clear turquoise waters nestled on the peaceful island of Comino.</p>
     </header>
 
     <main class="main-container">
-
-        <!-- Destino 1: Valletta (História) -->
-        <section class="destination-card">
-            <div class="destination-image-wrapper">
-                <img src="valeta.png" alt="Valletta Cityscape">
+        
+        <article class="info-card">
+            <!-- Imagem 1: Banner de Destaque -->
+            <div class="banner-container">
+                <img src="bluelagoon2.png" alt="The Blue Lagoon Panorama">
             </div>
-            <div class="destination-info">
-                <h2>Valletta: The Fortress Capital</h2>
-                <div class="location-tag">📍 South Eastern Region</div>
-                <p class="destination-text">
-                    Founded in 1566 by the Grand Master of the Knights of St. John, Jean de Valette, Valletta is a UNESCO World Heritage site and a masterpiece of Baroque architecture. This open-air museum is protected by massive stone bastions built to guard the majestic Grand Harbour. Walking down its steep streets reveals historic palaces, grand fountains, and beautiful limestone walls that tell centuries of heroic Mediterranean tales.
+            
+            <div class="card-padding">
+                <h2>Comino's Natural Masterpiece</h2>
+                <div class="location-tag">📍 Comino Island, Malta</div>
+                
+                <p class="card-text">
+                    The Blue Lagoon is widely recognized as one of Malta's most breathtaking natural treasures. Situated between the small island of Comino and the islet of Cominotto, this giant natural pool features a white sandy seafloor that reflects the sunlight to create a glowing cyan surface, making it one of the top locations in Europe for swimming and snorkeling.
                 </p>
-            </div>
-        </section>
 
-        <!-- Destino 2: Mdina / Hidden Gems (Sugerido para image3jpg.jpeg) -->
-        <section class="destination-card">
-            <div class="destination-image-wrapper">
-                <img src="image3jpg.jpeg" alt="Historic Maltese Architecture">
-            </div>
-            <div class="destination-info">
-                <h2>Mdina & The Silent Fortresses</h2>
-                <div class="location-tag">📍 Northern Region / Central Malta</div>
-                <p class="destination-text">
-                    Beyond the coast, Malta’s heart is shaped by ancient citadel alleys and narrow medieval corridors. Walking through these silent golden-limestone gateways feels like stepping back in time. These structures showcase traditional wooden balconies and detailed architecture, providing panoramic views that stretch across the entire island.
+                <p class="card-text">
+                    Historically, Comino island served as a key hiding spot for pirates and smugglers during the Middle Ages due to its secluded bays and complex cave systems. Today, it offers an unforgettable getaway where visitors can relax under the golden Mediterranean sun.
                 </p>
-            </div>
-        </section>
 
-        <!-- Destino 3: St. Julian's Promenade -->
-        <section class="destination-card">
-            <div class="destination-image-wrapper">
-                <img src="st-julians1.png" alt="St. Julian's Promenade">
+                <!-- Imagem 2: Segunda foto integrada com legenda -->
+                <div class="secondary-image-wrapper">
+                    <img src="bluelagoon4.jpg" alt="Scenic Cliffs at Comino">
+                    <div class="image-caption">Scenic coastal cliffs bordering the turquoise waters of the lagoon</div>
+                </div>
             </div>
-            <div class="destination-info">
-                <h2>St. Julian's Promenade</h2>
-                <div class="location-tag">📍 Eastern Coastline</div>
-                <p class="destination-text">
-                    St. Julian's perfectly balances traditional fishing charm with a lively, modern coastline. The coastal promenade is a major highlight, stretching along the sea and connecting Spinola Bay to Balluta Bay. Filled with lively open-air restaurants, cafes, and colorful traditional boats (luzzu), it is the ideal spot for long evening walks by the crashing waves and experiencing Malta's energetic coastal lifestyle.
-                </p>
-            </div>
-        </section>
+        </article>
 
     </main>
 
