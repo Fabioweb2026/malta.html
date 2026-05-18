@@ -63,11 +63,10 @@ body {
    ========================================================================== */
 .main-header, .header-section {
     text-align: center;
-    padding: 100px 20px 40px 20px;
+    padding: 60px 20px 40px 20px; /* Diminuímos o topo de 100px para 60px */
     max-width: 800px;
     margin: 0 auto;
 }
-
 .main-header h1, .header-section h1 {
     font-size: 2.8rem;
     color: #8c7864; /* Tom de pedra calcária escura */
@@ -254,15 +253,25 @@ body.high-contrast .location-tag {
    6. LOGO E ESTILIZAÇÃO DO RODAPÉ (FOOTER)
    ========================================================================== */
 .logo-container {
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* Aumenta o espaço entre o logo e o título */
     text-align: center;
+    width: 100%;
 }
 
 .main-logo {
-    max-width: 150px;       /* Controla o tamanho máximo do seu logo */
+    max-width: 320px;       /* Aumentamos de 150px para 320px para dar destaque */
+    width: 90%;             /* Garante que em celulares ele não passe das bordas da tela */
     height: auto;
     object-fit: contain;
+    filter: drop-shadow(0px 4px 8px rgba(140, 120, 100, 0.15)); /* Sombra suave para destacar o logo */
+    transition: transform 0.3s ease;
 }
+
+/* Efeito sutil: quando o usuário passar o mouse no logo, ele aumenta levemente */
+.main-logo:hover {
+    transform: scale(1.03);
+}
+
 
 .main-footer {
     text-align: center;
