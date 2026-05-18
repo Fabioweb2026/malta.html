@@ -141,14 +141,24 @@ main-header, .header-section {
     flex-direction: column;
     justify-content: flex-start;
 }
-
+/* Força o título do card a ficar bem escuro e visível */
 .card-content h2 {
     font-size: 1.35rem;
-    color: #735e49;
+    color: #2b1f14 !important; /* Marrom quase preto para destaque máximo */
     margin-bottom: 12px;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.2;
 }
+
+/* Força o texto descritivo a ter leitura perfeita */
+.card-content p {
+    font-size: 0.95rem;
+    color: #1a130c !important; /* Cor super escura para contraste total sobre o bege */
+    line-height: 1.6;
+    word-wrap: break-word;
+    opacity: 1 !important;     /* Garante que o texto não fique transparente */
+}
+
 .card-content p {
     font-size: 0.95rem;
     color: #362d24; /* Cor escurecida para dar o contraste ideal de leitura */
