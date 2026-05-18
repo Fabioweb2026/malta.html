@@ -371,5 +371,23 @@ body.high-contrast .main-header h1 {
     height: 100% !important;
     object-fit: cover !important;
 }
+/* CONSERTO DO VÍDEO GIGANTE DO CELULAR */
+.video-wrapper { 
+    width: 100% !important; 
+    max-width: 440px !important; /* Encolhe o vídeo para um tamanho super elegante */
+    height: auto !important; 
+    margin: 20px auto 30px auto !important; /* Centraliza o vídeo no meio do card */
+    border-radius: 8px !important; 
+    overflow: hidden !important; 
+    border: 1px solid #e6dac8 !important; 
+    box-shadow: 0 4px 12px rgba(140, 120, 100, 0.1) !important; 
+}
+
+.video-wrapper video { 
+    width: 100% !important; 
+    height: auto !important; 
+    display: block !important; 
+    object-fit: contain !important; /* Respeita a proporção original do celular */
+}
 
 
