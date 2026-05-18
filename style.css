@@ -174,60 +174,69 @@ main-header, .header-section {
 /* ==========================================================================
    4. ESTILO DE CARDS DE INFORMAÇÃO COM IMAGENS EM CÍRCULO (BOLINHAS)
    ========================================================================== */
+/* --- ATUALIZAÇÃO DO CARD DE INFORMAÇÃO (INFO-CARD AMPLIXADO) --- */
 .info-card {
     background-color: #f4ece1;
     border: 1px solid #e6dac8;
     border-radius: 12px;
     overflow: hidden;
-    margin-bottom: 40px;
-    box-shadow: 0 4px 15px rgba(140, 120, 100, 0.05);
+    margin-bottom: 50px; /* Aumentado o espaço entre os cartões */
+    box-shadow: 0 6px 20px rgba(140, 120, 100, 0.06);
     display: flex;
     flex-direction: column;
+    width: 100%; /* Força o card a ocupar toda a largura disponível do container */
 }
 
-.lagoon-image-wrapper, .solo-image-wrapper {
+/* Transforma o bloco da imagem em uma vitrine retangular ampla */
+.solo-image-wrapper {
     width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 30px;
-    background-color: transparent;
+    height: 350px; /* Altura ideal para exibir bem a paisagem */
+    overflow: hidden;
+    padding-top: 0; /* Remove o espaçamento antigo da bolinha */
+    background-color: #e6dac8;
 }
 
-/* Moldura circular para as fotos internas */
-.lagoon-image-wrapper img, .solo-image-wrapper img {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #8c7864;
-    box-shadow: 0 4px 10px rgba(140, 120, 100, 0.15);
+/* Remove o formato circular e faz a imagem cobrir todo o topo do card */
+.solo-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0; /* Remove o formato de círculo */
+    object-fit: cover; /* Faz a foto se adaptar perfeitamente sem distorcer */
+    border: none; /* Remove a moldura antiga */
+    box-shadow: none;
     display: block;
+    transition: transform 0.5s ease;
 }
 
+/* Efeito visual: a foto aumenta levemente quando o usuário passa o mouse */
+.info-card:hover .solo-image-wrapper img {
+    transform: scale(1.03);
+}
+
+/* Preenchimento interno do texto */
 .card-padding {
-    padding: 20px 30px 30px 30px;
+    padding: 35px 40px; /* Mais espaço interno para os textos respirarem */
 }
 
 .info-card h2 {
-    font-size: 1.6rem;
-    color: #735e49;
-    margin-bottom: 5px;
-    text-align: center;
+    font-size: 1.8rem; /* Título ligeiramente maior e mais imponente */
+    color: #2b1f14 !important;
+    margin-bottom: 8px;
+    text-align: left; /* Alinhado à esquerda para combinar com o estilo retangular */
+    font-weight: 700;
 }
 
 .location-tag {
-    display: block;
-    width: max-content;
-    margin: 5px auto 15px auto;
+    display: inline-block; /* Alinha o bloco junto ao texto */
+    margin: 0 0 20px 0; /* Posiciona abaixo do título e dá espaço para o parágrafo */
     background-color: #dfcfbe;
     color: #5c4f43;
-    padding: 4px 12px;
+    padding: 5px 14px;
     border-radius: 4px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: bold;
 }
+
 
 /* ==========================================================================
    5. ACESSIBILIDADE - MODO ALTO CONTRASTE ESCURO
