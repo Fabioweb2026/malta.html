@@ -149,13 +149,13 @@ main-header, .header-section {
     font-weight: 600;
     line-height: 1.2;
 }
-
 .card-content p {
     font-size: 0.95rem;
-    color: #706356;
+    color: #362d24; /* Cor escurecida para dar o contraste ideal de leitura */
     line-height: 1.6;
     word-wrap: break-word;
 }
+
 
 /* ==========================================================================
    4. ESTILO DE CARDS DE INFORMAÇÃO COM IMAGENS EM CÍRCULO (BOLINHAS)
@@ -334,10 +334,9 @@ body.high-contrast .location-tag {
     margin-bottom: 15px;
     line-height: 1.5;
 }
-
 .footer-info p {
     font-size: 0.85rem !important;
-    color: #706356 !important;
+    color: #362d24 !important; /* Mesma cor escura e legível para o rodapé */
 }
 
 .footer-copyright {
