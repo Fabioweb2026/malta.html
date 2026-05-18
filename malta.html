@@ -1,192 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<title>Malta | Mediterranean Experience</title>
-
-<link href="https://googleapis.com" rel="stylesheet">
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    background:#f6f0e7;
-    font-family:'Poppins', sans-serif;
-    color:#2b2b2b;
-}
-
-/* HEADER */
-header{
-    width:100%;
-    padding:70px 20px 40px;
-    text-align:center;
-}
-
-header h1{
-    font-size:72px;
-    font-family:'Playfair Display', serif;
-    letter-spacing:3px;
-    color:#8c6a43;
-}
-
-/* CONTAINER DOS CARDS */
-.cards-container{
-    width:90%;
-    max-width:1300px;
-    margin:auto;
-    display:grid;
-    /* Força os 3 cards a ficarem alinhados lado a lado no desktop */
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap:35px;
-    padding-bottom:80px;
-}
-
-/* CARD INDIVIDUAL */
-.card{
-    background:white;
-    border-radius:25px;
-    overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,0.10);
-    transition:0.4s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%; /* Mantém todos os cards com a mesma altura */
-}
-
-.card:hover{
-    transform:translateY(-10px);
-}
-
-/* RESOLVE O TAMANHO DAS IMAGENS */
-.card-img-wrapper {
-    width: 100%;
-    height: 260px; /* Força todas as imagens a terem exatamente o mesmo tamanho */
-    overflow: hidden;
-    background: #eaeaea; /* Fundo cinza caso a imagem falhe */
-}
-
-.card-img-wrapper img{
-    width:100%;
-    height:100%;
-    object-fit:cover; /* Corta a imagem proporcionalmente sem distorcer */
-}
-
-/* CONTEÚDO INTEGRADO */
-.card-content{
-    padding:28px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* Faz o conteúdo esticar igualmente em todos */
-}
-
-.card-content h2{
-    font-size:30px;
-    margin-bottom:15px;
-    font-family:'Playfair Display', serif;
-    color:#8c6a43;
-}
-
-.card-content p{
-    font-size:16px;
-    line-height:1.8;
-    color:#555;
-    margin-bottom: 25px;
-}
-
-/* BOTÕES ALINHADOS EM BAIXO */
-.btn{
-    display:inline-block;
-    margin-top: auto; /* Empurra o botão sempre para o final do card */
-    padding:12px 28px;
-    background:#8c6a43;
-    color:white;
-    text-decoration:none;
-    border-radius:40px;
-    transition:0.3s ease;
-    font-size:14px;
-    letter-spacing:1px;
-    text-align: center;
-}
-
-.btn:hover{
-    background:#6f5334;
-}
-
-/* RESPONSIVO */
-@media(max-width:768px){
-    header h1{
-        font-size:52px;
-    }
-    .card-content h2{
-        font-size:24px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<header>
-    <h1>Malta</h1>
+<header class="main-header">
+    <h1>Descubra Malta</h1>
+    <p class="subtitle">O coração do Mediterrâneo</p>
 </header>
 
-<section class="cards-container">
+<main class="container">
+    <!-- Esse container "cards-grid" ativa as colunas do CSS -->
+    <div class="cards-grid">
+        
+        <!-- CARD 1 -->
+        <a href="#" class="card-discreto">
+            <div class="card-image-wrapper">
+                <img src="sua-foto1.jpg" class="card-thumb" alt="Foto de Malta">
+            </div>
+            <div class="card-content">
+                <h2>Cultura e História</h2>
+                <p>Explore as igrejas barrocas e as ruas históricas de Valletta.</p>
+            </div>
+        </a>
 
-    <!-- CARD 1 -->
-    <div class="card">
-        <div class="card-img-wrapper">
-            <img src="goldenbay.jpg" alt="Golden Bay Malta">
-        </div>
-        <div class="card-content">
-            <h2>Golden Bay</h2>
-            <p>
-                Golden Bay is one of Malta’s most iconic beaches,
-                known for its crystal-clear waters, golden sand
-                and breathtaking Mediterranean sunsets.
-            </p>
-            <a href="bluelagoon.html" class="btn">Explore</a>
-        </div>
+        <!-- CARD 2 -->
+        <a href="#" class="card-discreto">
+            <div class="card-image-wrapper">
+                <img src="sua-foto2.jpg" class="card-thumb" alt="Foto de Malta">
+            </div>
+            <div class="card-content">
+                <h2>Oportunidades em TI</h2>
+                <p>Malta é um polo tecnológico crescente na Europa.</p>
+            </div>
+        </a>
+
     </div>
+</main>
 
-    <!-- CARD 2 -->
-    <div class="card">
-        <div class="card-img-wrapper">
-            <img src="bluelagoon2.png" alt="Tourism and Leisure">
-        </div>
-        <div class="card-content">
-            <h2>Tourism & Leisure</h2>
-            <p>
-                Malta offers luxury resorts, boat tours,
-                nightlife, diving experiences and unforgettable
-                cultural adventures across the island.
-            </p>
-            <a href="tourism.html" class="btn">Discover</a>
-        </div>
-    </div>
-
-    <!-- CARD 3 (Agora com giorgios.png funcionando) -->
-    <div class="card">
-        <div class="card-img-wrapper">
-            <img src="giorgios.png" alt="Gastronomy and Architecture">
-        </div>
-        <div class="card-content">
-            <h2>Gastronomy & Architecture</h2>
-            <p>
-                Discover Mediterranean cuisine, elegant cafés,
-                historic streets and stunning architecture
-                inspired by centuries of cultural influence.
-            </p>
-            <a href="gastronomy.html" class="btn">View More</a>
-        </div>
-    </div>
-
-</section>
-
-</body>
-</html>
