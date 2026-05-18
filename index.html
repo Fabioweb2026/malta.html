@@ -6,94 +6,162 @@
     <title>Malta Mediterranean</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* ==========================================
-           BLINDAGEM DO GRID E DOS CARDS DA HOME 
-           ========================================== */
+        /* Padronização de fontes e reset global */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Georgia, serif;
+        }
+
+        body {
+            background-color: #fcf8f2;
+            color: #4a3f35;
+            line-height: 1.6;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Botão de Acessibilidade */
+        .contrast-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #f4ece1;
+            border: 1px solid #e6dac8;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            z-index: 9999;
+            transition: background-color 0.2s ease;
+        }
+
+        .contrast-btn:hover {
+            background-color: #e6dac8;
+        }
+
+        /* Cabeçalho alinhado com a Blue Lagoon */
+        .main-header {
+            text-align: center;
+            padding: 100px 20px 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .main-header h1 {
+            font-size: 2.5rem;
+            color: #8c7864;
+            margin-bottom: 10px;
+        }
+
+        .main-header .subtitle {
+            font-size: 1.1rem;
+            color: #706356;
+        }
+
+        /* Grid de Conteúdo Limpo */
         .container {
-            max-width: 1100px !important;
-            margin: 0 auto !important;
-            padding: 30px 20px !important;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px 20px;
         }
 
         .cards-grid {
-            display: grid !important;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
-            gap: 30px !important;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
+        /* Cards Sem !important e com transições suaves */
         .card-discreto {
-            background-color: #f4ece1 !important;
-            border: 1px solid #e6dac8 !important;
-            border-radius: 12px !important;
-            text-decoration: none !important;
-            color: #4a3f35 !important;
-            display: flex !important;
-            flex-direction: column !important;
-            overflow: hidden !important;
-            box-shadow: 0 4px 15px rgba(140, 120, 100, 0.08) !important;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease !important;
-            height: 100% !important;
+            background-color: #f4ece1;
+            border: 1px solid #e6dac8;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #4a3f35;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(140, 120, 100, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, opacity 0.5s ease-out;
+            height: 100%;
         }
 
         .card-discreto:hover {
-            background-color: #ebe0cf !important;
-            transform: translateY(-6px) !important;
-            box-shadow: 0 12px 24px rgba(140, 120, 100, 0.18) !important;
+            background-color: #ebe0cf;
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(140, 120, 100, 0.18);
         }
 
-        /* Controle Rígido do Espaço da Imagem */
+        /* Mídia dos Cards */
         .card-media {
-            width: 100% !important;
-            height: 200px !important;
-            overflow: hidden !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            display: block !important;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            display: block;
         }
 
         .card-media img {
-            width: 100% !important;
-            height: 100% !important;
-            object-fit: cover !important;
-            border-radius: 0px !important;
-            display: block !important;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
+        /* Textos internos do Card */
         .card-content {
-            padding: 25px 20px !important;
-            text-align: left !important;
-            flex-grow: 1 !important;
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: space-between !important;
+            padding: 25px 20px;
+            text-align: left;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .card-content h2 {
-            font-size: 1.35rem !important;
-            color: #735e49 !important;
-            margin-bottom: 10px !important;
-            font-weight: 600 !important;
+            font-size: 1.35rem;
+            color: #735e49;
+            margin-bottom: 10px;
+            font-weight: 600;
         }
 
         .card-content p {
-            font-size: 0.95rem !important;
-            color: #706356 !important;
-            line-height: 1.5 !important;
+            font-size: 0.95rem;
+            color: #706356;
+            line-height: 1.5;
+        }
+
+        /* Modo de Alto Contraste Otimizado */
+        body.high-contrast {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        body.high-contrast .card-discreto {
+            background-color: #1a1a1a;
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+        body.high-contrast .card-content h2,
+        body.high-contrast .main-header h1 {
+            color: #ffff00;
+        }
+        body.high-contrast .card-content p,
+        body.high-contrast .main-header .subtitle {
+            color: #ffffff;
         }
     </style>
 </head>
 <body>
 
-    <!-- Botão de Acessibilidade (Contraste) -->
     <button id="toggle-contrast" class="contrast-btn" aria-label="Toggle Contrast">🌓</button>
 
-    <!-- Cabeçalho Principal -->
     <header class="main-header">
         <h1>Malta Mediterranean</h1>
         <p class="subtitle">The limestone gem in the heart of the Mediterranean</p>
     </header>
 
-    <!-- Seção de Cards -->
     <main class="container">
         <section class="cards-grid">
             
@@ -119,15 +187,11 @@
                 </div>
             </a>
 
-            <!-- Card 3: Blue Lagoon -->
+            <!-- Card 3: Blue Lagoon (CORRIGIDO) -->
             <a href="bluelagoon.html" class="card-discreto">
                 <figure class="card-media">
+                    <!-- Mantida a imagem principal do card da Home -->
                     <img src="bluelagoon2.png" alt="Blue Lagoon Comino">
-                    <!-- Segunda imagem atualizada para lagoon5.jpg -->
-                   <div class="image-card">
-                   <img src="lagoon5.jpg" alt="Blue Lagoon Cliffs">
-                  <div class="image-caption">Scenic coastal cliffs bordering the paradise lagoon</div>
-</div>
                 </figure>
                 <div class="card-content">
                     <h2>Blue Lagoon</h2>
@@ -143,11 +207,10 @@
             const cards = document.querySelectorAll('.card-discreto');
             const contrastBtn = document.getElementById('toggle-contrast');
 
-            // 1. Efeito de Entrada Suave (Fade-in)
+            // 1. Efeito de Entrada Suave corrigido para respeitar o CSS
             cards.forEach((card, index) => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(20px)';
-                card.style.transition = 'all 0.5s ease-out';
                 
                 setTimeout(() => {
                     card.style.opacity = '1';
@@ -162,7 +225,6 @@
                     const targetUrl = this.getAttribute('href');
                     
                     document.body.style.opacity = '0';
-                    document.body.style.transition = 'opacity 0.3s ease';
                     
                     setTimeout(() => {
                         window.location.href = targetUrl;
