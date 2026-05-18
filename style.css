@@ -67,18 +67,23 @@ main-header, .header-section {
     max-width: 900px;
     margin: 0 auto;
 }
+/* Configuração do Título Principal (Negrito e Imponente) */
 .main-header h1, .header-section h1 {
-    font-size: 2.8rem;
-    color: #8c7864; /* Tom de pedra calcária escura */
-    font-weight: 400;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
+    font-size: 3.2rem;          /* Aumentado de 2.8rem para 3.2rem */
+    color: #4a3f35 !important;  /* Mudado para o marrom escuro principal do site */
+    font-weight: 700 !important; /* ATIVA O NEGRITO FORTE */
+    letter-spacing: 1px;        /* Juntas as letras um pouco mais para dar peso */
+    margin-bottom: 12px;
 }
 
+/* Configuração do Subtítulo (Mais visível e elegante) */
 .main-header .subtitle, .header-section p {
-    font-size: 1rem;
-    color: #a3907c;
+    font-size: 1.15rem;         /* Aumentado de 1rem para 1.15rem */
+    color: #735e49 !important;  /* Tom médio com excelente leitura sobre o creme */
     font-style: italic;
+    font-weight: 500;           /* Peso médio para não sumir na tela */
+}
+
 }
 
 .container, .main-container {
