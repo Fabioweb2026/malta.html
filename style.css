@@ -175,67 +175,69 @@ main-header, .header-section {
    4. ESTILO DE CARDS DE INFORMAÇÃO COM IMAGENS EM CÍRCULO (BOLINHAS)
    ========================================================================== */
 /* --- ATUALIZAÇÃO DO CARD DE INFORMAÇÃO (INFO-CARD AMPLIXADO) --- */
-.info-card {
-    background-color: #f4ece1;
-    border: 1px solid #e6dac8;
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 50px; /* Aumentado o espaço entre os cartões */
-    box-shadow: 0 6px 20px rgba(140, 120, 100, 0.06);
-    display: flex;
-    flex-direction: column;
-    width: 100%; /* Força o card a ocupar toda a largura disponível do container */
-}
+        /* --- ESTILO REVISADO: CARDS RETANGULARES GRANDES (INFO-CARD) --- */
+        .info-card {
+            background-color: #f4ece1;
+            border: 1px solid #e6dac8;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 50px;
+            box-shadow: 0 6px 20px rgba(140, 120, 100, 0.06);
+            display: flex;
+            flex-direction: column;
+            width: 100%; /* Ocupa toda a largura da tela disponível */
+        }
 
-/* Transforma o bloco da imagem em uma vitrine retangular ampla */
-.solo-image-wrapper {
-    width: 100%;
-    height: 350px; /* Altura ideal para exibir bem a paisagem */
-    overflow: hidden;
-    padding-top: 0; /* Remove o espaçamento antigo da bolinha */
-    background-color: #e6dac8;
-}
+        /* Transforma o bloco da foto em uma vitrine retangular ampla */
+        .solo-image-wrapper {
+            width: 100%;
+            height: 380px; /* Altura generosa para destacar a paisagem */
+            overflow: hidden;
+            padding-top: 0; /* Remove a configuração da bolinha antiga */
+            background-color: #e6dac8;
+        }
 
-/* Remove o formato circular e faz a imagem cobrir todo o topo do card */
-.solo-image-wrapper img {
-    width: 100%;
-    height: 100%;
-    border-radius: 0; /* Remove o formato de círculo */
-    object-fit: cover; /* Faz a foto se adaptar perfeitamente sem distorcer */
-    border: none; /* Remove a moldura antiga */
-    box-shadow: none;
-    display: block;
-    transition: transform 0.5s ease;
-}
+        /* Remove o formato circular e faz a imagem cobrir todo o topo */
+        .solo-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            border-radius: 0; /* Fim do círculo */
+            object-fit: cover; /* Faz a foto se adaptar perfeitamente sem distorcer */
+            border: none;
+            box-shadow: none;
+            display: block;
+            transition: transform 0.5s ease;
+        }
 
-/* Efeito visual: a foto aumenta levemente quando o usuário passa o mouse */
-.info-card:hover .solo-image-wrapper img {
-    transform: scale(1.03);
-}
+        /* Efeito de zoom sutil ao passar o mouse */
+        .info-card:hover .solo-image-wrapper img {
+            transform: scale(1.03);
+        }
 
-/* Preenchimento interno do texto */
-.card-padding {
-    padding: 35px 40px; /* Mais espaço interno para os textos respirarem */
-}
+        /* Ajuste do preenchimento interno do texto */
+        .card-padding {
+            padding: 35px 40px; 
+        }
 
-.info-card h2 {
-    font-size: 1.8rem; /* Título ligeiramente maior e mais imponente */
-    color: #2b1f14 !important;
-    margin-bottom: 8px;
-    text-align: left; /* Alinhado à esquerda para combinar com o estilo retangular */
-    font-weight: 700;
-}
+        .info-card h2 {
+            font-size: 1.8rem; 
+            color: #2b1f14 !important;
+            margin-bottom: 8px;
+            text-align: left; /* Alinhado à esquerda para combinar com o retângulo */
+            font-weight: 700;
+        }
 
-.location-tag {
-    display: inline-block; /* Alinha o bloco junto ao texto */
-    margin: 0 0 20px 0; /* Posiciona abaixo do título e dá espaço para o parágrafo */
-    background-color: #dfcfbe;
-    color: #5c4f43;
-    padding: 5px 14px;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    font-weight: bold;
-}
+        .location-tag {
+            display: inline-block;
+            margin: 0 0 20px 0; /* Dá espaço antes do parágrafo começar */
+            background-color: #dfcfbe;
+            color: #5c4f43;
+            padding: 5px 14px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
 
 
 /* ==========================================================================
