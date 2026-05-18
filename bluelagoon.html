@@ -5,226 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blue Lagoon & Blue Grotto - Malta</title>
     <style>
-        /* ==========================================
-           Configurações Gerais (Padrão Gastronomia)
-           ========================================== */
-        * {
-            margin: 0 !important;
-            padding: 0 !important;
-            box-sizing: border-box !important;
-            font-family: 'Segoe UI', Georgia, serif !important;
-        }
-
-        body {
-            background-color: #fcf8f2 !important;
-            color: #4a3f35 !important;
-            line-height: 1.6 !important;
-        }
-
-        /* Botão Voltar Fixo e Discreto */
-        .back-btn {
-            position: fixed !important;
-            top: 20px !important;
-            left: 20px !important;
-            background-color: #f4ece1 !important;
-            border: 1px solid #e6dac8 !important;
-            color: #4a3f35 !important;
-            text-decoration: none !important;
-            padding: 10px 18px !important;
-            border-radius: 20px !important;
-            font-size: 0.9rem !important;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
-            z-index: 9999 !important;
-            transition: all 0.2s ease !important;
-        }
-
-        .back-btn:hover {
-            background-color: #ebe0cf !important;
-            transform: translateX(-3px) !important;
-        }
-
-        /* Cabeçalho */
-        .header-section {
-            text-align: center !important;
-            padding: 100px 20px 40px 20px !important;
-            max-width: 800px !important;
-            margin: 0 auto !important;
-        }
-
-        .header-section h1 {
-            font-size: 2.5rem !important;
-            color: #8c7864 !important;
-            font-weight: 400 !important;
-            letter-spacing: 1px !important;
-            margin-bottom: 15px !important;
-        }
-
-        .header-section p {
-            font-size: 1.05rem !important;
-            color: #706356 !important;
-            font-style: italic !important;
-        }
-
-        /* Container Principal */
-        .main-container {
-            max-width: 1000px !important;
-            margin: 0 auto !important;
-            padding: 20px !important;
-        }
-
-        /* Blocos de Conteúdo Estilo Gastronomia */
-        .showcase-block {
-            background-color: #f4ece1 !important;
-            border: 1px solid #e6dac8 !important;
-            border-radius: 12px !important;
-            padding: 30px !important;
-            margin-bottom: 40px !important;
-            box-shadow: 0 4px 15px rgba(140, 120, 100, 0.05) !important;
-        }
-
-        .showcase-block h2 {
-            font-size: 1.6rem !important;
-            color: #735e49 !important;
-            margin-bottom: 10px !important;
-            border-bottom: 2px solid #e6dac8 !important;
-            padding-bottom: 8px !important;
-        }
-
-        .location-badge {
-            display: inline-block !important;
-            background-color: #dfcfbe !important;
-            color: #5c4f43 !important;
-            padding: 4px 12px !important;
-            border-radius: 4px !important;
-            font-size: 0.85rem !important;
-            font-weight: bold !important;
-            margin-bottom: 20px !important;
-        }
-
-        .block-text {
-            font-size: 1rem !important;
-            color: #4a3f35 !important;
-            margin-bottom: 25px !important;
-            text-align: left !important;
-        }
-
-        /* Otimização do Vídeo do Celular */
-        .video-block-wrapper {
-            display: flex !important;
-            justify-content: center !important;
-            align-items: center !important;
-            width: 100% !important;
-            margin-bottom: 30px !important;
-        }
-
-        .video-card {
-            background: #fcf8f2 !important;
-            border: 1px solid #e6dac8 !important;
-            border-radius: 8px !important;
-            overflow: hidden !important;
-            max-width: 400px !important;
-            width: 100% !important;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.02) !important;
-        }
-
-        .video-card video {
-            width: 100% !important;
-            height: 250px !important;
-            object-fit: cover !important;
-            display: block !important;
-        }
-
-        /* Estrutura da Galeria Grid */
-        .image-grid {
-            display: grid !important;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-            gap: 20px !important;
-        }
-
-        .image-card {
-            background: #fcf8f2 !important;
-            border: 1px solid #e6dac8 !important;
-            border-radius: 8px !important;
-            overflow: hidden !important;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.02) !important;
-            display: flex !important;
-            flex-direction: column !important;
-        }
-
-        /* CORREÇÃO DO CORTE DA IMAGEM */
-        .image-card img {
-            width: 100% !important;
-            height: 220px !important;
-            object-fit: cover !important;
-            object-position: bottom !important; /* CORTA O CÉU DO TOPO E MANTÉM A PRAIA */
-            border-radius: 0px !important;
-            display: block !important;
-            transition: transform 0.3s ease !important;
-        }
-
-        .image-card:hover img {
-            transform: scale(1.03) !important;
-        }
-
-        .image-caption {
-            padding: 12px 15px !important;
-            font-size: 0.9rem !important;
-            color: #706356 !important;
-            text-align: center !important;
-            background-color: #f4ece1 !important;
-            border-top: 1px solid #e6dac8 !important;
-            width: 100% !important;
-        }
+        * { margin: 0 !important; padding: 0 !important; box-sizing: border-box !important; font-family: 'Segoe UI', Georgia, serif !important; }
+        body { background-color: #fcf8f2 !important; color: #4a3f35 !important; line-height: 1.6 !important; }
+        .back-btn { position: fixed !important; top: 20px !important; left: 20px !important; background-color: #f4ece1 !important; border: 1px solid #e6dac8 !important; color: #4a3f35 !important; text-decoration: none !important; padding: 10px 18px !important; border-radius: 20px !important; font-size: 0.9rem !important; z-index: 9999 !important; }
+        .header-section { text-align: center !important; padding: 100px 20px 40px 20px !important; max-width: 800px !important; margin: 0 auto !important; }
+        .header-section h1 { font-size: 2.5rem !important; color: #8c7864 !important; }
+        .main-container { max-width: 1000px !important; margin: 0 auto !important; padding: 20px !important; }
+        .showcase-block { background-color: #f4ece1 !important; border: 1px solid #e6dac8 !important; border-radius: 12px !important; padding: 30px !important; margin-bottom: 40px !important; }
+        .image-grid { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; gap: 20px !important; }
+        .image-card img { width: 100% !important; height: 220px !important; object-fit: cover !important; }
+        .image-caption { padding: 10px; font-size: 0.9rem !important; background-color: #f4ece1 !important; }
     </style>
 </head>
 <body>
-
-    <!-- Retorno à Home principal -->
     <a href="index.html" class="back-btn">← Back to Home</a>
-
     <header class="header-section">
         <h1>Aquatic Paradises</h1>
-        <p>A journey through Malta's crystal lagoons and hidden sea wonders.</p>
+        <p>A journey through Malta's crystal lagoons.</p>
     </header>
-
     <main class="main-container">
-
         <section class="showcase-block">
             <h2>The Blue Lagoon</h2>
-            <div class="location-badge">📍 Comino Island, Malta</div>
-            
-            <p class="block-text">
-                The Blue Lagoon is a paradise pool featuring a white sandy seafloor and exceptionally clear, glowing cyan waters. Nestled between the peaceful island of Comino and the islet of Cominotto, it offers some of the most spectacular tropical views in the heart of the Mediterranean Sea.
-            </p>
-
-            <!-- Vídeo Controlado -->
-            <div class="video-block-wrapper">
-                <div class="video-card">
-                    <video autoplay loop muted playsinline>
-                        <source src="kemmuna.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="image-caption">Live look at the crystal currents of Comino</div>
-                </div>
-            </div>
-
-            <!-- Galeria Formatada Lado a Lado (Com a nova lagoon5.jpg) -->
             <div class="image-grid">
                 <div class="image-card">
                     <img src="bluelagoon2.png" alt="Blue Lagoon View">
-                    <div class="image-caption">The vibrant landscape facing the turquoise sea</div>
+                    <div class="image-caption">The vibrant landscape</div>
                 </div>
-                
-                <!-- CARD ATUALIZADO PARA LAGOON5.JPG -->
-               <!-- Atualizado com a extensão dupla exata que está no seu repositório -->
-<div class="image-card">
-    <img src="lagoon5.png.jpg" alt="Blue Lagoon Cliffs">
-    <div class="image-caption">Scenic coastal cliffs bordering the paradise lagoon</div>
-</div>
-
+                <div class="image-card">
+                    <!-- CORREÇÃO: Nome do arquivo no repositório -->
+                    <img src="lagoon5.png.jpg" alt="Blue Lagoon Cliffs">
+                    <div class="image-caption">Scenic coastal cliffs</div>
+                </div>
+            </div>
         </section>
-
     </main>
-
 </body>
 </html>
