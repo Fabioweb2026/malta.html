@@ -208,56 +208,86 @@
     </style>
 </head>
 <body>
+<body>
 
-    <a href="index.html" class="back-btn" id="back-home-link">← Back to Home</a>
+    <!-- Back button connected to your homepage -->
+    <a href="index.html" class="back-btn">← Back</a>
 
-    <header class="header-section">
+    <header class="main-header">
+        <div class="logo-container">
+            <img src="logomalta.png" alt="Malta Logo" class="main-logo">
+        </div>
         <h1>Wonders of Malta</h1>
-        <p>Discover breathtaking fortresses, golden sandy bays, and vibrant coastal paths.</p>
+        <p class="subtitle">Discover breathtaking fortresses, golden sandy bays, and vibrant coastal paths</p>
     </header>
 
-    <main class="main-container">
+    <!-- Main structural container limiting the page width -->
+    <main class="container">
 
-        <!-- Card 1: Valletta -->
-        <section class="destination-card">
-            <div class="destination-image-wrapper">
-                <img src="valeta.png" alt="Valletta Cityscape">
+        <!-- Place 1: Valletta -->
+        <section class="info-card">
+            <div class="solo-image-wrapper">
+                <!-- Replace with your actual circular image file -->
+                <img src="valletta-circle.jpg" alt="Valletta Cityscape">
             </div>
-            <div class="destination-info">
+            <div class="card-padding">
                 <h2>Valletta: The Fortress Capital</h2>
-                <div class="location-tag">📍 Valletta</div>
-                <p class="destination-text">
-                    Founded in 1566, Valletta is a UNESCO World Heritage site filled with rich Baroque architecture. This historic fortress capital features spectacular limestone bastions, scenic harbor overlooks, and majestic cathedrals.
-                </p>
+                <span class="location-tag">📍 Valletta</span>
+                <p>Founded in 1566, Valletta is a UNESCO World Heritage site filled with rich Baroque architecture. This historic fortress capital features spectacular limestone bastions, scenic harbor overlooks, and majestic cathedrals.</p>
             </div>
         </section>
 
-        <!-- Card 2: Golden Bay Sunset -->
-        <section class="horizontal-card">
-            <div class="horizontal-image-wrapper">
-                <img src="goldenbayporsol.png" alt="Golden Bay Sunset">
+        <!-- Place 2: Golden Bay -->
+        <section class="info-card">
+            <div class="solo-image-wrapper">
+                <!-- Replace with your actual circular image file -->
+                <img src="goldenbay-circle.jpg" alt="Golden Bay Sunset">
             </div>
-            <div class="horizontal-info">
+            <div class="card-padding">
                 <h2>Golden Bay Sunset</h2>
-                <div class="location-tag">📍 Mellieha, Northwest Coast</div>
-                <p class="destination-text">
-                    Witness the breathtaking, magical sunset over the Mediterranean horizon. The amber sands reflect the deep orange hues, creating an unforgettable coastal moment and a perfect postcard scene.
-                </p>
+                <span class="location-tag">📍 Mellieha, Northwest Coast</span>
+                <p>Witness the breathtaking, magical sunset over the Mediterranean horizon. The amber sands reflect the deep orange hues, creating an unforgettable coastal moment and a perfect postcard scene.</p>
             </div>
         </section>
 
-        <!-- Card 3: St. Julian's Promenade (CORRIGIDO E CONCLUÍDO) -->
-        <section class="destination-card">
-            <div class="large-image-wrapper">
-                <img src="st-julians1.png" alt="St. Julian's Promenade">
+        <!-- Place 3: St. Julian's -->
+        <section class="info-card">
+            <div class="solo-image-wrapper">
+                <!-- Replace with your actual circular image file -->
+                <img src="stjulians-circle.jpg" alt="St. Julian's Promenade">
             </div>
-            <div class="destination-info">
+            <div class="card-padding">
                 <h2>St. Julian's Promenade</h2>
-                <div class="location-tag">📍 St. Julian's Bay</div>
-                <p class="destination-text">
-                    A lively coastal pathway bustling with energetic waterfront cafes, modern venues, and local fishing boats. It is the ideal place for peaceful evening walks alongside panoramic views of Spinola Bay.
-                </p>
+                <span class="location-tag">📍 St. Julian's Bay</span>
+                <p>A lively coastal pathway bustling with energetic waterfront cafes, modern venues, and local fishing boats. It is the ideal place for peaceful evening walks alongside panoramic views of Spinola Bay.</p>
             </div>
+        </section>
+
+    </main> <!-- End of container -->
+
+    <!-- FOOTER WITH INLINE STYLES FOR PERFECT CONTRAST -->
+    <footer class="main-footer" style="background-color: #f4ece1; border-top: 1px solid #e6dac8; padding: 60px 20px; text-align: center; margin-top: 40px;">
+        <div class="footer-info" style="margin-bottom: 15px; line-height: 1.6;">
+            <p style="color: #1a130c !important; font-size: 0.95rem !important; opacity: 1 !important; margin-bottom: 8px;">
+                <strong style="color: #1a130c !important; font-weight: 700;">Malta Heritage Tourism Agency</strong>
+            </p>
+            <p style="color: #1a130c !important; font-size: 0.95rem !important; opacity: 1 !important; margin-bottom: 8px;">
+                12, Republic Street, Valletta, VLT 1115, Malta
+            </p>
+            <p style="color: #1a130c !important; font-size: 0.95rem !important; opacity: 1 !important; margin-bottom: 8px;">
+                Contact: info@discovermalta.tourism.gov | +356 2122 0000
+            </p>
+        </div>
+        <div class="footer-copyright" style="border-top: 1px solid #dfcfbe; padding-top: 15px; margin-top: 15px;">
+            <p style="color: #1a130c !important; font-size: 0.95rem !important; opacity: 1 !important; font-weight: 600;">
+                &copy; 2026 Fabioandrade2026. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
         </section>
 
     </main>
