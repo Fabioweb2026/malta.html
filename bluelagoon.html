@@ -5,29 +5,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blue Lagoon & Blue Grotto - Malta</title>
     <style>
-        * { margin: 0 !important; padding: 0 !important; box-sizing: border-box !important; font-family: 'Segoe UI', Georgia, serif !important; }
-        body { background-color: #fcf8f2 !important; color: #4a3f35 !important; line-height: 1.6 !important; }
-        .back-btn { position: fixed !important; top: 20px !important; left: 20px !important; background-color: #f4ece1 !important; border: 1px solid #e6dac8 !important; color: #4a3f35 !important; text-decoration: none !important; padding: 10px 18px !important; border-radius: 20px !important; font-size: 0.9rem !important; z-index: 9999 !important; }
-        .header-section { text-align: center !important; padding: 100px 20px 40px 20px !important; max-width: 800px !important; margin: 0 auto !important; }
-        .header-section h1 { font-size: 2.5rem !important; color: #8c7864 !important; }
-        .main-container { max-width: 1000px !important; margin: 0 auto !important; padding: 20px !important; }
-        .showcase-block { background-color: #f4ece1 !important; border: 1px solid #e6dac8 !important; border-radius: 12px !important; padding: 30px !important; margin-bottom: 40px !important; }
+        /* Configurações Globais e Reset Limpo */
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Segoe UI', Georgia, serif; 
+        }
         
-        /* AJUSTADO: A grade agora se adapta dinamicamente para 3 itens se a tela for grande */
-        .image-grid { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important; gap: 20px !important; }
-        .image-card img { width: 100% !important; height: 220px !important; object-fit: cover !important; }
-        .image-caption { padding: 10px !important; font-size: 0.9rem !important; background-color: #f4ece1 !important; }
+        body { 
+            background-color: #fcf8f2; 
+            color: #4a3f35; 
+            line-height: 1.6; 
+        }
+
+        /* Botão de Voltar */
+        .back-btn { 
+            position: fixed; 
+            top: 20px; 
+            left: 20px; 
+            background-color: #f4ece1; 
+            border: 1px solid #e6dac8; 
+            color: #4a3f35; 
+            text-decoration: none; 
+            padding: 10px 18px; 
+            border-radius: 20px; 
+            font-size: 0.9rem; 
+            z-index: 9999; 
+            transition: background-color 0.2s ease;
+        }
         
-        /* NOVO: Classe específica para recortar o céu da nova foto */
-        .crop-sky { object-position: center bottom !important; }
+        .back-btn:hover {
+            background-color: #e6dac8;
+        }
+
+        /* Cabeçalho */
+        .header-section { 
+            text-align: center; 
+            padding: 100px 20px 40px 20px; 
+            max-width: 800px; 
+            margin: 0 auto; 
+        }
+        
+        .header-section h1 { 
+            font-size: 2.5rem; 
+            color: #8c7864; 
+            margin-bottom: 10px;
+        }
+
+        /* Container Principal */
+        .main-container { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 20px; 
+        }
+
+        /* Bloco de Conteúdo (Card Principal) */
+        .showcase-block { 
+            background-color: #f4ece1; 
+            border: 1px solid #e6dac8; 
+            border-radius: 12px; 
+            padding: 30px; 
+            margin-bottom: 40px; 
+        }
+        
+        .showcase-block h2 {
+            color: #8c7864;
+            margin-bottom: 20px;
+        }
+
+        /* Grade de Imagens Responsiva */
+        .image-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+            gap: 20px; 
+        }
+
+        /* Cards Individuais */
+        .image-card {
+            background-color: #fcf8f2;
+            border: 1px solid #e6dac8;
+            border-radius: 6px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .image-card img { 
+            width: 100%; 
+            height: 220px; 
+            object-fit: cover; 
+        }
+        
+        /* Ajuste fino para recortar o céu da foto 4 */
+        .crop-sky { 
+            object-position: center bottom; 
+        }
+
+        /* Legendas das Fotos */
+        .image-caption { 
+            padding: 15px; 
+            font-size: 0.9rem; 
+            color: #4a3f35;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .image-caption strong {
+            color: #8c7864;
+        }
+
+        .image-caption .address-text {
+            display: block;
+            margin-top: 4px;
+            font-size: 0.85rem;
+            color: #5c5044; /* Contraste melhorado para leitura fácil */
+        }
     </style>
 </head>
 <body>
+
     <a href="index.html" class="back-btn">← Back to Home</a>
+
     <header class="header-section">
         <h1>Aquatic Paradises</h1>
         <p>A journey through Malta's crystal lagoons.</p>
     </header>
+
     <main class="main-container">
         <section class="showcase-block">
             <h2>The Blue Lagoon</h2>
@@ -45,17 +149,19 @@
                     <div class="image-caption">Scenic coastal cliffs</div>
                 </div>
                 
-                <!-- Card 3 (NOVO): Mesma estrutura, sem vídeo, com recorte do céu e endereço -->
+                <!-- Card 3: Imagem com recorte do céu e endereço integrados -->
                 <div class="image-card">
                     <img src="bluelagoon4.jpg" class="crop-sky" alt="Blue Lagoon Location">
-                    <div class="image-caption" style="line-height: 1.4 !important;">
-                        <strong>📍 Location:</strong> Comino Island, Malta<br>
-                        <span style="font-size: 0.8rem !important; color: #7a6c5e !important;">Triq Kemmuneti, Għajnsielem KMN 1040</span>
+                    <div class="image-caption">
+                        <strong>📍 Location:</strong> Comino Island, Malta
+                        <span class="address-text">Triq Kemmuneti, Għajnsielem KMN 1040</span>
                     </div>
                 </div>
             </div>
             
         </section>
     </main>
+
 </body>
 </html>
+
