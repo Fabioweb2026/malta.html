@@ -5,6 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Malta Mediterranean</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* ==========================================
+           BLINDAGEM DO GRID E DOS CARDS DA HOME 
+           ========================================== */
+        .container {
+            max-width: 1100px !important;
+            margin: 0 auto !important;
+            padding: 30px 20px !important;
+        }
+
+        .cards-grid {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+            gap: 30px !important;
+        }
+
+        .card-discreto {
+            background-color: #f4ece1 !important;
+            border: 1px solid #e6dac8 !important;
+            border-radius: 12px !important;
+            text-decoration: none !important;
+            color: #4a3f35 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            overflow: hidden !important;
+            box-shadow: 0 4px 15px rgba(140, 120, 100, 0.08) !important;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease !important;
+            height: 100% !important;
+        }
+
+        .card-discreto:hover {
+            background-color: #ebe0cf !important;
+            transform: translateY(-6px) !important;
+            box-shadow: 0 12px 24px rgba(140, 120, 100, 0.18) !important;
+        }
+
+        /* Controle Rígido do Espaço da Imagem */
+        .card-media {
+            width: 100% !important;
+            height: 200px !important;
+            overflow: hidden !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            display: block !important;
+        }
+
+        .card-media img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            border-radius: 0px !important;
+            display: block !important;
+        }
+
+        .card-content {
+            padding: 25px 20px !important;
+            text-align: left !important;
+            flex-grow: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+        }
+
+        .card-content h2 {
+            font-size: 1.35rem !important;
+            color: #735e49 !important;
+            margin-bottom: 10px !important;
+            font-weight: 600 !important;
+        }
+
+        .card-content p {
+            font-size: 0.95rem !important;
+            color: #706356 !important;
+            line-height: 1.5 !important;
+        }
+    </style>
 </head>
 <body>
 
@@ -17,14 +93,14 @@
         <p class="subtitle">The limestone gem in the heart of the Mediterranean</p>
     </header>
 
-    <!-- Cards Section with Semantic Figures -->
+    <!-- Seção de Cards -->
     <main class="container">
         <section class="cards-grid">
             
             <!-- Card 1: Tourism -->
             <a href="tourism.html" class="card-discreto">
                 <figure class="card-media">
-                    <img src="st-julians1.png" alt="Tourism in Malta" class="card-thumb">
+                    <img src="st-julians1.png" alt="Tourism in Malta">
                 </figure>
                 <div class="card-content">
                     <h2>Tourism</h2>
@@ -35,7 +111,7 @@
             <!-- Card 2: Gastronomy & Architecture -->
             <a href="gastronomy.html" class="card-discreto">
                 <figure class="card-media">
-                    <img src="giorgios.png" alt="Maltese Gastronomy" class="card-thumb">
+                    <img src="giorgios.png" alt="Maltese Gastronomy">
                 </figure>
                 <div class="card-content">
                     <h2>Gastronomy & Architecture</h2>
@@ -43,10 +119,10 @@
                 </div>
             </a>
 
-            <!-- Card 3: Blue Lagoon (LINK DIRETO CORRIGIDO) -->
+            <!-- Card 3: Blue Lagoon -->
             <a href="bluelagoon.html" class="card-discreto">
                 <figure class="card-media">
-                    <img src="bluelagoon2.png" alt="Blue Lagoon Comino" class="card-thumb">
+                    <img src="bluelagoon2.png" alt="Blue Lagoon Comino">
                 </figure>
                 <div class="card-content">
                     <h2>Blue Lagoon</h2>
@@ -57,7 +133,6 @@
         </section>
     </main>
 
-    <!-- JavaScript Integrado para Transição Suave e Contraste -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const cards = document.querySelectorAll('.card-discreto');
