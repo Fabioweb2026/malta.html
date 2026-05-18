@@ -16,8 +16,8 @@
         }
 
         body {
-            background-color: #fcf8f2 !important; /* Creme suave */
-            color: #4a3f35 !important; /* Marrom escuro */
+            background-color: #fcf8f2 !important;
+            color: #4a3f35 !important;
             line-height: 1.6 !important;
         }
 
@@ -74,7 +74,7 @@
 
         /* Blocos de Conteúdo Estilo Gastronomia */
         .showcase-block {
-            background-color: #f4ece1 !important; /* Bege calcário */
+            background-color: #f4ece1 !important;
             border: 1px solid #e6dac8 !important;
             border-radius: 12px !important;
             padding: 30px !important;
@@ -108,9 +108,7 @@
             text-align: left !important;
         }
 
-        /* ==========================================
-           CONSERTO DO VÍDEO (NÃO FICA MAIS GIGANTE)
-           ========================================== */
+        /* Otimização do Vídeo do Celular */
         .video-block-wrapper {
             display: flex !important;
             justify-content: center !important;
@@ -124,21 +122,19 @@
             border: 1px solid #e6dac8 !important;
             border-radius: 8px !important;
             overflow: hidden !important;
-            max-width: 400px !important; /* Tamanho controlado e perfeito na tela */
+            max-width: 400px !important;
             width: 100% !important;
             box-shadow: 0 2px 6px rgba(0,0,0,0.02) !important;
         }
 
         .video-card video {
             width: 100% !important;
-            height: 250px !important; /* Altura controlada equivalente às fotos */
-            object-fit: cover !important; /* Corta proporcionalmente como no celular */
+            height: 250px !important;
+            object-fit: cover !important;
             display: block !important;
         }
 
-        /* ==========================================
-           CÓPIA EXATA DA GALERIA DE GASTRONOMIA
-           ========================================== */
+        /* Estrutura da Galeria Grid */
         .image-grid {
             display: grid !important;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
@@ -155,11 +151,13 @@
             flex-direction: column !important;
         }
 
+        /* CORREÇÃO DO CORTE DA IMAGEM */
         .image-card img {
             width: 100% !important;
-            height: 220px !important; /* Altura exata da página de gastronomia */
-            object-fit: cover !important; /* Preenche o card sem distorcer e sem amassar */
-            border-radius: 0px !important; /* Remove as bolinhas definitivamente */
+            height: 220px !important;
+            object-fit: cover !important;
+            object-position: bottom !important; /* CORTA O CÉU DO TOPO E MANTÉM A PRAIA */
+            border-radius: 0px !important;
             display: block !important;
             transition: transform 0.3s ease !important;
         }
@@ -181,7 +179,7 @@
 </head>
 <body>
 
-    <!-- Link de retorno para a Home principal -->
+    <!-- Retorno à Home principal -->
     <a href="index.html" class="back-btn">← Back to Home</a>
 
     <header class="header-section">
@@ -191,7 +189,6 @@
 
     <main class="main-container">
 
-        <!-- Seção 1: Blue Lagoon -->
         <section class="showcase-block">
             <h2>The Blue Lagoon</h2>
             <div class="location-badge">📍 Comino Island, Malta</div>
@@ -200,7 +197,7 @@
                 The Blue Lagoon is a paradise pool featuring a white sandy seafloor and exceptionally clear, glowing cyan waters. Nestled between the peaceful island of Comino and the islet of Cominotto, it offers some of the most spectacular tropical views in the heart of the Mediterranean Sea.
             </p>
 
-            <!-- Vídeo do Celular Totalmente Controlado -->
+            <!-- Vídeo Controlado -->
             <div class="video-block-wrapper">
                 <div class="video-card">
                     <video autoplay loop muted playsinline>
@@ -211,16 +208,18 @@
                 </div>
             </div>
 
-            <!-- Galeria de Imagens idêntica ao Formato de Gastronomia (RETANGULAR PERFEITO) -->
+            <!-- Galeria Formatada Lado a Lado (Com a nova lagoon5.jpg) -->
             <div class="image-grid">
                 <div class="image-card">
                     <img src="bluelagoon2.png" alt="Blue Lagoon View">
                     <div class="image-caption">The vibrant landscape facing the turquoise sea</div>
                 </div>
-                <!-- Segunda imagem atualizada para lagoon5.jpg -->
-                 <div class="image-card">
-                 <img src="lagoon5.jpg" alt="Blue Lagoon Cliffs">
-        <div class="image-caption">Scenic coastal cliffs bordering the paradise lagoon</div>
+                
+                <!-- CARD ATUALIZADO PARA LAGOON5.JPG -->
+                <div class="image-card">
+                    <img src="lagoon5.jpg" alt="Blue Lagoon Cliffs">
+                    <div class="image-caption">Scenic coastal cliffs bordering the paradise lagoon</div>
+                </div>
             </div>
         </section>
 
