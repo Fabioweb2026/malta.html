@@ -16,12 +16,14 @@
         .image-card img { width: 100% !important; height: 220px !important; object-fit: cover !important; }
         .image-caption { padding: 10px !important; font-size: 0.9rem !important; background-color: #f4ece1 !important; }
         
-        /* Novos estilos para o bloco de informações e vídeo pequeno */
-        .info-video-block { max-width: 450px !important; margin: 30px auto 0 auto !important; background-color: #fcf8f2 !important; border: 1px solid #e6dac8 !important; border-radius: 8px !important; padding: 20px !important; }
+        /* AJUSTADO: Bloco agora ocupa 100% da largura do card principal */
+        .info-video-block { width: 100% !important; margin: 30px auto 0 auto !important; background-color: #fcf8f2 !important; border: 1px solid #e6dac8 !important; border-radius: 8px !important; padding: 20px !important; }
         .location-info { margin-bottom: 15px !important; }
         .location-info h3 { font-size: 1.1rem !important; color: #8c7864 !important; margin-bottom: 8px !important; }
         .location-info p { font-size: 0.9rem !important; color: #4a3f35 !important; line-height: 1.4 !important; }
-        .video-wrapper video { width: 100% !important; height: auto !important; border-radius: 6px !important; display: block !important; }
+        
+        /* AJUSTADO: O vídeo preenche a largura mas mantém uma altura baixa e proporcional */
+        .video-wrapper video { width: 100% !important; height: 280px !important; object-fit: cover !important; border-radius: 6px !important; display: block !important; }
     </style>
 </head>
 <body>
@@ -41,13 +43,12 @@
                     <div class="image-caption">The vibrant landscape</div>
                 </div>
                 <div class="image-card">
-                    <!-- Mantido o nome do arquivo conforme seu repositório atual -->
                     <img src="lagoon5.png.jpg" alt="Blue Lagoon Cliffs">
                     <div class="image-caption">Scenic coastal cliffs</div>
                 </div>
             </div>
 
-            <!-- NOVO: Bloco Compacto com Endereço, Local e Vídeo -->
+            <!-- Bloco Expandido para ocupar o Card Inteiro -->
             <div class="info-video-block">
                 <div class="location-info">
                     <h3>📍 Location Details</h3>
@@ -60,7 +61,7 @@
                     <video controls>
                         <source src="bluelagoon.mp4" type="video/mp4">
                         Your browser does not support the video tag.
-                    </p>
+                    </video>
                 </div>
             </div>
 
@@ -68,4 +69,3 @@
     </main>
 </body>
 </html>
-
