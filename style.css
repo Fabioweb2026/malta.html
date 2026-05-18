@@ -84,7 +84,6 @@ main-header, .header-section {
     font-weight: 500;           /* Peso médio para não sumir na tela */
 }
 
-}
 
 .container, .main-container {
     max-width: 1100px;
@@ -300,11 +299,10 @@ body.high-contrast .location-tag {
     filter: drop-shadow(0px 3px 6px rgba(140, 120, 100, 0.08)); /* Sombra muito mais suave */
     transition: transform 0.3s ease;
 }
-
 .main-footer {
     text-align: center;
-    padding: 30px 20px;
-    margin-top: 50px;
+    padding: 60px 20px;       /* Aumentado para 60px para dar mais imponência e espaço */
+    margin-top: auto;          /* Altera de 50px para auto para empurrar o rodapé para a base da página */
     border-top: 1px solid #e6dac8;
     background-color: #f4ece1; /* Mesma cor bege dos cards para dar harmonia */
 }
