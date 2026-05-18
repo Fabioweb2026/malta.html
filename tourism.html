@@ -5,180 +5,211 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tourism - Explore Malta</title>
     <style>
-        /* === ESTILOS BLINDADOS ANTI-CONFLITO === */
+        /* === RESET GLOBAL E TIPOGRAFIA === */
         * { 
-            margin: 0 !important; 
-            padding: 0 !important; 
-            box-sizing: border-box !important; 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
         }
         
         body { 
-            background-color: #fcf8f2 !important; 
-            color: #4a3f35 !important; 
-            font-family: 'Segoe UI', Georgia, serif !important; 
-            line-height: 1.6 !important; 
+            background-color: #fcf8f2; 
+            color: #4a3f35; 
+            font-family: 'Segoe UI', Georgia, serif; 
+            line-height: 1.6;
+            transition: opacity 0.3s ease; /* Efeito de transição de página */
         }
         
         /* Botão Voltar Fixo */
         .back-btn { 
-            position: fixed !important; 
-            top: 20px !important; 
-            left: 20px !important; 
-            background-color: #f4ece1 !important; 
-            border: 1px solid #e6dac8 !important; 
-            color: #4a3f35 !important; 
-            text-decoration: none !important; 
-            padding: 10px 18px !important; 
-            border-radius: 20px !important; 
-            font-size: 0.9rem !important; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important; 
-            z-index: 9999 !important; 
+            position: fixed; 
+            top: 20px; 
+            left: 20px; 
+            background-color: #f4ece1; 
+            border: 1px solid #e6dac8; 
+            color: #4a3f35; 
+            text-decoration: none; 
+            padding: 10px 18px; 
+            border-radius: 20px; 
+            font-size: 0.9rem; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
+            z-index: 9999;
+            transition: all 0.2s ease;
         }
         
         .back-btn:hover { 
-            background-color: #ebe0cf !important; 
-            transform: translateX(-3px) !important; 
+            background-color: #ebe0cf; 
+            transform: translateX(-3px); 
         }
         
         /* Cabeçalho */
         .header-section { 
-            text-align: center !important; 
-            padding: 100px 20px 40px 20px !important; 
-            max-width: 800px !important; 
-            margin: 0 auto !important; 
+            text-align: center; 
+            padding: 100px 20px 40px 20px; 
+            max-width: 800px; 
+            margin: 0 auto; 
         }
         
         .header-section h1 { 
-            font-size: 2.5rem !important; 
-            color: #8c7864 !important; 
-            font-weight: 400 !important; 
-            letter-spacing: 1px !important; 
-            margin-bottom: 15px !important; 
+            font-size: 2.5rem; 
+            color: #8c7864; 
+            font-weight: 400; 
+            letter-spacing: 1px; 
+            margin-bottom: 15px; 
         }
         
         .header-section p { 
-            font-size: 1.05rem !important; 
-            color: #706356 !important; 
-            font-style: italic !important; 
+            font-size: 1.05rem; 
+            color: #706356; 
+            font-style: italic; 
         }
         
         /* Container Principal */
         .main-container { 
-            max-width: 900px !important; 
-            margin: 0 auto !important; 
-            padding: 20px !important; 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 20px; 
         }
         
-        /* --- CARDS VERTICAIS (Valletta e St. Julian's) --- */
+        /* --- CARDS VERTICAIS --- */
         .destination-card { 
-            background-color: #f4ece1 !important; 
-            border: 1px solid #e6dac8 !important; 
-            border-radius: 12px !important; 
-            overflow: hidden !important; 
-            margin-bottom: 40px !important; 
-            display: flex !important; 
-            flex-direction: column !important; 
-            box-shadow: 0 4px 15px rgba(140, 120, 100, 0.05) !important; 
+            background-color: #f4ece1; 
+            border: 1px solid #e6dac8; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            margin-bottom: 40px; 
+            display: flex; 
+            flex-direction: column; 
+            box-shadow: 0 4px 15px rgba(140, 120, 100, 0.05); 
         }
         
         .destination-image-wrapper { 
-            width: 100% !important; 
-            height: 240px !important; 
-            overflow: hidden !important; 
+            width: 100%; 
+            height: 240px; 
+            overflow: hidden; 
         }
         
         .large-image-wrapper { 
-            width: 100% !important; 
-            height: 340px !important; 
-            overflow: hidden !important; 
+            width: 100%; 
+            height: 340px; 
+            overflow: hidden; 
         }
         
         .destination-card img { 
-            width: 100% !important; 
-            height: 100% !important; 
-            object-fit: cover !important; 
-            display: block !important; 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            display: block; 
+        }
+
+        .destination-info {
+            padding: 30px;
         }
         
-        /* --- CARD DO PÔR DO SOL CORRIGIDO (SEM CORTES) --- */
+        /* --- CARD DO PÔR DO SOL (HORIZONTAL REVISADO) --- */
         .horizontal-card { 
-            background-color: #f4ece1 !important; 
-            border: 1px solid #e6dac8 !important; 
-            border-radius: 12px !important; 
-            overflow: hidden !important; 
-            margin-bottom: 40px !important; 
-            display: flex !important; 
-            flex-direction: row !important; 
-            box-shadow: 0 4px 15px rgba(140, 120, 100, 0.05) !important; 
+            background-color: #f4ece1; 
+            border: 1px solid #e6dac8; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            margin-bottom: 40px; 
+            display: flex; 
+            flex-direction: row; 
+            box-shadow: 0 4px 15px rgba(140, 120, 100, 0.05); 
         }
         
-        /* MÁGICA AQUI: Container flexível e menor para o pôr do sol */
         .horizontal-image-wrapper { 
-            width: 40% !important; 
-            min-width: 250px !important; 
-            height: 250px !important; 
-            background-color: #f4ece1 !important; /* Mesma cor do card para fundir a imagem */
-            display: flex !important;
-            justify-content: center !important;
-            align-items: center !important;
-            padding: 10px !important;
+            width: 40%; 
+            min-width: 250px; 
+            height: 250px; 
+            background-color: #f4ece1; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
         }
         
-        /* Evita 100% de corte. Mostra a foto inteira centralizada */
         .horizontal-image-wrapper img { 
-            width: auto !important; 
-            height: auto !important; 
-            max-width: 100% !important;
-            max-height: 100% !important;
-            object-fit: contain !important; /* GARANTE QUE NÃO CORTA O PÔR DO SOL */
-            border-radius: 6px !important;
-            display: block !important; 
+            width: auto; 
+            height: auto; 
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; 
+            border-radius: 6px;
+            display: block; 
         }
         
         .horizontal-info { 
-            width: 60% !important; 
-            padding: 30px !important; 
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: center !important;
+            width: 60%; 
+            padding: 30px; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         
         /* Elementos de Texto Gerais */
         h2 { 
-            font-size: 1.6rem !important; 
-            color: #735e49 !important; 
-            margin-bottom: 5px !important; 
+            font-size: 1.6rem; 
+            color: #735e49; 
+            margin-bottom: 5px; 
         }
         
         .location-tag { 
-            display: inline-block !important; 
-            background-color: #dfcfbe !important; 
-            color: #5c4f43 !important; 
-            padding: 4px 12px !important; 
-            border-radius: 4px !important; 
-            font-size: 0.8rem !important; 
-            font-weight: bold !important; 
-            margin-bottom: 15px !important; 
-            width: max-content !important;
+            display: inline-block; 
+            background-color: #dfcfbe; 
+            color: #5c4f43; 
+            padding: 4px 12px; 
+            border-radius: 4px; 
+            font-size: 0.8rem; 
+            font-weight: bold; 
+            margin-bottom: 15px; 
+            width: max-content;
         }
         
         .destination-text { 
-            font-size: 0.95rem !important; 
-            color: #4a3f35 !important; 
-            text-align: left !important; 
+            font-size: 0.95rem; 
+            color: #4a3f35; 
+            text-align: left; 
         }
         
         /* Responsividade para Celulares */
         @media (max-width: 650px) {
-            .horizontal-card { flex-direction: column !important; }
-            .horizontal-image-wrapper { width: 100% !important; height: 200px !important; }
-            .horizontal-info { width: 100% !important; }
+            .horizontal-card { flex-direction: column; }
+            .horizontal-image-wrapper { width: 100%; height: 220px; }
+            .horizontal-info { width: 100%; }
+        }
+
+        /* Otimização do Modo de Alto Contraste Herdado */
+        body.high-contrast {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        body.high-contrast .destination-card,
+        body.high-contrast .horizontal-card {
+            background-color: #1a1a1a;
+            border-color: #ffffff;
+        }
+        body.high-contrast .horizontal-image-wrapper {
+            background-color: #1a1a1a;
+        }
+        body.high-contrast .back-btn {
+            background-color: #1a1a1a;
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+        body.high-contrast h1,
+        body.high-contrast h2 {
+            color: #ffff00;
+        }
+        body.high-contrast .destination-text,
+        body.high-contrast p {
+            color: #ffffff;
         }
     </style>
 </head>
 <body>
 
-    <a href="index.html" class="back-btn">← Back to Home</a>
+    <a href="index.html" class="back-btn" id="back-home-link">← Back to Home</a>
 
     <header class="header-section">
         <h1>Wonders of Malta</h1>
@@ -187,7 +218,7 @@
 
     <main class="main-container">
 
-        <!-- Card 1: Valletta (Top Banner) -->
+        <!-- Card 1: Valletta -->
         <section class="destination-card">
             <div class="destination-image-wrapper">
                 <img src="valeta.png" alt="Valletta Cityscape">
@@ -201,7 +232,7 @@
             </div>
         </section>
 
-        <!-- Card 2: Golden Bay Sunset (Ajustado sem nenhum corte) -->
+        <!-- Card 2: Golden Bay Sunset -->
         <section class="horizontal-card">
             <div class="horizontal-image-wrapper">
                 <img src="goldenbayporsol.png" alt="Golden Bay Sunset">
@@ -215,21 +246,43 @@
             </div>
         </section>
 
-        <!-- Card 3: St. Julian's Promenade (Espaço Ampliado) -->
+        <!-- Card 3: St. Julian's Promenade (CORRIGIDO E CONCLUÍDO) -->
         <section class="destination-card">
             <div class="large-image-wrapper">
                 <img src="st-julians1.png" alt="St. Julian's Promenade">
             </div>
             <div class="destination-info">
                 <h2>St. Julian's Promenade</h2>
-                <div class="location-tag">📍 Eastern Coastline</div>
+                <div class="location-tag">📍 St. Julian's Bay</div>
                 <p class="destination-text">
-                    St. Julian's offers an expansive, lively coastal path that connects historic bays with modern seaside culture. The promenade is perfect for long scenic walks, lined with vibrant open-air cafes, restaurants, and traditional Maltese fishing boats bobbing gently in the water.
+                    A lively coastal pathway bustling with energetic waterfront cafes, modern venues, and local fishing boats. It is the ideal place for peaceful evening walks alongside panoramic views of Spinola Bay.
                 </p>
             </div>
         </section>
 
     </main>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const backLink = document.getElementById('back-home-link');
+
+            // Mantém o alto contraste ativado se veio da página principal
+            if (localStorage.getItem('highContrast') === 'enabled') {
+                document.body.classList.add('high-contrast');
+            }
+
+            // Animação suave ao retornar para a página anterior
+            if(backLink) {
+                backLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetUrl = this.getAttribute('href');
+                    document.body.style.opacity = '0';
+                    setTimeout(() => {
+                        window.location.href = targetUrl;
+                    }, 300);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
