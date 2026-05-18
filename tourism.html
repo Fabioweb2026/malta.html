@@ -17,7 +17,9 @@
             color: #4a3f35; 
             font-family: 'Segoe UI', Georgia, serif; 
             line-height: 1.6;
-            transition: opacity 0.3s ease; /* Efeito de transição de página */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         
         /* Botão Voltar Fixo */
@@ -42,141 +44,111 @@
             transform: translateX(-3px); 
         }
         
-        /* Cabeçalho */
-        .header-section { 
+        /* Cabeçalho Principal (Unificado com a Home) */
+        .main-header { 
             text-align: center; 
-            padding: 100px 20px 40px 20px; 
+            padding: 40px 20px 20px 20px; 
             max-width: 800px; 
             margin: 0 auto; 
         }
         
-        .header-section h1 { 
-            font-size: 2.5rem; 
-            color: #8c7864; 
-            font-weight: 400; 
+        .main-header h1 { 
+            font-size: 3.2rem; 
+            color: #4a3f35 !important; 
+            font-weight: 700 !important; 
             letter-spacing: 1px; 
-            margin-bottom: 15px; 
+            margin-bottom: 12px; 
         }
         
-        .header-section p { 
-            font-size: 1.05rem; 
-            color: #706356; 
+        .main-header .subtitle { 
+            font-size: 1.15rem; 
+            color: #735e49 !important; 
             font-style: italic; 
+            font-weight: 500;
+        }
+
+        .logo-container {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .main-logo {
+            max-width: 180px;
+            width: 85%;
+            height: auto;
+            object-fit: contain;
         }
         
         /* Container Principal */
-        .main-container { 
+        .container { 
             max-width: 900px; 
             margin: 0 auto; 
             padding: 20px; 
+            flex-grow: 1;
         }
         
-        /* --- CARDS VERTICAIS --- */
-        .destination-card { 
-            background-color: #f4ece1; 
-            border: 1px solid #e6dac8; 
-            border-radius: 12px; 
-            overflow: hidden; 
-            margin-bottom: 40px; 
-            display: flex; 
-            flex-direction: column; 
-            box-shadow: 0 4px 15px rgba(140, 120, 100, 0.05); 
-        }
-        
-        .destination-image-wrapper { 
-            width: 100%; 
-            height: 240px; 
-            overflow: hidden; 
-        }
-        
-        .large-image-wrapper { 
-            width: 100%; 
-            height: 340px; 
-            overflow: hidden; 
-        }
-        
-        .destination-card img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            display: block; 
+        /* --- ESTILO DE CARDS DE INFORMAÇÃO (INFO-CARD) --- */
+        .info-card {
+            background-color: #f4ece1;
+            border: 1px solid #e6dac8;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(140, 120, 100, 0.05);
+            display: flex;
+            flex-direction: column;
         }
 
-        .destination-info {
-            padding: 30px;
-        }
-        
-        /* --- CARD DO PÔR DO SOL (HORIZONTAL REVISADO) --- */
-        .horizontal-card { 
-            background-color: #f4ece1; 
-            border: 1px solid #e6dac8; 
-            border-radius: 12px; 
-            overflow: hidden; 
-            margin-bottom: 40px; 
-            display: flex; 
-            flex-direction: row; 
-            box-shadow: 0 4px 15px rgba(140, 120, 100, 0.05); 
-        }
-        
-        .horizontal-image-wrapper { 
-            width: 40%; 
-            min-width: 250px; 
-            height: 250px; 
-            background-color: #f4ece1; 
+        .solo-image-wrapper {
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 10px;
+            padding-top: 30px;
+            background-color: transparent;
         }
-        
-        .horizontal-image-wrapper img { 
-            width: auto; 
-            height: auto; 
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain; 
-            border-radius: 6px;
-            display: block; 
+
+        /* Moldura circular perfeita para as fotos internas */
+        .solo-image-wrapper img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #8c7864;
+            box-shadow: 0 4px 10px rgba(140, 120, 100, 0.15);
+            display: block;
         }
-        
-        .horizontal-info { 
-            width: 60%; 
-            padding: 30px; 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+
+        .card-padding {
+            padding: 20px 30px 30px 30px;
         }
-        
-        /* Elementos de Texto Gerais */
-        h2 { 
-            font-size: 1.6rem; 
-            color: #735e49; 
-            margin-bottom: 5px; 
+
+        .info-card h2 {
+            font-size: 1.6rem;
+            color: #2b1f14 !important;
+            margin-bottom: 5px;
+            text-align: center;
+            font-weight: 700;
         }
-        
-        .location-tag { 
-            display: inline-block; 
-            background-color: #dfcfbe; 
-            color: #5c4f43; 
-            padding: 4px 12px; 
-            border-radius: 4px; 
-            font-size: 0.8rem; 
-            font-weight: bold; 
-            margin-bottom: 15px; 
+
+        .location-tag {
+            display: block;
             width: max-content;
+            margin: 5px auto 15px auto;
+            background-color: #dfcfbe;
+            color: #5c4f43;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
         }
-        
-        .destination-text { 
-            font-size: 0.95rem; 
-            color: #4a3f35; 
-            text-align: left; 
-        }
-        
-        /* Responsividade para Celulares */
-        @media (max-width: 650px) {
-            .horizontal-card { flex-direction: column; }
-            .horizontal-image-wrapper { width: 100%; height: 220px; }
-            .horizontal-info { width: 100%; }
+
+        .info-card p {
+            font-size: 0.95rem;
+            color: #1a130c !important; /* Contraste máximo para leitura */
+            line-height: 1.6;
+            word-wrap: break-word;
+            text-align: left;
         }
 
         /* Otimização do Modo de Alto Contraste Herdado */
@@ -184,13 +156,9 @@
             background-color: #000000;
             color: #ffffff;
         }
-        body.high-contrast .destination-card,
-        body.high-contrast .horizontal-card {
+        body.high-contrast .info-card {
             background-color: #1a1a1a;
             border-color: #ffffff;
-        }
-        body.high-contrast .horizontal-image-wrapper {
-            background-color: #1a1a1a;
         }
         body.high-contrast .back-btn {
             background-color: #1a1a1a;
@@ -201,13 +169,11 @@
         body.high-contrast h2 {
             color: #ffff00;
         }
-        body.high-contrast .destination-text,
         body.high-contrast p {
-            color: #ffffff;
+            color: #ffffff !important;
         }
     </style>
 </head>
-<body>
 <body>
 
     <!-- Back button connected to your homepage -->
@@ -227,7 +193,6 @@
         <!-- Place 1: Valletta -->
         <section class="info-card">
             <div class="solo-image-wrapper">
-                <!-- Replace with your actual circular image file -->
                 <img src="valletta-circle.jpg" alt="Valletta Cityscape">
             </div>
             <div class="card-padding">
@@ -240,7 +205,6 @@
         <!-- Place 2: Golden Bay -->
         <section class="info-card">
             <div class="solo-image-wrapper">
-                <!-- Replace with your actual circular image file -->
                 <img src="goldenbay-circle.jpg" alt="Golden Bay Sunset">
             </div>
             <div class="card-padding">
@@ -253,7 +217,6 @@
         <!-- Place 3: St. Julian's -->
         <section class="info-card">
             <div class="solo-image-wrapper">
-                <!-- Replace with your actual circular image file -->
                 <img src="stjulians-circle.jpg" alt="St. Julian's Promenade">
             </div>
             <div class="card-padding">
@@ -266,53 +229,24 @@
     </main> <!-- End of container -->
 
     <!-- FOOTER WITH INLINE STYLES FOR PERFECT CONTRAST -->
-    <footer class="main-footer" style="background-color: #f4ece1; border-top: 1px solid #e6dac8; padding: 60px 20px; text-align: center; margin-top: 40px;">
+    <footer class="main-footer" style="background-color: #f4ece1; border-top: 1px solid #e6dac8; padding: 60px 20px; text-align: center; margin-top: 40px; width: 100%;">
         <div class="footer-info" style="margin-bottom: 15px; line-height: 1.6;">
-            <p style="color: #1a130c !important; font-size: 0.95rem !important; opacity: 1 !important; margin-bottom: 8px;">
+            <p style="color: #1a130c !important; font-size: 0.95rem !important; opacity: 1 !important; margin-bottom: 8px; text-align: center;">
                 <strong style="color: #1a130c !important; font-weight: 700;">Malta Heritage Tourism Agency</strong>
             </p>
-            <p style="color: #1a130c !important; font-size: 0.95rem !important; opacity: 1 !important; margin-bottom: 8px;">
+            <p style="color: #1a130c !important; font-size: 0.95rem !important; opacity: 1 !important; margin-bottom: 8px; text-align: center;">
                 12, Republic Street, Valletta, VLT 1115, Malta
             </p>
-            <p style="color: #1a130c !important; font-size: 0.95rem !important; opacity: 1 !important; margin-bottom: 8px;">
+            <p style="color: #1a130c !important; font-size: 0.95rem !important; opacity: 1 !important; margin-bottom: 8px; text-align: center;">
                 Contact: info@discovermalta.tourism.gov | +356 2122 0000
             </p>
         </div>
         <div class="footer-copyright" style="border-top: 1px solid #dfcfbe; padding-top: 15px; margin-top: 15px;">
-            <p style="color: #1a130c !important; font-size: 0.95rem !important; opacity: 1 !important; font-weight: 600;">
+            <p style="color: #1a130c !important; font-size: 0.95rem !important; opacity: 1 !important; font-weight: 600; text-align: center;">
                 &copy; 2026 Fabioandrade2026. All rights reserved.
             </p>
         </div>
     </footer>
 
-</body>
-</html>
-
-        </section>
-
-    </main>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const backLink = document.getElementById('back-home-link');
-
-            // Mantém o alto contraste ativado se veio da página principal
-            if (localStorage.getItem('highContrast') === 'enabled') {
-                document.body.classList.add('high-contrast');
-            }
-
-            // Animação suave ao retornar para a página anterior
-            if(backLink) {
-                backLink.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetUrl = this.getAttribute('href');
-                    document.body.style.opacity = '0';
-                    setTimeout(() => {
-                        window.location.href = targetUrl;
-                    }, 300);
-                });
-            }
-        });
-    </script>
 </body>
 </html>
