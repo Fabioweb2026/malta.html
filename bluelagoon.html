@@ -12,9 +12,16 @@
         .header-section h1 { font-size: 2.5rem !important; color: #8c7864 !important; }
         .main-container { max-width: 1000px !important; margin: 0 auto !important; padding: 20px !important; }
         .showcase-block { background-color: #f4ece1 !important; border: 1px solid #e6dac8 !important; border-radius: 12px !important; padding: 30px !important; margin-bottom: 40px !important; }
-        .image-grid { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; gap: 20px !important; }
+        .image-grid { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; gap: 20px !important; margin-bottom: 30px !important; }
         .image-card img { width: 100% !important; height: 220px !important; object-fit: cover !important; }
-        .image-caption { padding: 10px; font-size: 0.9rem !important; background-color: #f4ece1 !important; }
+        .image-caption { padding: 10px !important; font-size: 0.9rem !important; background-color: #f4ece1 !important; }
+        
+        /* Novos estilos para o bloco de informações e vídeo pequeno */
+        .info-video-block { max-width: 450px !important; margin: 30px auto 0 auto !important; background-color: #fcf8f2 !important; border: 1px solid #e6dac8 !important; border-radius: 8px !important; padding: 20px !important; }
+        .location-info { margin-bottom: 15px !important; }
+        .location-info h3 { font-size: 1.1rem !important; color: #8c7864 !important; margin-bottom: 8px !important; }
+        .location-info p { font-size: 0.9rem !important; color: #4a3f35 !important; line-height: 1.4 !important; }
+        .video-wrapper video { width: 100% !important; height: auto !important; border-radius: 6px !important; display: block !important; }
     </style>
 </head>
 <body>
@@ -26,17 +33,37 @@
     <main class="main-container">
         <section class="showcase-block">
             <h2>The Blue Lagoon</h2>
+            
+            <!-- Grade de Imagens existente -->
             <div class="image-grid">
                 <div class="image-card">
                     <img src="bluelagoon2.png" alt="Blue Lagoon View">
                     <div class="image-caption">The vibrant landscape</div>
                 </div>
                 <div class="image-card">
-                    <!-- CORREÇÃO: Nome do arquivo no repositório -->
+                    <!-- Mantido o nome do arquivo conforme seu repositório atual -->
                     <img src="lagoon5.png.jpg" alt="Blue Lagoon Cliffs">
                     <div class="image-caption">Scenic coastal cliffs</div>
                 </div>
             </div>
+
+            <!-- NOVO: Bloco Compacto com Endereço, Local e Vídeo -->
+            <div class="info-video-block">
+                <div class="location-info">
+                    <h3>📍 Location Details</h3>
+                    <p>
+                        <strong>Address:</strong> Triq Kemmuneti, Għajnsielem KMN 1040, Malta<br>
+                        <strong>Location:</strong> Comino Island (between Malta and Gozo)
+                    </p>
+                </div>
+                <div class="video-wrapper">
+                    <video controls>
+                        <source src="bluelagoon.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </p>
+                </div>
+            </div>
+
         </section>
     </main>
 </body>
