@@ -21,35 +21,50 @@
         <!-- The 'cards-grid' container activates your CSS columns -->
         <div class="cards-grid">
             <!-- Main container for the cards -->
-<section class="cards-container">
+            <!-- The container must use the "container" class to limit width and "cards-grid" to align them -->
+<main class="container">
+    <div class="cards-grid">
 
-    <!-- Card 1: Tourism -->
-    <div class="card">
-        <h3>Tourism</h3>
-        <p>Discover the rich history and breathtaking landmarks of Malta.</p>
-        <a href="tourism.html" class="card-btn">Explore More</a>
+        <!-- Card 1: Tourism -->
+        <a href="tourism.html" class="card-discreto">
+            <div class="card-image-wrapper">
+                <!-- Replace with your real image path -->
+                <img src="images/tourism-thumb.jpg" alt="Malta Tourism" class="card-thumb">
+            </div>
+            <div class="card-content">
+                <h2>Tourism</h2>
+                <p>Discover the rich history, ancient temples, and breathtaking landmarks across the Maltese islands.</p>
+            </div>
+        </a>
+
+        <!-- Card 2: Gastronomy -->
+        <a href="gastronomy.html" class="card-discreto">
+            <div class="card-image-wrapper">
+                <!-- Replace with your real image path -->
+                <img src="images/gastronomy-thumb.jpg" alt="Maltese Gastronomy" class="card-thumb">
+            </div>
+            <div class="card-content">
+                <h2>Gastronomy</h2>
+                <p>Savor the unique traditional dishes, fresh Mediterranean seafood, and local wines of Malta.</p>
+            </div>
+        </a>
+
+        <!-- Card 3: Blue Lagoon -->
+        <a href="bluelagoon.html" class="card-discreto">
+            <div class="card-image-wrapper">
+                <!-- Replace with your real image path -->
+                <img src="images/bluelagoon-thumb.jpg" alt="Blue Lagoon Comino" class="card-thumb">
+            </div>
+            <div class="card-content">
+                <h2>Blue Lagoon</h2>
+                <p>Explore the crystal-clear turquoise waters and paradise views on the island of Comino.</p>
+            </div>
+        </a>
+
     </div>
+</main>
 
-    <!-- Card 2: Gastronomy -->
-    <div class="card">
-        <h3>Gastronomy</h3>
-        <p>Savor the unique flavors and traditional dishes of Maltese cuisine.</p>
-        <a href="gastronomy.html" class="card-btn">Taste Now</a>
-    </div>
 
-    <!-- Card 3: Blue Lagoon -->
-    <div class="card">
-        <h3>Blue Lagoon</h3>
-        <p>Explore the crystal-clear turquoise waters of Comino Island.</p>
-        <a href="bluelagoon.html" class="card-btn">Discover</a>
-    </div>
-
-</section>                
-        </div>
-            </a>
-
-        </div>
-    </main>
 
 </body>
 </html>
