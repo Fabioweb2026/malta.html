@@ -277,10 +277,14 @@ body.high-contrast .location-tag {
 }
 
 /* Efeito sutil: quando o usuário passar o mouse no logo, ele aumenta levemente */
-.main-logo:hover {
-    transform: scale(1.03);
+.main-logo {
+    max-width: 180px;       /* Reduzido de 450px para 180px (tamanho ideal de assinatura) */
+    width: 85%;             /* Mantém uma ótima proporção e flexibilidade em celulares */
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0px 3px 6px rgba(140, 120, 100, 0.08)); /* Sombra muito mais suave */
+    transition: transform 0.3s ease;
 }
-
 
 .main-footer {
     text-align: center;
@@ -301,18 +305,23 @@ body.high-contrast .location-tag {
 /* Se o usuário tiver o modo escuro ativo no celular, o site se adapta sozinho */
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #1a1510;
-        color: #fff6eb;
+        background-color: #1a1510 !important;
+        color: #fff6eb !important;
     }
     
     .card-discreto, .main-footer {
-        background-color: #2d251e;
-        border-color: #4a3f35;
-        color: #fff6eb;
+        background-color: #2d251e !important;
+        border-color: #4a3f35 !important;
+        color: #fff6eb !important;
     }
     
     .card-content h2, .main-header h1 {
-        color: #ffff00; /* Destaca os títulos principais em amarelo suave/leitura */
+        color: #ffff00 !important; /* Amarelo acessível para leitura no escuro */
+    }
+    
+    .card-content p, .main-header .subtitle, .main-footer p, .footer-info p {
+        color: #dcd1c4 !important;
+    }
     }
     
     .card-content p, .main-header .subtitle, .main-footer p {
