@@ -1,242 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malta Mediterranean</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Padronização de fontes e reset global */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Georgia, serif;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        body {
-            background-color: #fcf8f2;
-            color: #4a3f35;
-            line-height: 1.6;
-            transition: opacity 0.3s ease;
-        }
+<title>Malta | Mediterranean Experience</title>
 
-        /* Botão de Acessibilidade */
-        .contrast-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: #f4ece1;
-            border: 1px solid #e6dac8;
-            cursor: pointer;
-            padding: 10px;
-            border-radius: 50%;
-            font-size: 1.2rem;
-            z-index: 9999;
-            transition: background-color 0.2s ease;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-        .contrast-btn:hover {
-            background-color: #e6dac8;
-        }
+<style>
 
-        /* Cabeçalho alinhado com a Blue Lagoon */
-        .main-header {
-            text-align: center;
-            padding: 100px 20px 40px 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .main-header h1 {
-            font-size: 2.5rem;
-            color: #8c7864;
-            margin-bottom: 10px;
-        }
+body{
+    background:#f6f0e7;
+    font-family:'Poppins', sans-serif;
+    color:#2b2b2b;
+}
 
-        .main-header .subtitle {
-            font-size: 1.1rem;
-            color: #706356;
-        }
+/* HEADER */
 
-        /* Grid de Conteúdo Limpo */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 30px 20px;
-        }
+header{
+    width:100%;
+    padding:70px 20px 40px;
+    text-align:center;
+}
 
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
+header h1{
+    font-size:72px;
+    font-family:'Playfair Display', serif;
+    letter-spacing:3px;
+    color:#8c6a43;
+}
 
-        /* Cards Sem !important e com transições suaves */
-        .card-discreto {
-            background-color: #f4ece1;
-            border: 1px solid #e6dac8;
-            border-radius: 12px;
-            text-decoration: none;
-            color: #4a3f35;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(140, 120, 100, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, opacity 0.5s ease-out;
-            height: 100%;
-        }
+/* CARDS */
 
-        .card-discreto:hover {
-            background-color: #ebe0cf;
-            transform: translateY(-6px);
-            box-shadow: 0 12px 24px rgba(140, 120, 100, 0.18);
-        }
+.cards-container{
+    width:90%;
+    max-width:1300px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+    gap:35px;
+    padding-bottom:80px;
+}
 
-        /* Mídia dos Cards */
-        .card-media {
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-            display: block;
-        }
+.card{
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.10);
+    transition:0.4s ease;
+}
 
-        .card-media img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
+.card:hover{
+    transform:translateY(-10px);
+}
 
-        /* Textos internos do Card */
-        .card-content {
-            padding: 25px 20px;
-            text-align: left;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+.card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
 
-        .card-content h2 {
-            font-size: 1.35rem;
-            color: #735e49;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
+.card-content{
+    padding:28px;
+}
 
-        .card-content p {
-            font-size: 0.95rem;
-            color: #706356;
-            line-height: 1.5;
-        }
+.card-content h2{
+    font-size:30px;
+    margin-bottom:15px;
+    font-family:'Playfair Display', serif;
+    color:#8c6a43;
+}
 
-        /* Modo de Alto Contraste Otimizado */
-        body.high-contrast {
-            background-color: #000000;
-            color: #ffffff;
-        }
-        body.high-contrast .card-discreto {
-            background-color: #1a1a1a;
-            border-color: #ffffff;
-            color: #ffffff;
-        }
-        body.high-contrast .card-content h2,
-        body.high-contrast .main-header h1 {
-            color: #ffff00;
-        }
-        body.high-contrast .card-content p,
-        body.high-contrast .main-header .subtitle {
-            color: #ffffff;
-        }
-    </style>
+.card-content p{
+    font-size:16px;
+    line-height:1.8;
+    color:#555;
+}
+
+/* BUTTON */
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 28px;
+    background:#8c6a43;
+    color:white;
+    text-decoration:none;
+    border-radius:40px;
+    transition:0.3s ease;
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+.btn:hover{
+    background:#6f5334;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    header h1{
+        font-size:52px;
+    }
+
+    .card-content h2{
+        font-size:24px;
+    }
+
+}
+
+</style>
 </head>
+
 <body>
 
-    <button id="toggle-contrast" class="contrast-btn" aria-label="Toggle Contrast">🌓</button>
+<header>
+    <h1>Malta</h1>
+</header>
 
-    <header class="main-header">
-        <h1>Malta Mediterranean</h1>
-        <p class="subtitle">The limestone gem in the heart of the Mediterranean</p>
-    </header>
+<section class="cards-container">
 
-    <main class="container">
-        <section class="cards-grid">
-            
-            <!-- Card 1: Tourism -->
-            <a href="tourism.html" class="card-discreto">
-                <figure class="card-media">
-                    <img src="st-julians1.png" alt="Tourism in Malta">
-                </figure>
-                <div class="card-content">
-                    <h2>Tourism</h2>
-                    <p>Explore historic cities, Golden Bay, and rich Maltese culture.</p>
-                </div>
-            </a>
+    <!-- CARD 1 - BLUE LAGOON (Link atualizado para o seu arquivo) -->
+    <div class="card">
+        <img src="goldenbay.jpg" alt="Golden Bay Malta">
+        <div class="card-content">
+            <h2>Golden Bay & Lagoon</h2>
+            <p>
+                Golden Bay is one of Malta’s most iconic beaches,
+                known for its crystal-clear waters, golden sand
+                and breathtaking Mediterranean sunsets.
+            </p>
+            <a href="bluelagoon.html" class="btn">Explore</a>
+        </div>
+    </div>
 
-            <!-- Card 2: Gastronomy & Architecture -->
-            <a href="gastronomy.html" class="card-discreto">
-                <figure class="card-media">
-                    <img src="giorgios.png" alt="Maltese Gastronomy">
-                </figure>
-                <div class="card-content">
-                    <h2>Gastronomy & Architecture</h2>
-                    <p>Discover traditional flavors and iconic limestone buildings.</p>
-                </div>
-            </a>
+    <!-- CARD 2 - TOURISM (Título traduzido e link interno configurado) -->
+    <div class="card">
+        <img src="bluelagoon2.png" alt="Tourism and Leisure">
+        <div class="card-content">
+            <h2>Tourism & Leisure</h2>
+            <p>
+                Malta offers luxury resorts, boat tours,
+                nightlife, diving experiences and unforgettable
+                cultural adventures across the island.
+            </p>
+            <!-- Nota: Verifique no GitHub se o arquivo chama tourism.html ou tuirsm.htm -->
+            <a href="tourism.html" class="btn">Discover</a>
+        </div>
+    </div>
 
-            <!-- Card 3: Blue Lagoon (CORRIGIDO) -->
-            <a href="bluelagoon.html" class="card-discreto">
-                <figure class="card-media">
-                    <!-- Mantida a imagem principal do card da Home -->
-                    <img src="bluelagoon2.png" alt="Blue Lagoon Comino">
-                </figure>
-                <div class="card-content">
-                    <h2>Blue Lagoon</h2>
-                    <p>Visit the crystal-clear and paradise waters of Comino Island.</p>
-                </div>
-            </a>
+    <!-- CARD 3 - GASTRONOMY (Título traduzido e link interno configurado) -->
+    <div class="card">
+        <img src="malta01.jpg.png" alt="Gastronomy and Architecture">
+        <div class="card-content">
+            <h2>Gastronomy & Architecture</h2>
+            <p>
+                Discover Mediterranean cuisine, elegant cafés,
+                historic streets and stunning architecture
+                inspired by centuries of cultural influence.
+            </p>
+            <a href="gastronomy.html" class="btn">View More</a>
+        </div>
+    </div>
 
-        </section>
-    </main>
+</section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const cards = document.querySelectorAll('.card-discreto');
-            const contrastBtn = document.getElementById('toggle-contrast');
-
-            // 1. Efeito de Entrada Suave corrigido para respeitar o CSS
-            cards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, index * 150);
-            });
-
-            // 2. Animação de Saída ao Clicar
-            cards.forEach(card => {
-                card.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetUrl = this.getAttribute('href');
-                    
-                    document.body.style.opacity = '0';
-                    
-                    setTimeout(() => {
-                        window.location.href = targetUrl;
-                    }, 300);
-                });
-            });
-
-            // 3. Alternador de Contraste
-            contrastBtn.addEventListener('click', () => {
-                document.body.classList.toggle('high-contrast');
-            });
-        });
-    </script>
 </body>
 </html>
