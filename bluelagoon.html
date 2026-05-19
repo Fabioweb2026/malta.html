@@ -6,7 +6,12 @@
     <title>Blue Lagoon - Paradise Island</title>
     <style>
         /* === 1. RESET GLOBAL E TIPOGRAFIA === */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
         body { 
             background-color: #fcf8f2; 
             color: #4a3f35; 
@@ -16,35 +21,133 @@
             flex-direction: column;
             min-height: 100vh;
         }
+        
+        /* Botão Voltar Fixo */
         .back-btn { 
-            position: fixed; top: 20px; left: 20px; background-color: #f4ece1; 
-            border: 1px solid #e6dac8; color: #4a3f35; text-decoration: none; 
-            padding: 10px 18px; border-radius: 20px; font-size: 0.9rem; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05); z-index: 9999; transition: all 0.2s ease;
+            position: fixed; 
+            top: 20px; 
+            left: 20px; 
+            background-color: #f4ece1; 
+            border: 1px solid #e6dac8; 
+            color: #4a3f35; 
+            text-decoration: none; 
+            padding: 10px 18px; 
+            border-radius: 20px; 
+            font-size: 0.9rem; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
+            z-index: 9999;
+            transition: all 0.2s ease;
         }
-        .back-btn:hover { background-color: #ebe0cf; transform: translateX(-3px); }
+        
+        .back-btn:hover { 
+            background-color: #ebe0cf; 
+            transform: translateX(-3px); 
+        }
         
         /* === 2. CABEÇALHO === */
-        .main-header { text-align: center; padding: 40px 20px 20px 20px; max-width: 800px; margin: 0 auto; }
-        .main-header h1 { font-size: 3.2rem; color: #4a3f35 !important; font-weight: 700 !important; letter-spacing: 1px; margin-bottom: 12px; }
-        .main-header .subtitle { font-size: 1.15rem; color: #735e49 !important; font-style: italic; font-weight: 500; }
-        .logo-container { margin-bottom: 15px; text-align: center; }
-        .main-logo { max-width: 180px; width: 85%; height: auto; object-fit: contain; }
+        .main-header { 
+            text-align: center; 
+            padding: 40px 20px 20px 20px; 
+            max-width: 800px; 
+            margin: 0 auto; 
+        }
+        
+        .main-header h1 { 
+            font-size: 3.2rem; 
+            color: #4a3f35 !important; 
+            font-weight: 700 !important; 
+            letter-spacing: 1px; 
+            margin-bottom: 12px; 
+        }
+        
+        .main-header .subtitle { 
+            font-size: 1.15rem; 
+            color: #735e49 !important; 
+            font-style: italic; 
+            font-weight: 500; 
+        }
+        
+        .logo-container { 
+            margin-bottom: 15px; 
+            text-align: center; 
+        }
+        
+        .main-logo { 
+            max-width: 180px; 
+            width: 85%; 
+            height: auto; 
+            object-fit: contain; 
+        }
         
         /* === 3. CONTAINER E CARDS === */
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; flex-grow: 1; }
-        .info-card {
-            background-color: #f4ece1; border: 1px solid #e6dac8; border-radius: 12px;
-            overflow: hidden; margin-bottom: 50px; box-shadow: 0 6px 20px rgba(140, 120, 100, 0.06);
-            display: flex; flex-direction: column; width: 100%;
+        .container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            flex-grow: 1; 
         }
-        .solo-image-wrapper { width: 100%; height: 380px; overflow: hidden; background-color: #e6dac8; }
-        .solo-image-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
-        .info-card:hover .solo-image-wrapper img { transform: scale(1.03); }
-        .card-padding { padding: 35px 40px; }
-        .info-card h2 { font-size: 1.8rem; color: #2b1f14 !important; margin-bottom: 8px; text-align: left; font-weight: 700; }
-        .location-tag { display: inline-block; margin: 0 0 20px 0; background-color: #dfcfbe; color: #5c4f43; padding: 5px 14px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; }
-        .info-card p { font-size: 0.95rem; color: #1a130c !important; line-height: 1.6; word-wrap: break-word; text-align: left; }
+        
+        .info-card {
+            background-color: #f4ece1; 
+            border: 1px solid #e6dac8; 
+            border-radius: 12px;
+            overflow: hidden; 
+            margin-bottom: 50px; 
+            box-shadow: 0 6px 20px rgba(140, 120, 100, 0.06);
+            display: flex; 
+            flex-direction: column; 
+            width: 100%;
+        }
+        
+        .solo-image-wrapper { 
+            width: 100%; 
+            height: 380px; 
+            overflow: hidden; 
+            background-color: #e6dac8; 
+        }
+        
+        .solo-image-wrapper img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            display: block; 
+            transition: transform 0.5s ease; 
+        }
+        
+        .info-card:hover .solo-image-wrapper img { 
+            transform: scale(1.03); 
+        }
+        
+        .card-padding { 
+            padding: 35px 40px; 
+        }
+        
+        .info-card h2 { 
+            font-size: 1.8rem; 
+            color: #2b1f14 !important; 
+            margin-bottom: 8px; 
+            text-align: left; 
+            font-weight: 700; 
+        }
+        
+        .location-tag { 
+            display: inline-block; 
+            margin: 0 0 20px 0; 
+            background-color: #dfcfbe; 
+            color: #5c4f43; 
+            padding: 5px 14px; 
+            border-radius: 4px; 
+            font-size: 0.85rem; 
+            font-weight: bold; 
+        }
+        
+        .info-card p { 
+            font-size: 0.95rem; 
+            color: #1a130c !important; 
+            line-height: 1.6; 
+            word-wrap: break-word; 
+            text-align: left; 
+        }
     </style>
 </head>
 <body>
@@ -60,7 +163,8 @@
     </header>
 
     <main class="container">
-        <!-- Atração 1: Lagoa -->
+        
+        <!-- Card 1: bluelagoon.jpeg -->
         <section class="info-card">
             <div class="solo-image-wrapper">
                 <img src="bluelagoon.jpeg" alt="Blue Lagoon Paradise Vista">
@@ -71,6 +175,31 @@
                 <p>The Blue Lagoon is a slice of heaven nestled between Malta and Gozo on the small island of Comino. Renowned worldwide for its glowing turquoise shallow water and pure white sand, it stands as the ultimate premium destination for swimming, boat cruising, and capturing unforgettable scenery views.</p>
             </div>
         </section>
+
+        <!-- Card 2: bluelagoon2.png -->
+        <section class="info-card">
+            <div class="solo-image-wrapper">
+                <img src="bluelagoon2.png" alt="Blue Lagoon Panoramic View">
+            </div>
+            <div class="card-padding">
+                <h2>Turquoise Sanctuary</h2>
+                <span class="location-tag">📍 Comino Cliffs</span>
+                <p>Surrounded by dramatic limestone cliffs, the lagoon forms a natural, peaceful swimming pool protected from the open Mediterranean sea. Visitors can explore local caves, hike across the scenic nature trails of Comino, or simply relax under the bright Maltese sun.</p>
+            </div>
+        </section>
+
+        <!-- Card 3: bluelagoon4.jpg -->
+        <section class="info-card">
+            <div class="solo-image-wrapper">
+                <img src="bluelagoon4.jpg" alt="Blue Lagoon Coastal Waters">
+            </div>
+            <div class="card-padding">
+                <h2>Island Adventures & Boat Cruises</h2>
+                <span class="location-tag">📍 Comino Bay</span>
+                <p>Daily boat cruises transport travelers from Malta mainland to this paradise shore. It provides an exceptional experience for snorkeling enthusiasts eager to discover underwater marine life hidden within the clear turquoise bays of the Maltese archipelago.</p>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer Blindado -->
@@ -95,3 +224,4 @@
 
 </body>
 </html>
+
