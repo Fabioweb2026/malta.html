@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tourism - Explore Malta</title>
     <style>
-        /* === RESET GLOBAL E TIPOGRAFIA === */
+        /* === 1. RESET GLOBAL E TIPOGRAFIA === */
         * { 
             margin: 0; 
             padding: 0; 
@@ -44,7 +44,7 @@
             transform: translateX(-3px); 
         }
         
-        /* Cabeçalho Principal (Unificado com a Home) */
+        /* === 2. CABEÇALHO PRINCIPAL === */
         .main-header { 
             text-align: center; 
             padding: 40px 20px 20px 20px; 
@@ -55,7 +55,7 @@
         .main-header h1 { 
             font-size: 3.2rem; 
             color: #4a3f35 !important; 
-            font-weight: 700 !important; 
+            font-weight: 700 !important; /* Negrito imponente */
             letter-spacing: 1px; 
             margin-bottom: 12px; 
         }
@@ -79,79 +79,84 @@
             object-fit: contain;
         }
         
-        /* Container Principal */
+        /* === 3. CONTAINER DE CONTEÚDO === */
         .container { 
             max-width: 900px; 
             margin: 0 auto; 
             padding: 20px; 
-            flex-grow: 1;
+            flex-grow: 1; /* Empurra o rodapé para baixo */
         }
         
-        /* --- ESTILO DE CARDS DE INFORMAÇÃO (INFO-CARD) --- */
+        /* === 4. CARDS RETANGULARES GRANDES (INFO-CARD) === */
         .info-card {
             background-color: #f4ece1;
             border: 1px solid #e6dac8;
             border-radius: 12px;
             overflow: hidden;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 15px rgba(140, 120, 100, 0.05);
+            margin-bottom: 50px;
+            box-shadow: 0 6px 20px rgba(140, 120, 100, 0.06);
             display: flex;
             flex-direction: column;
+            width: 100%;
         }
 
+        /* Bloco da foto em formato vitrine retangular ampla */
         .solo-image-wrapper {
             width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-top: 30px;
-            background-color: transparent;
+            height: 380px; 
+            overflow: hidden;
+            background-color: #e6dac8;
         }
 
-        /* Moldura circular perfeita para as fotos internas */
+        /* Foto cobrindo todo o topo sem distorcer */
         .solo-image-wrapper img {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #8c7864;
-            box-shadow: 0 4px 10px rgba(140, 120, 100, 0.15);
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
             display: block;
+            transition: transform 0.5s ease;
         }
 
+        /* Efeito de zoom sutil ao passar o mouse */
+        .info-card:hover .solo-image-wrapper img {
+            transform: scale(1.03);
+        }
+
+        /* Ajuste do preenchimento interno do texto */
         .card-padding {
-            padding: 20px 30px 30px 30px;
+            padding: 35px 40px; 
         }
 
         .info-card h2 {
-            font-size: 1.6rem;
+            font-size: 1.8rem; 
             color: #2b1f14 !important;
-            margin-bottom: 5px;
-            text-align: center;
+            margin-bottom: 8px;
+            text-align: left; 
             font-weight: 700;
         }
 
         .location-tag {
-            display: block;
-            width: max-content;
-            margin: 5px auto 15px auto;
+            display: inline-block;
+            margin: 0 0 20px 0; 
             background-color: #dfcfbe;
             color: #5c4f43;
-            padding: 4px 12px;
+            padding: 5px 14px;
             border-radius: 4px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: bold;
         }
 
+        /* Contraste total para o parágrafo descritivo */
         .info-card p {
             font-size: 0.95rem;
-            color: #1a130c !important; /* Contraste máximo para leitura */
+            color: #1a130c !important; /* Leitura limpa */
             line-height: 1.6;
             word-wrap: break-word;
             text-align: left;
+            opacity: 1 !important;
         }
 
-        /* Otimização do Modo de Alto Contraste Herdado */
+        /* === 5. ACESSIBILIDADE - ALTO CONTRASTE === */
         body.high-contrast {
             background-color: #000000;
             color: #ffffff;
@@ -176,9 +181,10 @@
 </head>
 <body>
 
-    <!-- Back button connected to your homepage -->
+    <!-- Botão de Voltar para a Página Principal -->
     <a href="index.html" class="back-btn">← Back</a>
 
+    <!-- Cabeçalho Institucional -->
     <header class="main-header">
         <div class="logo-container">
             <img src="logomalta.png" alt="Malta Logo" class="main-logo">
@@ -187,13 +193,14 @@
         <p class="subtitle">Discover breathtaking fortresses, golden sandy bays, and vibrant coastal paths</p>
     </header>
 
-    <!-- Main structural container limiting the page width -->
+    <!-- Conteúdo Principal -->
     <main class="container">
 
-        <!-- Place 1: Valletta -->
+        <!-- Local 1: Valletta -->
         <section class="info-card">
             <div class="solo-image-wrapper">
-                <img src="valletta-circle.jpg" alt="Valletta Cityscape">
+                <!-- Certifique-se de que o arquivo "valletta.jpg" existe no seu GitHub -->
+                <img src="valletta.png" alt="Valletta Cityscape">
             </div>
             <div class="card-padding">
                 <h2>Valletta: The Fortress Capital</h2>
@@ -202,10 +209,11 @@
             </div>
         </section>
 
-        <!-- Place 2: Golden Bay -->
+        <!-- Local 2: Golden Bay -->
         <section class="info-card">
             <div class="solo-image-wrapper">
-                <img src="goldenbay-circle.jpg" alt="Golden Bay Sunset">
+                <!-- Certifique-se de que o arquivo "goldenbay.png" ou .jpg existe no seu GitHub -->
+                <img src="goldenbay.jpg" alt="Golden Bay Sunset">
             </div>
             <div class="card-padding">
                 <h2>Golden Bay Sunset</h2>
@@ -214,10 +222,11 @@
             </div>
         </section>
 
-        <!-- Place 3: St. Julian's -->
+        <!-- Local 3: St. Julian's -->
         <section class="info-card">
             <div class="solo-image-wrapper">
-                <img src="stjulians-circle.jpg" alt="St. Julian's Promenade">
+                <!-- Certifique-se de que o arquivo "stjulians1.png" existe no seu GitHub -->
+                <img src="stjulians.jpg" alt="St. Julian's Promenade">
             </div>
             <div class="card-padding">
                 <h2>St. Julian's Promenade</h2>
@@ -226,9 +235,9 @@
             </div>
         </section>
 
-    </main> <!-- End of container -->
+    </main>
 
-    <!-- FOOTER WITH INLINE STYLES FOR PERFECT CONTRAST -->
+    <!-- Rodapé Estilizado Inline para Evitar Falhas de Contraste -->
     <footer class="main-footer" style="background-color: #f4ece1; border-top: 1px solid #e6dac8; padding: 60px 20px; text-align: center; margin-top: 40px; width: 100%;">
         <div class="footer-info" style="margin-bottom: 15px; line-height: 1.6;">
             <p style="color: #1a130c !important; font-size: 0.95rem !important; opacity: 1 !important; margin-bottom: 8px; text-align: center;">
@@ -250,3 +259,4 @@
 
 </body>
 </html>
+
