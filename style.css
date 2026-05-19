@@ -83,18 +83,26 @@ main-header, .header-section {
     font-style: italic;
     font-weight: 500;           /* Peso médio para não sumir na tela */
 }
-
-
 .container, .main-container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 30px 20px;
+    width: 100%;
 }
 
+/* Força a grade a alinhar em 3 colunas perfeitas no computador */
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr) !important; /* Obriga a ter 3 colunas iguais */
     gap: 30px;
+    width: 100%;
+}
+
+/* Responsividade: Se a tela for pequena (celular), os cards ficam um embaixo do outro */
+@media (max-width: 900px) {
+    .cards-grid {
+        grid-template-columns: 1fr !important;
+    }
 }
 
 /* ==========================================================================
@@ -110,6 +118,7 @@ main-header, .header-section {
     flex-direction: column;
     overflow: hidden;
     height: 100%;
+    min-height: 400px; /* Garante que todos tenham exatamente a mesma altura mínima */
     box-shadow: 0 4px 15px rgba(140, 120, 100, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
@@ -119,14 +128,19 @@ main-header, .header-section {
     transform: translateY(-6px);
     box-shadow: 0 12px 24px rgba(140, 120, 100, 0.18);
 }
-/* Remove o formato circular e faz a imagem cobrir todo o topo */
-.solo-image-wrapper img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    object-position: center 70%; /* TRUQUE: Puxa a foto para cima, revelando o mar e cortando o excesso de céu */
-    display: block; 
-    transition: transform 0.5s ease; 
+
+.card-image-wrapper {
+    width: 100%;
+    height: 220px; /* Altura fixa para a foto do card principal */
+    overflow: hidden;
+}
+
+.card-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
 
 }
 
